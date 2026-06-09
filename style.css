@@ -955,6 +955,9 @@ html.lenis body {
 /* =============================================
    HERO RESPONSIVE OVERRIDES (MOBILE & TABLET)
    ============================================= */
+/* =============================================
+   HERO RESPONSIVE OVERRIDES (MOBILE & TABLET)
+   ============================================= */
 @media (max-width: 768px) {
   #hero {
     min-height: 90svh !important;
@@ -968,7 +971,7 @@ html.lenis body {
     align-items: center !important;
   }
 
-  /* Tighten inner container padding and height */
+  /* Eliminate Mobile justify-between Dead-Zone: Stack tightly in the center */
   #hero > div.relative.z-10 {
     padding-top: 0.5rem !important;
     padding-bottom: 0 !important;
@@ -977,45 +980,47 @@ html.lenis body {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important; /* Group elements neatly instead of stretching */
+    min-height: auto !important; /* Prevent parent min-height stretch */
+    height: auto !important;
     width: 100% !important;
-    gap: 1.25rem !important;
+    gap: 1.5rem !important; /* Controlled spacing gap */
   }
 
   /* Shrink text gaps */
   .hero-badge {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
   }
 
   .hero-headline {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
   }
 
   .hero-sub {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0 !important;
     font-size: 0.85rem !important;
-    line-height: 1.4 !important;
+    line-height: 1.45 !important;
   }
 
   .hero-ctas {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
     gap: 0.5rem !important;
     width: 100% !important;
-    max-width: 280px !important;
+    max-width: 290px !important;
   }
 
   .hero-ctas a {
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
-    font-size: 0.8rem !important;
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+    font-size: 0.85rem !important;
   }
 
   /* Vibe control panel mobile styling */
   .vibe-control-panel {
     padding: 0.75rem !important;
     gap: 0.5rem !important;
-    max-width: 290px !important;
-    margin-bottom: 0.5rem !important;
+    max-width: 320px !important;
+    margin-bottom: 0 !important;
   }
 
   .vibe-control-panel label {
@@ -1035,19 +1040,22 @@ html.lenis body {
     font-size: 8px !important;
   }
 
-  /* 2x2 grid for mobile metrics */
+  /* Premium mobile metrics grid configuration (expanded width & readable sizing) */
   .hero-stats-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 6px !important;
+    gap: 8px !important;
     width: 100% !important;
-    max-width: 290px !important;
-    margin-bottom: 0.5rem !important;
+    max-width: 320px !important;
+    margin-bottom: 0 !important;
   }
   
   .hero-stats-grid span {
-    padding: 0.35rem 0.5rem !important;
-    font-size: 9px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    justify-content: flex-start !important;
   }
 
   /* absolute positioning for scroll indicator to keep it locked at the bottom without shifting page */
@@ -1068,6 +1076,17 @@ html.lenis body {
   .hero-scroll-indicator span {
     font-size: 0.55rem !important;
     letter-spacing: 0.2em !important;
+  }
+}
+
+/* Desktop alignment overrides to guarantee vertical centering above the fold */
+@media (min-width: 1024px) {
+  #hero > div.relative.z-10 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important; /* Keep columns vertically centered relative to each other */
+    justify-content: space-between !important;
+    min-height: calc(100svh - 6rem) !important;
   }
 }
 
