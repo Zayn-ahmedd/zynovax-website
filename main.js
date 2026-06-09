@@ -597,3 +597,357 @@ console.log(
   'background: linear-gradient(135deg, #FF6B35, #FF1A8C, #8B2FC9); color: white; font-size: 24px; font-weight: bold; padding: 8px 16px; border-radius: 8px; font-family: sans-serif;',
   'color: #888; font-size: 12px; margin-top: 4px;'
 );
+
+/* =============================================
+   20. INTERACTIVE HERO & BRAND VIBE CONTROLLER
+   ============================================= */
+(function initInteractiveHero() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  
+  let width = canvas.width = canvas.offsetWidth;
+  let height = canvas.height = canvas.offsetHeight;
+  
+  let particles = [];
+  let mouse = { x: null, y: null, active: false };
+  let energyLevel = 2; // Default from range slider
+  
+  const canvasConfigs = {
+    disruptor: {
+      count: 70,
+      colors: ['#FF6B35', '#FF1A8C', '#8B2FC9'],
+      maxSpeed: 1.4,
+      connectionDist: 100,
+      lineOpacity: 0.18,
+      mouseRepelRadius: 110,
+      forceMultiplier: 0.08
+    },
+    minimalist: {
+      count: 25,
+      colors: document.documentElement.classList.contains('dark') ? ['#ffffff', '#64748b'] : ['#0f172a', '#475569'],
+      maxSpeed: 0.4,
+      connectionDist: 140,
+      lineOpacity: 0.06,
+      mouseRepelRadius: 70,
+      forceMultiplier: 0.02
+    },
+    visionary: {
+      count: 55,
+      colors: ['#06b6d4', '#0ea5e9', '#10b981'],
+      maxSpeed: 1.1,
+      connectionDist: 110,
+      lineOpacity: 0.15,
+      mouseRepelRadius: 130,
+      forceMultiplier: 0.12,
+      vortex: true
+    }
+  };
+  
+  const archetypesData = {
+    disruptor: {
+      line1: "We Don't Just",
+      line2: "Build Brands.",
+      line3: "We Build Weapons.",
+      badge: "Creative Brand Building Agency · Perungalathur, Chennai, India",
+      desc: "Strategy-first brand engineering for startups, D2C brands, and local businesses ready to stop being invisible.",
+      stat1: "340%",
+      stat1Growth: "↑ Avg Reach",
+      stat1Desc: "Instagram organic growth generated",
+      stat2: "50+",
+      stat3: "5.0★",
+      mobStat1: "50+ Brands Built",
+      mobStat2: "5.0★ Rating",
+      mobStat3: "0 Templates",
+      mobStat4: "340% Avg Growth"
+    },
+    minimalist: {
+      line1: "The Art of",
+      line2: "True Restraint.",
+      line3: "Luxury Refined.",
+      badge: "Bespoke Minimalist Brand Studio · Luxury & Design",
+      desc: "Curating ultra-high-end visual systems and silent prestige for brands that value substance over noise.",
+      stat1: "99.8%",
+      stat1Growth: "↑ Retention",
+      stat1Desc: "Client satisfaction & lifetime retention rate",
+      stat2: "12",
+      stat3: "Elite",
+      mobStat1: "12 Elite Clients",
+      mobStat2: "100% Bespoke",
+      mobStat3: "Zero Noise",
+      mobStat4: "99.8% Retention"
+    },
+    visionary: {
+      line1: "Brands Built For",
+      line2: "The Next Epoch.",
+      line3: "Future Systems.",
+      badge: "Futuristic Identity Engineering Lab · Next-Gen Brand Systems",
+      desc: "Architecting hyper-scalable, tech-forward, and automated digital brand experiences built to scale infinitely.",
+      stat1: "$12M+",
+      stat1Growth: "↑ Raised",
+      stat1Desc: "Seed and Series-A capital raised by clients",
+      stat2: "15x",
+      stat3: "AI",
+      mobStat1: "15x Avg ROI",
+      mobStat2: "AI Integrated",
+      mobStat3: "Future Proof",
+      mobStat4: "$12M+ Raised"
+    }
+  };
+  
+  let activeConfigName = 'disruptor';
+  let config = canvasConfigs.disruptor;
+  
+  // Theme change listener
+  const themeObserver = new MutationObserver(() => {
+    canvasConfigs.minimalist.colors = document.documentElement.classList.contains('dark') ? ['#ffffff', '#64748b'] : ['#0f172a', '#475569'];
+    if (activeConfigName === 'minimalist') {
+      config = canvasConfigs.minimalist;
+      particles.forEach(p => {
+        p.color = config.colors[Math.floor(Math.random() * config.colors.length)];
+      });
+    }
+  });
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  
+  class Particle {
+    constructor() {
+      this.reset();
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+    }
+    
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.radius = Math.random() * 2 + 1;
+      this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
+      
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * config.maxSpeed + 0.1;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+    }
+    
+    update() {
+      const speedFactor = energyLevel === 1 ? 0.45 : (energyLevel === 3 ? 2.2 : 1.0);
+      
+      if (config.vortex) {
+        const dx = this.x - width / 2;
+        const dy = this.y - height / 2;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        this.vx += (-dy / dist) * 0.015 * speedFactor;
+        this.vy += (dx / dist) * 0.015 * speedFactor;
+        this.vx -= (dx / dist) * 0.005;
+        this.vy -= (dy / dist) * 0.005;
+      }
+      
+      this.x += this.vx * speedFactor;
+      this.y += this.vy * speedFactor;
+      
+      if (mouse.active && mouse.x !== null && mouse.y !== null) {
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        
+        if (dist < config.mouseRepelRadius) {
+          const force = (config.mouseRepelRadius - dist) / config.mouseRepelRadius;
+          const angle = Math.atan2(dy, dx);
+          this.x += Math.cos(angle) * force * 5 * config.forceMultiplier * speedFactor;
+          this.y += Math.sin(angle) * force * 5 * config.forceMultiplier * speedFactor;
+        }
+      }
+      
+      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+        this.reset();
+      }
+    }
+    
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = activeConfigName !== 'minimalist' ? 8 : 0;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+  
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < config.count; i++) {
+      particles.push(new Particle());
+    }
+  }
+  
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    
+    ctx.lineWidth = 0.8;
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+      
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < config.connectionDist) {
+          const alpha = (config.connectionDist - dist) / config.connectionDist * config.lineOpacity;
+          ctx.strokeStyle = `rgba(${activeConfigName === 'disruptor' ? '255,26,140' : (activeConfigName === 'visionary' ? '6,182,212' : (document.documentElement.classList.contains('dark') ? '255,255,255' : '15,23,42'))}, ${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  function transitionTextElement(el, newText) {
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.innerHTML = newText;
+      el.style.opacity = 1;
+    }, 250);
+  }
+  
+  function transitionText(id, newText) {
+    const el = document.getElementById(id);
+    if (el) transitionTextElement(el, newText);
+  }
+  
+  function setArchetype(name) {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+    
+    hero.classList.remove('archetype-disruptor', 'archetype-minimalist', 'archetype-visionary');
+    hero.classList.add(`archetype-${name}`);
+    
+    document.querySelectorAll('.archetype-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`archetype-${name}-btn`);
+    if (activeBtn) activeBtn.classList.add('active');
+    
+    const content = archetypesData[name];
+    if (content) {
+      const lines = hero.querySelectorAll('.hero-headline .hero-line');
+      if (lines.length >= 3) {
+        transitionTextElement(lines[0], content.line1);
+        transitionTextElement(lines[1], content.line2);
+        transitionTextElement(lines[2], content.line3);
+      }
+      
+      const badgeText = document.getElementById('hero-badge-text');
+      if (badgeText) transitionTextElement(badgeText, content.badge);
+      
+      const subCopy = hero.querySelector('.hero-sub');
+      if (subCopy) {
+        subCopy.style.opacity = 0;
+        setTimeout(() => {
+          subCopy.innerHTML = content.desc + `<span class="block mt-1.5 text-xs sm:text-sm font-medium text-brand-magenta dark:text-brand-pink">Based in Perungalathur, Chennai. <span id="hero-typing" class="inline-block min-w-[6ch]"></span></span>`;
+          subCopy.style.opacity = 1;
+        }, 250);
+      }
+      
+      // Desktop Card stats
+      transitionText('card-stat-1', content.stat1);
+      transitionText('card-stat-growth', content.stat1Growth);
+      transitionText('card-stat-desc', content.stat1Desc);
+      transitionText('card-stat-2', content.stat2);
+      transitionText('card-stat-3', content.stat3);
+      
+      // Mobile stats
+      transitionText('mob-stat-1', content.mobStat1);
+      transitionText('mob-stat-2', content.mobStat2);
+      transitionText('mob-stat-3', content.mobStat3);
+      transitionText('mob-stat-4', content.mobStat4);
+    }
+    
+    // Update canvas active configurations
+    activeConfigName = name;
+    config = canvasConfigs[name];
+    initParticles();
+  }
+  
+  // Resize handler
+  window.addEventListener('resize', () => {
+    width = canvas.width = canvas.offsetWidth;
+    height = canvas.height = canvas.offsetHeight;
+    initParticles();
+  }, { passive: true });
+  
+  // Mouse track
+  const heroSection = document.getElementById('hero');
+  if (heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    }, { passive: true });
+    
+    heroSection.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    }, { passive: true });
+  }
+  
+  // Controller button clicks
+  const disruptorBtn = document.getElementById('archetype-disruptor-btn');
+  const minimalistBtn = document.getElementById('archetype-minimalist-btn');
+  const visionaryBtn = document.getElementById('archetype-visionary-btn');
+  const energySlider = document.getElementById('particle-energy');
+  const energyValText = document.getElementById('energy-val');
+  
+  if (disruptorBtn) disruptorBtn.addEventListener('click', () => setArchetype('disruptor'));
+  if (minimalistBtn) minimalistBtn.addEventListener('click', () => setArchetype('minimalist'));
+  if (visionaryBtn) visionaryBtn.addEventListener('click', () => setArchetype('visionary'));
+  
+  if (energySlider && energyValText) {
+    energySlider.addEventListener('input', (e) => {
+      energyLevel = parseInt(e.target.value, 10);
+      const labels = ['Calm', 'Medium', 'Hyper-Growth'];
+      energyValText.textContent = labels[energyLevel - 1];
+    }, { passive: true });
+  }
+  
+  // Card 3D tilt
+  const tiltCard = document.getElementById('interactive-brand-card');
+  if (tiltCard) {
+    tiltCard.addEventListener('mousemove', (e) => {
+      const rect = tiltCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cardWidth = rect.width;
+      const cardHeight = rect.height;
+      
+      const rotateX = ((y / cardHeight) - 0.5) * -24;
+      const rotateY = ((x / cardWidth) - 0.5) * 24;
+      
+      tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    }, { passive: true });
+    
+    tiltCard.addEventListener('mouseleave', () => {
+      tiltCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    }, { passive: true });
+    
+    // Cycle archetype on click
+    tiltCard.addEventListener('click', () => {
+      const order = ['disruptor', 'minimalist', 'visionary'];
+      const nextIndex = (order.indexOf(activeConfigName) + 1) % order.length;
+      setArchetype(order[nextIndex]);
+    });
+  }
+  
+  // Set default archetype class on load
+  const hero = document.getElementById('hero');
+  if (hero) {
+    hero.classList.add('archetype-disruptor');
+  }
+  
+  initParticles();
+  animate();
+})();

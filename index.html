@@ -182,198 +182,189 @@
 
   <!-- ========== HERO ========== -->
   <section id="hero"
-    class="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-gray-950 pt-16 lg:pt-20">
+    class="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-gray-950 pt-16 lg:pt-20 transition-all duration-700">
+
+    <!-- ── Interactive Canvas Background ── -->
+    <canvas id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-80 dark:opacity-60"></canvas>
 
     <!-- ── Background Orbs ── -->
-    <div class="hero-orb orb-1" aria-hidden="true"></div>
-    <div class="hero-orb orb-2" aria-hidden="true"></div>
-    <div class="hero-orb orb-3" aria-hidden="true"></div>
-    <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-15" aria-hidden="true"></div>
+    <div class="hero-orb orb-1 transition-all duration-700" aria-hidden="true"></div>
+    <div class="hero-orb orb-2 transition-all duration-700" aria-hidden="true"></div>
+    <div class="hero-orb orb-3 transition-all duration-700" aria-hidden="true"></div>
+    <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-15 pointer-events-none" aria-hidden="true"></div>
 
-    <!-- ── Floating social proof chips (desktop only) ── -->
-    <div class="hidden lg:block absolute left-6 xl:left-10 top-1/2 -translate-y-1/2 z-20 space-y-3" aria-hidden="true">
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand-pink/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:0s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>
+    <!-- ── Split Content & Interactive Preview Layout ── -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-6 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8 min-h-[calc(100svh-5rem)]">
+      
+      <!-- Left Column: Copy & Vibe Controller -->
+      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <!-- Badge -->
+        <div class="hero-badge reveal mb-5 sm:mb-6">
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-brand-orange/10 via-brand-pink/10 to-brand-purple/10 border border-brand-pink/20 text-xs sm:text-sm font-semibold text-brand-magenta dark:text-brand-pink tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
+            <span id="hero-badge-text">Creative Brand Building Agency · Perungalathur, Chennai, India</span>
+          </span>
         </div>
-        <div>
-          <p class="font-syne font-extrabold text-base leading-none gradient-text">50+</p>
-          <p class="text-xs text-gray-400 mt-0.5">Brands Built</p>
+
+        <!-- Headline -->
+        <h1 class="hero-headline font-syne font-extrabold tracking-tight mb-4 sm:mb-6 w-full"
+          style="font-size:clamp(2.1rem,6.2vw,4.8rem);line-height:1.06;letter-spacing:-0.03em;">
+          <span class="hero-line block text-gray-900 dark:text-white transition-all duration-500" style="opacity:0;transform:translateY(32px)">We Don't Just</span>
+          <span class="hero-line block text-gray-900 dark:text-white transition-all duration-500" style="opacity:0;transform:translateY(32px)">Build Brands.</span>
+          <span class="hero-line block gradient-text transition-all duration-500" style="opacity:0;transform:translateY(32px)">We Build Weapons.</span>
+        </h1>
+
+        <!-- Sub-copy -->
+        <p class="hero-sub reveal text-gray-500 dark:text-gray-400 text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed mb-6 sm:mb-8 px-2 lg:px-0"
+          style="opacity:0">
+          Strategy-first brand engineering for startups, D2C brands, and local businesses ready to stop being invisible.
+          <span class="block mt-1.5 text-xs sm:text-sm font-medium text-brand-magenta dark:text-brand-pink">
+            Based in Perungalathur, Chennai.
+            <span id="hero-typing" class="inline-block min-w-[6ch]"></span>
+          </span>
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-ctas reveal flex flex-col xs:flex-row items-stretch xs:items-center justify-center lg:justify-start gap-3 w-full max-w-sm xs:max-w-none mb-6 sm:mb-8 px-0"
+          style="opacity:0">
+          <a href="audit.html" id="hero-cta-primary"
+            class="btn-primary px-6 py-3.5 text-sm w-full xs:w-auto group flex items-center justify-center gap-2">
+            <span>Get Free Brand Audit</span>
+            <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="work.html" id="hero-cta-secondary"
+            class="btn-outline px-6 py-3.5 text-sm w-full xs:w-auto group flex items-center justify-center gap-2">
+            <span>See Our Work</span>
+            <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Brand Playground Controls Panel -->
+        <div class="vibe-control-panel reveal bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl border border-gray-100 dark:border-gray-800/80 rounded-2xl p-4 sm:p-5 w-full max-w-md shadow-xl shadow-brand-pink/5 flex flex-col gap-4 mx-auto lg:mx-0"
+          style="opacity:0">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">Brand Playground</span>
+            <span class="text-[9px] font-semibold text-brand-pink bg-brand-pink/10 px-2 py-0.5 rounded-full">Interactive Vibe Sandbox</span>
+          </div>
+          
+          <div class="flex flex-col gap-2">
+            <label class="text-xs font-semibold text-gray-600 dark:text-gray-400 text-left">Select Visual Vibe Archetype:</label>
+            <div class="grid grid-cols-3 gap-2">
+              <button id="archetype-disruptor-btn" class="archetype-btn active flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/40 text-center transition-all duration-300">
+                <span class="text-base sm:text-lg mb-0.5">💥</span>
+                <span class="text-[10px] font-bold text-gray-700 dark:text-gray-300">Disruptor</span>
+              </button>
+              <button id="archetype-minimalist-btn" class="archetype-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/40 text-center transition-all duration-300">
+                <span class="text-base sm:text-lg mb-0.5">💎</span>
+                <span class="text-[10px] font-bold text-gray-700 dark:text-gray-300">Minimalist</span>
+              </button>
+              <button id="archetype-visionary-btn" class="archetype-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/40 text-center transition-all duration-300">
+                <span class="text-base sm:text-lg mb-0.5">🚀</span>
+                <span class="text-[10px] font-bold text-gray-700 dark:text-gray-300">Visionary</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between text-xs">
+              <label class="font-semibold text-gray-600 dark:text-gray-400">Particle Energy / Speed:</label>
+              <span id="energy-val" class="font-bold text-brand-pink">Medium</span>
+            </div>
+            <input type="range" id="particle-energy" min="1" max="3" value="2" class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-pink" />
+          </div>
         </div>
       </div>
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand-purple/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:1.2s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-        </div>
-        <div>
-          <p class="font-syne font-extrabold text-base leading-none gradient-text">5.0★</p>
-          <p class="text-xs text-gray-400 mt-0.5">Client Rating</p>
-        </div>
-      </div>
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand-indigo/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:2.4s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <div>
-          <p class="font-syne font-extrabold text-base leading-none gradient-text">24hr</p>
-          <p class="text-xs text-gray-400 mt-0.5">Response Time</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Right chips (desktop) -->
-    <div class="hidden lg:block absolute right-6 xl:right-10 top-1/2 -translate-y-1/2 z-20 space-y-3"
-      aria-hidden="true">
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand-orange/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:0.6s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-          </svg>
+      <!-- Right Column: Interactive 3D Mockup Glass Stats Card -->
+      <div class="hidden lg:flex w-full lg:w-1/2 flex-col justify-center items-center relative z-20">
+        <!-- Glow underlying the card -->
+        <div class="absolute -inset-4 bg-gradient-to-r from-brand-orange/30 via-brand-pink/30 to-brand-purple/30 rounded-3xl blur-2xl opacity-60 mix-blend-screen animate-pulse-slow active-glow" aria-hidden="true"></div>
+        
+        <!-- Glass Stats Card -->
+        <div id="interactive-brand-card" class="relative w-full max-w-[370px] aspect-[4/5] bg-white/60 dark:bg-gray-900/50 backdrop-blur-2xl border border-white/20 dark:border-gray-800/80 rounded-3xl p-6 shadow-2xl flex flex-col justify-between overflow-hidden group select-none transition-all duration-500 cursor-pointer">
+          <!-- Abstract internal decorative elements that shift with archetype -->
+          <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-brand-pink/20 blur-xl card-glow-1 transition-all duration-500"></div>
+          <div class="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-brand-purple/20 blur-xl card-glow-2 transition-all duration-500"></div>
+          
+          <!-- Top header area of the card -->
+          <div class="flex items-center justify-between border-b border-gray-150 dark:border-gray-800/60 pb-3 z-10">
+            <div class="flex items-center gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            </div>
+            <span class="text-[9px] font-bold tracking-widest text-gray-400 dark:text-gray-500 uppercase">Live Identity Preview</span>
+          </div>
+          
+          <!-- Big Stat Area -->
+          <div class="my-auto py-4 flex flex-col gap-5 z-10">
+            <div class="text-left">
+              <span class="text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider block mb-1">Growth Engine</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-syne font-black text-5xl tracking-tight text-gray-950 dark:text-white" id="card-stat-1">340%</span>
+                <span class="text-green-500 font-bold text-xs" id="card-stat-growth">↑ Avg Reach</span>
+              </div>
+              <p class="text-xs text-gray-400 dark:text-gray-500 mt-1" id="card-stat-desc">Instagram organic growth generated</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 border-t border-gray-150 dark:border-gray-800/60 pt-4">
+              <div class="text-left">
+                <span class="text-[9px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider block mb-1">Brands Built</span>
+                <span class="font-syne font-extrabold text-xl text-gray-950 dark:text-white" id="card-stat-2">50+</span>
+              </div>
+              <div class="text-left">
+                <span class="text-[9px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider block mb-1">Agency Rating</span>
+                <span class="font-syne font-extrabold text-xl text-gray-950 dark:text-white" id="card-stat-3">5.0★</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Footer of the mockup card -->
+          <div class="border-t border-gray-150 dark:border-gray-800/60 pt-3 flex items-center justify-between z-10">
+            <div class="flex items-center gap-1.5">
+              <img src="logo.png" alt="Zynovax Logo" class="h-4.5 w-auto flex-shrink-0" />
+              <span class="font-syne font-bold text-xs tracking-tight text-gray-950 dark:text-white">ZYNOVAX</span>
+            </div>
+            <span class="text-[9px] font-bold text-brand-pink uppercase tracking-widest" id="card-action-btn">Optimize vibe</span>
+          </div>
         </div>
-        <div>
-          <p class="font-syne font-extrabold text-base leading-none gradient-text">0</p>
-          <p class="text-xs text-gray-400 mt-0.5">Templates Used</p>
-        </div>
-      </div>
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand-pink/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:1.8s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-        <div>
-          <p class="font-syne font-extrabold text-sm leading-none text-gray-900 dark:text-white">MAA 🇮🇳</p>
-          <p class="text-xs text-gray-400 mt-0.5">Chennai</p>
-        </div>
-      </div>
-      <div
-        class="hero-chip flex items-center gap-2.5 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-green-500/10 border border-gray-100 dark:border-gray-800 animate-float"
-        style="animation-delay:3s">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0">
-          <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-          </svg>
-        </div>
-        <div>
-          <p class="font-syne font-extrabold text-base leading-none text-green-600 dark:text-green-400">340%</p>
-          <p class="text-xs text-gray-400 mt-0.5">Avg IG Growth</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── MAIN CONTENT ── -->
-    <div
-      class="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center py-10 sm:py-16">
-
-      <!-- Badge -->
-      <div class="hero-badge reveal mb-6 sm:mb-8">
-        <span
-          class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-brand-orange/10 via-brand-pink/10 to-brand-purple/10 border border-brand-pink/20 text-xs sm:text-sm font-semibold text-brand-magenta dark:text-brand-pink tracking-wide">
-          <span class="w-2 h-2 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
-          Brand Engineering Agency · Perungalathur, Chennai, India
-        </span>
-      </div>
-
-      <!-- Headline — fluid type using clamp -->
-      <h1 class="hero-headline font-syne font-extrabold tracking-tight mb-5 sm:mb-7 w-full"
-        style="font-size:clamp(2.4rem,8.5vw,6.5rem);line-height:1.06;letter-spacing:-0.03em;">
-        <span class="hero-line block text-gray-900 dark:text-white" style="opacity:0;transform:translateY(32px)">We
-          Don't Just</span>
-        <span class="hero-line block text-gray-900 dark:text-white" style="opacity:0;transform:translateY(32px)">Build
-          Brands.</span>
-        <span class="hero-line block gradient-text" style="opacity:0;transform:translateY(32px)">We Build
-          Weapons.</span>
-      </h1>
-
-      <!-- Sub-copy -->
-      <p class="hero-sub reveal text-gray-500 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-12 px-2"
-        style="opacity:0">
-        Strategy-first brand engineering for startups, D2C brands, and local businesses ready to stop being invisible.
-        <span class="block mt-1 text-sm sm:text-base font-medium text-brand-magenta dark:text-brand-pink">
-          Based in Perungalathur, Chennai.
-          <span id="hero-typing" class="inline-block min-w-[6ch]"></span>
-        </span>
-      </p>
-
-      <!-- CTA Buttons -->
-      <div
-        class="hero-ctas reveal flex flex-col xs:flex-row sm:flex-row items-stretch xs:items-center sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-sm xs:max-w-none sm:max-w-none mb-10 sm:mb-16 px-0"
-        style="opacity:0">
-        <a href="audit.html" id="hero-cta-primary"
-          class="btn-primary px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base w-full xs:w-auto group flex items-center justify-center gap-2">
-          <span>Get Free Brand Audit</span>
-          <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-        <a href="work.html" id="hero-cta-secondary"
-          class="btn-outline px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base w-full xs:w-auto group flex items-center justify-center gap-2">
-          <span>See Our Work</span>
-          <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
       </div>
 
       <!-- Mobile stat pills (visible on mobile only) -->
       <div class="hero-stats-grid lg:hidden w-full max-w-sm px-2">
         <span
-          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-brand-orange to-brand-pink flex-shrink-0"></span>
-          <span>50+ Brands Built</span>
+          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm transition-all duration-500">
+          <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-brand-orange to-brand-pink flex-shrink-0 bg-accent-1"></span>
+          <span id="mob-stat-1">50+ Brands Built</span>
         </span>
         <span
-          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-pink flex-shrink-0"></span>
-          <span>5.0★ Rating</span>
+          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm transition-all duration-500">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-pink flex-shrink-0 bg-accent-2"></span>
+          <span id="mob-stat-2">5.0★ Rating</span>
         </span>
         <span
-          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0"></span>
-          <span>0 Templates</span>
+          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm transition-all duration-500">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0 bg-accent-3"></span>
+          <span id="mob-stat-3">0 Templates</span>
         </span>
         <span
-          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>
-          <span>340% Avg Growth</span>
+          class="inline-flex items-center justify-center gap-1.5 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-gray-700 dark:text-gray-300 shadow-sm transition-all duration-500">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 bg-accent-4"></span>
+          <span id="mob-stat-4">340% Avg Growth</span>
         </span>
       </div>
 
       <!-- Scroll indicator -->
-      <div class="hero-scroll-indicator flex flex-col items-center gap-2 text-gray-400 dark:text-gray-600 animate-float" aria-hidden="true">
+      <div class="hero-scroll-indicator flex flex-col items-center gap-1.5 text-gray-400 dark:text-gray-600 animate-float" aria-hidden="true">
         <div class="scroll-indicator"></div>
-        <span class="text-xs uppercase tracking-widest font-medium">Scroll</span>
+        <span class="text-[10px] uppercase tracking-widest font-semibold">Scroll</span>
       </div>
     </div>
 

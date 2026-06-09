@@ -961,7 +961,7 @@ html.lenis body {
     height: 92svh !important;
     max-height: 95svh !important;
     padding-top: 3.5rem !important; /* Tighten top space */
-    padding-bottom: 4.5rem !important; /* Make room for absolute scroll indicator */
+    padding-bottom: 4rem !important; /* Make room for absolute scroll indicator */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -970,7 +970,7 @@ html.lenis body {
 
   /* Tighten inner container padding and height */
   #hero > div.relative.z-10 {
-    padding-top: 1rem !important;
+    padding-top: 0.5rem !important;
     padding-bottom: 0 !important;
     margin-top: auto !important;
     margin-bottom: auto !important;
@@ -979,49 +979,81 @@ html.lenis body {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
+    gap: 1.25rem !important;
   }
 
   /* Shrink text gaps */
   .hero-badge {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .hero-headline {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .hero-sub {
-    margin-bottom: 1.25rem !important;
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
   }
 
   .hero-ctas {
-    margin-bottom: 1.5rem !important;
-    gap: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+    gap: 0.5rem !important;
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 280px !important;
   }
 
   .hero-ctas a {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Vibe control panel mobile styling */
+  .vibe-control-panel {
+    padding: 0.75rem !important;
+    gap: 0.5rem !important;
+    max-width: 290px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .vibe-control-panel label {
+    font-size: 0.7rem !important;
+  }
+
+  .archetype-btn {
+    padding: 0.35rem 0.15rem !important;
+  }
+
+  .archetype-btn span.text-base {
+    font-size: 1.1rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .archetype-btn span {
+    font-size: 8px !important;
   }
 
   /* 2x2 grid for mobile metrics */
   .hero-stats-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
+    gap: 6px !important;
     width: 100% !important;
-    max-width: 340px !important;
-    margin-bottom: 1.5rem !important;
+    max-width: 290px !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .hero-stats-grid span {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 9px !important;
   }
 
   /* absolute positioning for scroll indicator to keep it locked at the bottom without shifting page */
   .hero-scroll-indicator {
     position: absolute !important;
-    bottom: 1.25rem !important;
+    bottom: 1rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     margin: 0 !important;
@@ -1030,11 +1062,208 @@ html.lenis body {
   }
 
   .hero-scroll-indicator .scroll-indicator {
-    height: 24px !important; /* Shrink height of line */
+    height: 20px !important; /* Shrink height of line */
   }
 
   .hero-scroll-indicator span {
-    font-size: 0.6rem !important;
+    font-size: 0.55rem !important;
     letter-spacing: 0.2em !important;
   }
+}
+
+/* =============================================
+   INTERACTIVE HERO COMPONENT STYLES
+   ============================================= */
+#hero {
+  /* Default Disruptor variables */
+  --hero-accent-grad: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 40%, #8B2FC9 70%, #4A2FBD 100%);
+  --hero-accent-color: #FF1A8C;
+  --hero-accent-color-rgb: 255, 26, 140;
+  --hero-accent-secondary: #FF6B35;
+  --hero-orb-1: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(255, 26, 140, 0.1) 0%, transparent 70%);
+  --hero-orb-3: radial-gradient(circle, rgba(139, 47, 201, 0.08) 0%, transparent 70%);
+  --hero-glow-color: rgba(255, 26, 140, 0.35);
+}
+
+/* Overriding orbs using css variables */
+#hero .hero-orb.orb-1 {
+  background: var(--hero-orb-1) !important;
+}
+#hero .hero-orb.orb-2 {
+  background: var(--hero-orb-2) !important;
+}
+#hero .hero-orb.orb-3 {
+  background: var(--hero-orb-3) !important;
+}
+
+/* Archetype - Disruptor */
+#hero.archetype-disruptor {
+  --hero-accent-grad: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 40%, #8B2FC9 70%, #4A2FBD 100%);
+  --hero-accent-color: #FF1A8C;
+  --hero-accent-color-rgb: 255, 26, 140;
+  --hero-accent-secondary: #FF6B35;
+  --hero-glow-color: rgba(255, 26, 140, 0.35);
+}
+
+/* Archetype - Minimalist */
+#hero.archetype-minimalist {
+  --hero-accent-grad: linear-gradient(135deg, #0f172a 0%, #475569 50%, #0f172a 100%);
+  --hero-accent-color: #0f172a;
+  --hero-accent-color-rgb: 15, 23, 42;
+  --hero-accent-secondary: #64748b;
+  --hero-orb-1: radial-gradient(circle, rgba(15, 23, 42, 0.04) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(100, 116, 139, 0.04) 0%, transparent 70%);
+  --hero-orb-3: radial-gradient(circle, rgba(71, 85, 105, 0.04) 0%, transparent 70%);
+  --hero-glow-color: rgba(15, 23, 42, 0.15);
+}
+.dark #hero.archetype-minimalist {
+  --hero-accent-grad: linear-gradient(135deg, #ffffff 0%, #94a3b8 50%, #ffffff 100%);
+  --hero-accent-color: #ffffff;
+  --hero-accent-color-rgb: 255, 255, 255;
+  --hero-accent-secondary: #475569;
+  --hero-orb-1: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(148, 163, 184, 0.05) 0%, transparent 70%);
+  --hero-orb-3: radial-gradient(circle, rgba(71, 85, 105, 0.05) 0%, transparent 70%);
+  --hero-glow-color: rgba(255, 255, 255, 0.15);
+}
+
+#hero.archetype-minimalist .hero-headline {
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+#hero.archetype-minimalist .hero-headline span {
+  font-weight: 500 !important;
+}
+
+/* Archetype - Visionary */
+#hero.archetype-visionary {
+  --hero-accent-grad: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 40%, #10b981 100%);
+  --hero-accent-color: #06b6d4;
+  --hero-accent-color-rgb: 6, 182, 212;
+  --hero-accent-secondary: #10b981;
+  --hero-orb-1: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+  --hero-orb-3: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  --hero-glow-color: rgba(6, 182, 212, 0.3);
+}
+
+#hero.archetype-visionary .hero-headline {
+  font-family: 'Outfit', sans-serif !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Global elements overriding based on active archetype properties */
+#hero .gradient-text {
+  background: var(--hero-accent-grad) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+#hero .btn-primary {
+  background: var(--hero-accent-grad) !important;
+}
+
+#hero .btn-primary::before {
+  background: var(--hero-accent-grad) !important;
+  opacity: 0.15;
+}
+
+#hero .btn-primary:hover {
+  box-shadow: 0 12px 40px var(--hero-glow-color) !important;
+}
+
+#hero .btn-outline {
+  color: var(--hero-accent-color) !important;
+  border-color: var(--hero-accent-color) !important;
+}
+
+#hero .btn-outline:hover {
+  background: var(--hero-accent-grad) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 24px var(--hero-glow-color) !important;
+}
+
+/* Glassmorphism Controls Dashboard */
+.vibe-control-panel {
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#hero.archetype-disruptor .vibe-control-panel {
+  box-shadow: 0 20px 40px rgba(255, 26, 140, 0.04);
+}
+#hero.archetype-minimalist .vibe-control-panel {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+}
+#hero.archetype-visionary .vibe-control-panel {
+  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.04);
+}
+
+/* Archetype buttons */
+.archetype-btn {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.dark .archetype-btn {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+.archetype-btn.active {
+  border-color: var(--hero-accent-color) !important;
+  background: rgba(var(--hero-accent-color-rgb), 0.08) !important;
+  box-shadow: 0 4px 12px rgba(var(--hero-accent-color-rgb), 0.15);
+}
+.archetype-btn.active span {
+  color: var(--hero-accent-color) !important;
+}
+
+/* Accent mobile badges indicators */
+#hero .hero-stats-grid span .bg-accent-1 {
+  background: var(--hero-accent-color) !important;
+}
+#hero .hero-stats-grid span .bg-accent-2 {
+  background: var(--hero-accent-secondary) !important;
+}
+#hero .hero-stats-grid span .bg-accent-3 {
+  background: var(--hero-accent-color) !important;
+  opacity: 0.6;
+}
+#hero .hero-stats-grid span .bg-accent-4 {
+  background: #10b981 !important;
+}
+
+/* 3D Glass Stats Card */
+#interactive-brand-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+}
+#interactive-brand-card:hover {
+  box-shadow: 0 25px 60px rgba(var(--hero-accent-color-rgb), 0.16);
+}
+.active-glow {
+  background: radial-gradient(circle, rgba(var(--hero-accent-color-rgb), 0.22) 0%, transparent 70%) !important;
+  transition: background 0.5s ease;
+}
+
+/* Custom slider input */
+#particle-energy::-webkit-slider-runnable-track {
+  background: rgba(var(--hero-accent-color-rgb), 0.1);
+  border-radius: 99px;
+  height: 6px;
+  transition: background 0.5s ease;
+}
+#particle-energy::-webkit-slider-thumb {
+  background: var(--hero-accent-color) !important;
+  width: 14px;
+  height: 14px;
+  margin-top: -4px;
+  border-radius: 50%;
+  appearance: none;
+  transition: background 0.5s ease;
 }
