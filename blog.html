@@ -648,7 +648,19 @@
     function renderPosts() {
       // Filter posts
       const filtered = POSTS.filter(post => {
-        const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
+        // Robust sanitization helper to handle spaces, casing, & vs &amp;, and special characters
+        const sanitize = (str) => {
+          if (!str) return '';
+          return str.toLowerCase()
+            .replace(/&amp;/g, '&') // Normalize HTML entity codes
+            .replace(/[^a-z0-9]/g, '') // Remove symbols, spaces, and punctuation
+            .trim();
+        };
+
+        const postCat = sanitize(post.category);
+        const activeCat = sanitize(activeCategory);
+
+        const matchesCategory = activeCat === 'all' || postCat === activeCat;
         const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                               post.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
                               post.category.toLowerCase().includes(searchQuery.toLowerCase());
@@ -743,6 +755,13 @@
       pill.classList.add('active');
 
       activeCategory = pill.dataset.category;
+
+      // Unconditionally reset the search inputs when 'All Articles' is selected to restore list
+      if (activeCategory && activeCategory.toLowerCase().trim() === 'all') {
+        searchQuery = '';
+        if (blogSearch) blogSearch.value = '';
+      }
+
       renderPosts();
     });
 
