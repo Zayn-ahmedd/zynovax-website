@@ -36,7 +36,6 @@
    ============================================= */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -47,23 +46,7 @@
     } else {
       navbar.classList.remove('scrolled');
     }
-
-    // Back-to-top visibility
-    if (backToTop) {
-      if (scrollY > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }
   }, { passive: true });
-
-  // Back to top click
-  if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 })();
 
 
@@ -572,7 +555,7 @@ window.requestIdleCallback = window.requestIdleCallback || function (cb) {
     '#wa-tip::after{content:"";position:absolute;top:100%;right:18px;border:5px solid transparent;border-top-color:#111827;}' +
     '#wa-fab:hover~#wa-tip,#wa-fab:focus~#wa-tip{opacity:1;transform:translateY(0);}';
   document.head.appendChild(waStyle);
-  
+
   var waBtn = document.createElement('a');
   waBtn.id = 'wa-fab';
   waBtn.href = 'https://wa.me/919876543210?text=Hi%20Zynovax%2C%20I%27d%20love%20to%20learn%20about%20your%20brand%20building%20services!';
@@ -581,7 +564,7 @@ window.requestIdleCallback = window.requestIdleCallback || function (cb) {
   waBtn.setAttribute('aria-label', 'Chat with us on WhatsApp');
   waBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
   document.body.appendChild(waBtn);
-  
+
   var waTip = document.createElement('div');
   waTip.id = 'wa-tip';
   waTip.textContent = 'Chat on WhatsApp';
@@ -599,355 +582,72 @@ console.log(
 );
 
 /* =============================================
-   20. INTERACTIVE HERO & BRAND VIBE CONTROLLER
+   21. DYNAMIC GLOBAL SCROLL TO TOP INJECTOR
    ============================================= */
-(function initInteractiveHero() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  
-  let width = canvas.width = canvas.offsetWidth;
-  let height = canvas.height = canvas.offsetHeight;
-  
-  let particles = [];
-  let mouse = { x: null, y: null, active: false };
-  let energyLevel = 2; // Default from range slider
-  
-  const canvasConfigs = {
-    disruptor: {
-      count: 70,
-      colors: ['#FF6B35', '#FF1A8C', '#8B2FC9'],
-      maxSpeed: 1.4,
-      connectionDist: 100,
-      lineOpacity: 0.18,
-      mouseRepelRadius: 110,
-      forceMultiplier: 0.08
-    },
-    minimalist: {
-      count: 25,
-      colors: document.documentElement.classList.contains('dark') ? ['#ffffff', '#64748b'] : ['#0f172a', '#475569'],
-      maxSpeed: 0.4,
-      connectionDist: 140,
-      lineOpacity: 0.06,
-      mouseRepelRadius: 70,
-      forceMultiplier: 0.02
-    },
-    visionary: {
-      count: 55,
-      colors: ['#06b6d4', '#0ea5e9', '#10b981'],
-      maxSpeed: 1.1,
-      connectionDist: 110,
-      lineOpacity: 0.15,
-      mouseRepelRadius: 130,
-      forceMultiplier: 0.12,
-      vortex: true
+(function initScrollToTop() {
+  if (document.getElementById('back-to-top')) {
+    document.getElementById('back-to-top').remove();
+  }
+
+  var style = document.createElement('style');
+  style.textContent = 
+    '#back-to-top {' +
+    '  position: fixed;' +
+    '  bottom: 28px;' +
+    '  left: 28px;' +
+    '  z-index: 9000;' +
+    '  width: 48px;' +
+    '  height: 48px;' +
+    '  border-radius: 50%;' +
+    '  background: #ffffff;' +
+    '  border: 1px solid rgba(0, 0, 0, 0.08);' +
+    '  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);' +
+    '  display: flex;' +
+    '  align-items: center;' +
+    '  justify-content: center;' +
+    '  color: #4b5563;' +
+    '  cursor: pointer;' +
+    '  opacity: 0;' +
+    '  pointer-events: none;' +
+    '  transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;' +
+    '}' +
+    '.dark #back-to-top {' +
+    '  background: #1f2937;' +
+    '  border-color: rgba(255, 255, 255, 0.08);' +
+    '  color: #d1d5db;' +
+    '}' +
+    '#back-to-top:hover {' +
+    '  transform: scale(1.08) translateY(-2px);' +
+    '  color: #FF1A8C;' +
+    '  border-color: #FF1A8C;' +
+    '  box-shadow: 0 6px 24px rgba(255, 26, 140, 0.15);' +
+    '}' +
+    '#back-to-top.visible {' +
+    '  opacity: 1;' +
+    '  pointer-events: auto;' +
+    '}';
+  document.head.appendChild(style);
+
+  var btn = document.createElement('button');
+  btn.id = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>';
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
     }
-  };
-  
-  const archetypesData = {
-    disruptor: {
-      line1: "We Don't Just",
-      line2: "Build Brands.",
-      line3: "We Build Weapons.",
-      badge: "Creative Brand Building Agency · Perungalathur, Chennai, India",
-      desc: "Strategy-first brand engineering for startups, D2C brands, and local businesses ready to stop being invisible.",
-      stat1: "340%",
-      stat1Growth: "↑ Avg Reach",
-      stat1Desc: "Instagram organic growth generated",
-      stat2: "50+",
-      stat3: "5.0★",
-      mobStat1: "50+ Brands Built",
-      mobStat2: "5.0★ Rating",
-      mobStat3: "0 Templates",
-      mobStat4: "340% Avg Growth"
-    },
-    minimalist: {
-      line1: "The Art of",
-      line2: "True Restraint.",
-      line3: "Luxury Refined.",
-      badge: "Bespoke Minimalist Brand Studio · Luxury & Design",
-      desc: "Curating ultra-high-end visual systems and silent prestige for brands that value substance over noise.",
-      stat1: "99.8%",
-      stat1Growth: "↑ Retention",
-      stat1Desc: "Client satisfaction & lifetime retention rate",
-      stat2: "12",
-      stat3: "Elite",
-      mobStat1: "12 Elite Clients",
-      mobStat2: "100% Bespoke",
-      mobStat3: "Zero Noise",
-      mobStat4: "99.8% Retention"
-    },
-    visionary: {
-      line1: "Brands Built For",
-      line2: "The Next Epoch.",
-      line3: "Future Systems.",
-      badge: "Futuristic Identity Engineering Lab · Next-Gen Brand Systems",
-      desc: "Architecting hyper-scalable, tech-forward, and automated digital brand experiences built to scale infinitely.",
-      stat1: "$12M+",
-      stat1Growth: "↑ Raised",
-      stat1Desc: "Seed and Series-A capital raised by clients",
-      stat2: "15x",
-      stat3: "AI",
-      mobStat1: "15x Avg ROI",
-      mobStat2: "AI Integrated",
-      mobStat3: "Future Proof",
-      mobStat4: "$12M+ Raised"
-    }
-  };
-  
-  let activeConfigName = 'disruptor';
-  let config = canvasConfigs.disruptor;
-  
-  // Theme change listener
-  const themeObserver = new MutationObserver(() => {
-    canvasConfigs.minimalist.colors = document.documentElement.classList.contains('dark') ? ['#ffffff', '#64748b'] : ['#0f172a', '#475569'];
-    if (activeConfigName === 'minimalist') {
-      config = canvasConfigs.minimalist;
-      particles.forEach(p => {
-        p.color = config.colors[Math.floor(Math.random() * config.colors.length)];
-      });
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    if (window.lenis) {
+      window.lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-  
-  class Particle {
-    constructor() {
-      this.reset();
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-    }
-    
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.radius = Math.random() * 2 + 1;
-      this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
-      
-      const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * config.maxSpeed + 0.1;
-      this.vx = Math.cos(angle) * speed;
-      this.vy = Math.sin(angle) * speed;
-    }
-    
-    update() {
-      const speedFactor = energyLevel === 1 ? 0.45 : (energyLevel === 3 ? 2.2 : 1.0);
-      
-      if (config.vortex) {
-        const dx = this.x - width / 2;
-        const dy = this.y - height / 2;
-        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        this.vx += (-dy / dist) * 0.015 * speedFactor;
-        this.vy += (dx / dist) * 0.015 * speedFactor;
-        this.vx -= (dx / dist) * 0.005;
-        this.vy -= (dy / dist) * 0.005;
-      }
-      
-      this.x += this.vx * speedFactor;
-      this.y += this.vy * speedFactor;
-      
-      if (mouse.active && mouse.x !== null && mouse.y !== null) {
-        const dx = this.x - mouse.x;
-        const dy = this.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        
-        if (dist < config.mouseRepelRadius) {
-          const force = (config.mouseRepelRadius - dist) / config.mouseRepelRadius;
-          const angle = Math.atan2(dy, dx);
-          this.x += Math.cos(angle) * force * 5 * config.forceMultiplier * speedFactor;
-          this.y += Math.sin(angle) * force * 5 * config.forceMultiplier * speedFactor;
-        }
-      }
-      
-      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
-        this.reset();
-      }
-    }
-    
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = activeConfigName !== 'minimalist' ? 8 : 0;
-      ctx.shadowColor = this.color;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-  
-  function initParticles() {
-    particles = [];
-    for (let i = 0; i < config.count; i++) {
-      particles.push(new Particle());
-    }
-  }
-  
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-    
-    ctx.lineWidth = 0.8;
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-      
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        if (dist < config.connectionDist) {
-          const alpha = (config.connectionDist - dist) / config.connectionDist * config.lineOpacity;
-          ctx.strokeStyle = `rgba(${activeConfigName === 'disruptor' ? '255,26,140' : (activeConfigName === 'visionary' ? '6,182,212' : (document.documentElement.classList.contains('dark') ? '255,255,255' : '15,23,42'))}, ${alpha})`;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    
-    requestAnimationFrame(animate);
-  }
-  
-  function transitionTextElement(el, newText) {
-    el.style.opacity = 0;
-    setTimeout(() => {
-      el.innerHTML = newText;
-      el.style.opacity = 1;
-    }, 250);
-  }
-  
-  function transitionText(id, newText) {
-    const el = document.getElementById(id);
-    if (el) transitionTextElement(el, newText);
-  }
-  
-  function setArchetype(name) {
-    const hero = document.getElementById('hero');
-    if (!hero) return;
-    
-    hero.classList.remove('archetype-disruptor', 'archetype-minimalist', 'archetype-visionary');
-    hero.classList.add(`archetype-${name}`);
-    
-    document.querySelectorAll('.archetype-btn').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.getElementById(`archetype-${name}-btn`);
-    if (activeBtn) activeBtn.classList.add('active');
-    
-    const content = archetypesData[name];
-    if (content) {
-      const lines = hero.querySelectorAll('.hero-headline .hero-line');
-      if (lines.length >= 3) {
-        transitionTextElement(lines[0], content.line1);
-        transitionTextElement(lines[1], content.line2);
-        transitionTextElement(lines[2], content.line3);
-      }
-      
-      const badgeText = document.getElementById('hero-badge-text');
-      if (badgeText) transitionTextElement(badgeText, content.badge);
-      
-      const subCopy = hero.querySelector('.hero-sub');
-      if (subCopy) {
-        subCopy.style.opacity = 0;
-        setTimeout(() => {
-          subCopy.innerHTML = content.desc + `<span class="block mt-1.5 text-xs sm:text-sm font-medium text-brand-magenta dark:text-brand-pink">Based in Perungalathur, Chennai. <span id="hero-typing" class="inline-block min-w-[6ch]"></span></span>`;
-          subCopy.style.opacity = 1;
-        }, 250);
-      }
-      
-      // Desktop Card stats
-      transitionText('card-stat-1', content.stat1);
-      transitionText('card-stat-growth', content.stat1Growth);
-      transitionText('card-stat-desc', content.stat1Desc);
-      transitionText('card-stat-2', content.stat2);
-      transitionText('card-stat-3', content.stat3);
-      
-      // Mobile stats
-      transitionText('mob-stat-1', content.mobStat1);
-      transitionText('mob-stat-2', content.mobStat2);
-      transitionText('mob-stat-3', content.mobStat3);
-      transitionText('mob-stat-4', content.mobStat4);
-    }
-    
-    // Update canvas active configurations
-    activeConfigName = name;
-    config = canvasConfigs[name];
-    initParticles();
-  }
-  
-  // Resize handler
-  window.addEventListener('resize', () => {
-    width = canvas.width = canvas.offsetWidth;
-    height = canvas.height = canvas.offsetHeight;
-    initParticles();
-  }, { passive: true });
-  
-  // Mouse track
-  const heroSection = document.getElementById('hero');
-  if (heroSection) {
-    heroSection.addEventListener('mousemove', (e) => {
-      const rect = heroSection.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
-    }, { passive: true });
-    
-    heroSection.addEventListener('mouseleave', () => {
-      mouse.active = false;
-    }, { passive: true });
-  }
-  
-  // Controller button clicks
-  const disruptorBtn = document.getElementById('archetype-disruptor-btn');
-  const minimalistBtn = document.getElementById('archetype-minimalist-btn');
-  const visionaryBtn = document.getElementById('archetype-visionary-btn');
-  const energySlider = document.getElementById('particle-energy');
-  const energyValText = document.getElementById('energy-val');
-  
-  if (disruptorBtn) disruptorBtn.addEventListener('click', () => setArchetype('disruptor'));
-  if (minimalistBtn) minimalistBtn.addEventListener('click', () => setArchetype('minimalist'));
-  if (visionaryBtn) visionaryBtn.addEventListener('click', () => setArchetype('visionary'));
-  
-  if (energySlider && energyValText) {
-    energySlider.addEventListener('input', (e) => {
-      energyLevel = parseInt(e.target.value, 10);
-      const labels = ['Calm', 'Medium', 'Hyper-Growth'];
-      energyValText.textContent = labels[energyLevel - 1];
-    }, { passive: true });
-  }
-  
-  // Card 3D tilt
-  const tiltCard = document.getElementById('interactive-brand-card');
-  if (tiltCard) {
-    tiltCard.addEventListener('mousemove', (e) => {
-      const rect = tiltCard.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cardWidth = rect.width;
-      const cardHeight = rect.height;
-      
-      const rotateX = ((y / cardHeight) - 0.5) * -24;
-      const rotateY = ((x / cardWidth) - 0.5) * 24;
-      
-      tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    }, { passive: true });
-    
-    tiltCard.addEventListener('mouseleave', () => {
-      tiltCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-    }, { passive: true });
-    
-    // Cycle archetype on click
-    tiltCard.addEventListener('click', () => {
-      const order = ['disruptor', 'minimalist', 'visionary'];
-      const nextIndex = (order.indexOf(activeConfigName) + 1) % order.length;
-      setArchetype(order[nextIndex]);
-    });
-  }
-  
-  // Set default archetype class on load
-  const hero = document.getElementById('hero');
-  if (hero) {
-    hero.classList.add('archetype-disruptor');
-  }
-  
-  initParticles();
-  animate();
 })();
+

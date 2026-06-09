@@ -128,15 +128,12 @@ function buildFooter() {
         </div>
       </div>
     </div>
-  </footer>
-  <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:scale-110 hover:text-brand-pink hover:border-brand-pink transition-all duration-200 opacity-0 pointer-events-none">
-    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
-  </button>`;
+  </footer>`;
 }
 
 /* ─────────────────────────────────────────────────
    INJECT on DOMContentLoaded
-───────────────────────────────────────────────── */
+ ───────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   // Inject navbar before body first child
   const navEl = document.getElementById('navbar-placeholder');
@@ -162,12 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Navbar scroll ──
   const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 30) navbar?.classList.add('scrolled'); else navbar?.classList.remove('scrolled');
-    if (backToTop) { if (window.scrollY > 400) backToTop.classList.add('visible'); else backToTop.classList.remove('visible'); }
   }, { passive: true });
-  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // ── Mobile menu ──
   const btn = document.getElementById('mobile-menu-btn');
@@ -352,4 +346,73 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(script);
   })();
 
+  // ── Global Scroll to Top Button Injection & Handling ──
+  (function initScrollToTop() {
+    if (document.getElementById('back-to-top')) {
+      document.getElementById('back-to-top').remove();
+    }
+
+    var style = document.createElement('style');
+    style.textContent = 
+      '#back-to-top {' +
+      '  position: fixed;' +
+      '  bottom: 28px;' +
+      '  left: 28px;' +
+      '  z-index: 9000;' +
+      '  width: 48px;' +
+      '  height: 48px;' +
+      '  border-radius: 50%;' +
+      '  background: #ffffff;' +
+      '  border: 1px solid rgba(0, 0, 0, 0.08);' +
+      '  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);' +
+      '  display: flex;' +
+      '  align-items: center;' +
+      '  justify-content: center;' +
+      '  color: #4b5563;' +
+      '  cursor: pointer;' +
+      '  opacity: 0;' +
+      '  pointer-events: none;' +
+      '  transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;' +
+      '}' +
+      '.dark #back-to-top {' +
+      '  background: #1f2937;' +
+      '  border-color: rgba(255, 255, 255, 0.08);' +
+      '  color: #d1d5db;' +
+      '}' +
+      '#back-to-top:hover {' +
+      '  transform: scale(1.08) translateY(-2px);' +
+      '  color: #FF1A8C;' +
+      '  border-color: #FF1A8C;' +
+      '  box-shadow: 0 6px 24px rgba(255, 26, 140, 0.15);' +
+      '}' +
+      '#back-to-top.visible {' +
+      '  opacity: 1;' +
+      '  pointer-events: auto;' +
+      '}';
+    document.head.appendChild(style);
+
+    var btn = document.createElement('button');
+    btn.id = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      if (window.lenis) {
+        window.lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  })();
+
 });
+
