@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Zynovax Brand Building Agency</title>
+  <meta name="description" content="Read our latest insights on strategy-first brand building, visual identity design, performance marketing, and AI engineering for modern D2C and local brands." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            syne: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              orange: '#FF6B35',
+              pink: '#FF1A8C',
+              magenta: '#E8176F',
+              purple: '#8B2FC9',
+              indigo: '#4A2FBD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Gradient animated border for premium interactive cards */
+    .blog-card {
+      position: relative;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+    }
+    
+    .dark .blog-card {
+      background: rgba(17, 24, 39, 0.6);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 24px 50px rgba(255, 26, 140, 0.1);
+      border-color: rgba(255, 26, 140, 0.3);
+    }
+
+    /* Category Pill styles */
+    .category-pill {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .category-pill.active {
+      background: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 50%, #8B2FC9 100%);
+      color: white;
+      box-shadow: 0 8px 20px rgba(255, 26, 140, 0.3);
+      border-color: transparent;
+    }
+
+    /* Modal reading progress bar styling */
+    #reading-progress-bar {
+      transition: width 0.1s ease-out;
+    }
+
+    /* Custom range slider styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 99px;
+      background: #e5e7eb;
+      outline: none;
+      transition: background 0.3s;
+    }
+    .dark input[type="range"] {
+      background: #374151;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #FF1A8C;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 26, 140, 0.5);
+      transition: transform 0.2s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+    }
+
+    /* Glassmorphism for read modal */
+    .glass-modal {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    .dark class-modal,
+    .dark .glass-modal {
+      background: rgba(3, 7, 18, 0.9);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+  </style>
+</head>
+<body class="font-outfit bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
+
+  <!-- Shared Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="pt-24 lg:pt-32 min-h-screen">
+    
+    <!-- Hero / Header Section -->
+    <section class="relative py-12 md:py-16 overflow-hidden">
+      <!-- Background Orbs -->
+      <div class="hero-orb orb-1" aria-hidden="true"></div>
+      <div class="hero-orb orb-2" aria-hidden="true"></div>
+      <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-15" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="label-badge reveal mb-4">Zynovax Journal</span>
+        <h1 class="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight reveal">
+          Engineering Brands<br />
+          <span class="gradient-text">That Command Attention</span>
+        </h1>
+        <p class="mt-6 text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto reveal">
+          No templates. No compromises. Deep strategy, sharp visual design, and performance-marketing tactics optimized to grow your business.
+        </p>
+
+        <!-- Search and Filtering Interface -->
+        <div class="mt-12 max-w-3xl mx-auto reveal flex flex-col md:flex-row gap-4 items-center justify-center">
+          <div class="relative w-full md:w-2/3">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </span>
+            <input type="text" id="blog-search" placeholder="Search insights by title or topic..." class="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink transition-all text-sm shadow-sm" />
+          </div>
+        </div>
+
+        <!-- Dynamic Category Pills -->
+        <div class="mt-6 flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto reveal" id="category-pills-container">
+          <button class="category-pill active px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="all">All Articles</button>
+          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Branding & Strategy">Branding & Strategy</button>
+          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Visual Identity">Visual Identity</button>
+          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Performance Marketing">Performance Marketing</button>
+          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="AI & Automation">AI & Automation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Grid Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        
+        <!-- Left Side: Blog List (Covers 2 cols) -->
+        <div class="lg:col-span-2 space-y-8" id="blog-posts-container">
+          <!-- Dynamically populated via Javascript -->
+        </div>
+
+        <!-- Right Side: Sidebar Widget Controls (Covers 1 col) -->
+        <div class="space-y-8">
+          
+          <!-- BRAND ROI CALCULATOR WIDGET -->
+          <div class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl relative overflow-hidden">
+            <!-- Micro-gradient lines -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple"></div>
+            
+            <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-2">Brand ROI Calculator</h3>
+            <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+              Estimate the monthly revenue boost a custom brand strategy and high-trust custom visual identity can bring by improving conversions.
+            </p>
+
+            <div class="space-y-6">
+              <!-- Slider 1 -->
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2">
+                  <span class="text-gray-700 dark:text-gray-300">Monthly Traffic</span>
+                  <span class="text-brand-pink" id="val-traffic">20,000 visitors</span>
+                </div>
+                <input type="range" id="slider-traffic" min="5000" max="250000" step="5000" value="20000" class="w-full" />
+              </div>
+
+              <!-- Slider 2 -->
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2">
+                  <span class="text-gray-700 dark:text-gray-300">Avg. Order Value (AOV)</span>
+                  <span class="text-brand-pink" id="val-aov">₹1,500</span>
+                </div>
+                <input type="range" id="slider-aov" min="250" max="10000" step="250" value="1500" class="w-full" />
+              </div>
+
+              <!-- Slider 3 -->
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2 flex-wrap gap-1">
+                  <span class="text-gray-700 dark:text-gray-300">Brand Trust Boost</span>
+                  <span class="text-brand-pink" id="val-boost">+0.8% Conversion rate</span>
+                </div>
+                <input type="range" id="slider-boost" min="0.1" max="3" step="0.1" value="0.8" class="w-full" />
+              </div>
+
+              <!-- Live Calculation Result Card -->
+              <div class="p-4 rounded-xl bg-gray-50/50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 text-center relative overflow-hidden mt-2">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Est. Additional Revenue / Month</span>
+                <div class="font-syne font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-pink mt-1" id="val-result">
+                  ₹2,40,000
+                </div>
+                <p class="text-[10px] text-gray-400 mt-2">Based on a baseline conversion rate upgrade of 1.5%</p>
+              </div>
+
+              <!-- Direct CTA Link -->
+              <a href="audit.html" class="btn-primary w-full py-3.5 text-sm flex items-center justify-center gap-2 group">
+                Claim Free Audit to Verify
+                <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- NEWSLETTER SIGNUP -->
+          <div class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl">
+            <h3 class="font-syne font-bold text-lg text-gray-900 dark:text-white mb-2">Subscribe to Insights</h3>
+            <p class="text-xs text-gray-400 mb-5 leading-relaxed">
+              No spam. Just hard-hitting, strategy-first breakdowns delivered twice a month.
+            </p>
+            <form id="newsletter-form" class="space-y-3">
+              <input type="email" id="newsletter-email" required placeholder="your.name@business.com" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink text-xs transition-colors" />
+              <button type="submit" id="newsletter-btn" class="w-full py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-950 font-semibold rounded-xl text-xs transition-colors">
+                Join the Loop
+              </button>
+            </form>
+            <div id="newsletter-success" class="hidden text-xs text-green-500 font-medium mt-3 flex items-center gap-1.5">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+              </svg>
+              Subscribed! Welcome to the loop.
+            </div>
+          </div>
+
+          <!-- ABOUT AUTHOR -->
+          <div class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-syne font-extrabold text-xl shadow-lg mb-4">
+              AR
+            </div>
+            <h4 class="font-syne font-bold text-gray-900 dark:text-white text-base">Ahmed Rashmi</h4>
+            <p class="text-brand-pink text-xs font-semibold mb-3">Founder & Brand Strategist</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+              Helping Indian brands scale from generic commodities to high-value identities. Based in Perungalathur, Chennai, serving clients nationwide.
+            </p>
+            <div class="flex gap-2.5">
+              <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-pink text-xs transition-colors">LinkedIn</a>
+              <span class="text-gray-700">•</span>
+              <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-pink text-xs transition-colors">Instagram</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- IMMERSIVE ARTICLE READING MODAL (Full page overlay) -->
+    <div id="read-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+      <!-- Backdrop -->
+      <div class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity" id="modal-backdrop"></div>
+      
+      <!-- Immersive reading screen -->
+      <div class="relative min-h-screen flex items-stretch justify-center z-10">
+        <div class="glass-modal w-full max-w-4xl flex flex-col justify-between shadow-2xl relative">
+          
+          <!-- Reading Progress Bar (Scroll-bound) -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-800">
+            <div id="reading-progress-bar" class="h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple w-0"></div>
+          </div>
+          
+          <!-- Modal Top Bar -->
+          <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100 dark:border-gray-800/80 sticky top-0 bg-white/70 dark:bg-gray-950/70 backdrop-blur-md z-20">
+            <!-- Left: Brand logo watermark -->
+            <div class="flex items-center gap-2">
+              <img src="logo.png" alt="Zynovax Logo" class="h-6 w-auto" />
+              <span class="font-syne font-extrabold text-xs tracking-tight bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple bg-clip-text text-transparent">ZYNOVAX JOURNAL</span>
+            </div>
+
+            <!-- Right Controls: Font sizing & Close -->
+            <div class="flex items-center gap-3">
+              <div class="flex items-center bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg p-0.5">
+                <button id="btn-font-dec" title="Decrease font size" class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A-</button>
+                <span class="w-px h-3 bg-gray-200 dark:bg-gray-800"></span>
+                <button id="btn-font-inc" title="Increase font size" class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A+</button>
+              </div>
+              <button id="btn-close-modal" aria-label="Close article" class="p-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-500 hover:text-brand-pink transition-colors">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Scrollable Body Content -->
+          <div class="flex-grow overflow-y-auto px-6 sm:px-12 py-10 md:py-14" id="modal-scroll-container">
+            <div class="max-w-2xl mx-auto">
+              
+              <!-- Article Meta Header -->
+              <div class="mb-8">
+                <div class="flex items-center gap-2 mb-3">
+                  <span id="modal-art-category" class="text-xs font-bold text-brand-pink uppercase tracking-widest bg-brand-pink/10 px-2.5 py-1 rounded">Branding & Strategy</span>
+                  <span class="text-gray-400 text-xs" id="modal-art-date">June 8, 2026</span>
+                </div>
+                <h2 class="font-syne font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white leading-tight" id="modal-art-title">
+                  The Anatomy of a Strategy-First Brand
+                </h2>
+                <!-- Author & Readtime Info -->
+                <div class="flex items-center gap-3 mt-6 border-y border-gray-100 dark:border-gray-800/80 py-4">
+                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center text-white text-xs font-bold font-syne">
+                    AR
+                  </div>
+                  <div class="text-xs flex-1">
+                    <p class="font-semibold text-gray-900 dark:text-white">Ahmed Rashmi</p>
+                    <p class="text-gray-400">Founder & Brand Strategist</p>
+                  </div>
+                  <div class="text-xs text-gray-400 flex items-center gap-1">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span id="modal-art-readtime">5 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article Body -->
+              <article class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 text-base" id="modal-art-content">
+                <!-- Populated dynamically -->
+              </article>
+
+              <!-- Article Footer Share / Widget -->
+              <div class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-gray-400">Did you find this strategy insightful? Share it with other founders:</span>
+                <div class="flex items-center gap-2 relative">
+                  <button id="btn-share-twitter" title="Share on Twitter" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </button>
+                  <button id="btn-share-linkedin" title="Share on LinkedIn" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                  </button>
+                  <button id="btn-share-copy" title="Copy Link" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                    </svg>
+                  </button>
+                  <!-- Floating notification pill for copied link -->
+                  <span id="share-copied-pill" class="absolute bottom-full mb-2 right-0 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none transition-all duration-200">Copied!</span>
+                </div>
+              </div>
+
+              <!-- In-article call to action widget -->
+              <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-brand-orange/5 via-brand-pink/5 to-brand-purple/5 border border-brand-pink/10 text-center">
+                <span class="label-badge text-[10px]">Audit Invitation</span>
+                <h3 class="font-syne font-extrabold text-xl sm:text-2xl mt-4 mb-2">Is your brand built on templates or truth?</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-md mx-auto mb-6">
+                  Get a free audit worth ₹5,000. We'll identify bottlenecks in your visual positioning and performance ads setup within 24 hours.
+                </p>
+                <a href="audit.html" class="btn-primary px-8 py-3.5 text-xs">Claim Free Brand Audit</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Modal Footer bottom bar (Close confirmation) -->
+          <div class="px-6 py-4 border-t border-gray-100 dark:border-gray-800/80 flex justify-end bg-gray-50/50 dark:bg-gray-950/20">
+            <button id="btn-footer-close" class="btn-outline px-6 py-2.5 text-xs">Finished Reading</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+  </main>
+
+  <script src="shared.js"></script>
+  
+  <!-- In-page Blog Interactive Actions -->
+  <script>
+    "use strict";
+
+    /* =============================================
+       1. BLOG DATABASE
+       ============================================= */
+    const POSTS = [
+      {
+        id: "strategy-first-brand",
+        title: "The Anatomy of a Strategy-First Brand",
+        category: "Branding & Strategy",
+        date: "June 8, 2026",
+        readTime: "5 min read",
+        summary: "Why jumping straight to logo design is a recipe for failure, and the four strategic questions you must answer first.",
+        gradient: "from-brand-orange/20 via-brand-pink/10 to-transparent",
+        content: `
+          <p>Most business owners think a brand starts with a logo, a color palette, and a name. They hire a designer, tell them what colors they like, and wait for a vector file. This is the commodity approach. It is cheap, template-driven, and almost guaranteed to fail in a crowded market.</p>
+          
+          <h3>Why Strategy Precedes Creativity</h3>
+          <p>At Zynovax, we believe visual execution without a strategic foundation is just decoration. Strategy is the logic that justifies the design. Before we decide if your brand is blue, orange, bold, or minimalist, we must map out the positioning architecture.</p>
+          
+          <p>Think of your strategy as the structural engineering of a building. The logo is the paint on the walls. If the foundations are misaligned, the paint won't stop the structure from collapsing. In branding terms, if you don't know who you are fighting, who you are talking to, and why you are different, a beautiful font will not convert customers.</p>
+          
+          <h3>The Four Strategic Pillars</h3>
+          <p>Before launching a brand or starting a redesign, you must answer these four core questions:</p>
+          <ol>
+            <li><strong>Who is the target customer?</strong> We don't mean generic demographics like "females aged 25-40." We mean behavioral archetypes. What keeps them awake at 3:00 AM? What are their frustrations with current market alternatives?</li>
+            <li><strong>Who is the enemy?</strong> Every strong brand needs an enemy. Your enemy might be a direct competitor, or it could be an industry standard (e.g., "slow response times," "lack of transparency," or "recycled templates"). Position yourself directly against it.</li>
+            <li><strong>What is the singular key difference?</strong> If you offer the same features at the same price with the same voice, you are a commodity. You must pick one core pillar to dominate (e.g., speed, premium engineering, absolute minimalism, or accessibility).</li>
+            <li><strong>What is the brand personality?</strong> If your brand was a person, how would they speak? Bold and direct? Clinical and authoritative? Warm and conversational? This voice must remain consistent across your website, ad copy, and social comments.</li>
+          </ol>
+          
+          <h3>Case Study: Bloom Organics</h3>
+          <p>When we built the identity for <strong>Bloom Organics</strong>, a wellness startup, the direct instinct would have been a soft green palette with leaf illustrations. Instead, we analyzed the competitor landscape. Every D2C wellness brand in India was using green leaves, pastel colors, and soft messaging.</p>
+          <p>We pivoted. We positioned Bloom Organics as a high-scientific-purity brand rather than just another organic farm. We used deep, contrast-heavy botanical styling, clinical typography, and positioning copy focused on "active concentration percentages." The result? A 340% increase in social media engagement and a D2C visual structure that stood out immediately in feeds.</p>
+          
+          <h3>Summary</h3>
+          <p>Stop jumping straight to colors. Invest in the strategy first. Your brand will not just look pretty — it will work.</p>
+        `
+      },
+      {
+        id: "template-website-conversion",
+        title: "Why Your Template Website is Killing Your Conversion Rates",
+        category: "Visual Identity",
+        date: "June 6, 2026",
+        readTime: "6 min read",
+        summary: "Templated websites make your business look like everyone else. Here is how custom brand identity architecture directly impacts trust and AOV.",
+        gradient: "from-brand-pink/20 via-brand-purple/10 to-transparent",
+        content: `
+          <p>WordPress themes, Shopify templates, and Webflow kits have democratized the web. For a few thousand rupees, anyone can buy a pre-designed layout and launch a business. But this convenience has a hidden cost: it makes your business look exactly like five hundred other websites in your industry.</p>
+          
+          <h3>The Psychology of Trust</h3>
+          <p>When a visitor lands on your website, their subconscious makes a trust assessment in less than 50 milliseconds. They look at typography alignment, the consistency of borders, load times, and custom elements. If they recognize a standard template, their brain flags it: <em>This is a generic drop-shipper or a low-investment operation.</em></p>
+          
+          <p>If you don't invest in your own digital presence, why should a client trust you with their money? A custom-engineered visual identity solves this trust deficit. By aligning every interactive element, line-height, and hover transition with your specific strategy, you build subconscious credibility.</p>
+          
+          <h3>How Custom Visuals Affect Average Order Value (AOV)</h3>
+          <p>When you use a generic template, your product is judged strictly on price. Since you look like everyone else, the client assumes your product is the same as everyone else's. You are forced into a price war, shaving margins just to stay alive.</p>
+          <p>A professionally engineered brand identity communicates premium quality. By using custom-tailored layout systems, harmonious color palettes, and micro-animations, you shift the purchase logic from "Is this cheap?" to "I want <em>this specific</em> experience." This shift is what allows premium brands to charge a 40%+ markup over commodities.</p>
+          
+          <h3>Key Signs Your Website Looks "Templated":</h3>
+          <ul>
+            <li><strong>Stock Photography Overload:</strong> Customers recognize the same smiling office workers or generic plants from standard free assets. Use custom product photography or strategic graphic illustrations.</li>
+            <li><strong>Broken Typography Hierarchy:</strong> Using different fonts for headers, subheaders, and body copy that don't match or look inconsistent across different viewports.</li>
+            <li><strong>Slow Performance:</strong> Drag-and-drop page builders load hundreds of lines of unused code, animations, and heavy tracking scripts, causing site speeds to crawl.</li>
+          </ul>
+          
+          <h3>The Zynovax Approach</h3>
+          <p>We build without templates. We write our structures from clean code systems to fit the exact brand guidelines we outline. It means your page loads in milliseconds, functions flawlessly on mobile devices, and looks unmistakable. That is how we achieved a 2.8x return on ad spend for NexGen Apparel.</p>
+        `
+      },
+      {
+        id: "meta-vs-google-ads",
+        title: "Meta Ads vs. Google Ads: Where D2C Brands Should Spend First",
+        category: "Performance Marketing",
+        date: "June 3, 2026",
+        readTime: "7 min read",
+        summary: "A transparent breakdown of search intent vs. social discovery, and how to allocate your ad budgets for maximum ROAS in India.",
+        gradient: "from-brand-purple/20 via-brand-indigo/10 to-transparent",
+        content: `
+          <p>It is the most common question we get from founders: "Should I run Facebook ads or Google search campaigns?" The answer is not "both." If you are a young brand with limited budget, spreading your ad spend thin across multiple networks is the fastest way to burn capital.</p>
+          
+          <h3>Understanding User Intent</h3>
+          <p>To choose where to spend your first rupee, you must understand the difference in customer intent between the two platforms:</p>
+          
+          <h4>1. Google Ads: High-Intent Capture</h4>
+          <p>On Google, users are actively searching for a solution. If someone types "organic face wash for dry skin in India," they have a high intent to purchase. They already know their problem and are looking for a product. Google Ads capture this existing demand. If your product has high search volume, Google is an extremely effective channel.</p>
+          
+          <h4>2. Meta Ads: Interruptive Discovery</h4>
+          <p>Nobody goes to Instagram to buy a product. They go to look at stories, watch reels, and chat with friends. Your ad is interrupting their scroll. You must generate demand from scratch. You need highly disruptive creative visuals, copy hooks that hit their pain points in 2 seconds, and an instant trust funnel.</p>
+          
+          <h3>The Allocation Matrix</h3>
+          <p>We use a simple framework to guide our clients' ad spend:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Product Type</th>
+                <th>Primary Channel</th>
+                <th>Reasoning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Utility / Solution-Focused</strong> (e.g., "waterproof phone cases")</td>
+                <td>Google Search</td>
+                <td>Users search for specific utilities. They buy what matches their spec immediately.</td>
+              </tr>
+              <tr>
+                <td><strong>Lifestyle / Aesthetic</strong> (e.g., "designer kurtis", "premium watch straps")</td>
+                <td>Meta Ads</td>
+                <td>Purchased based on visual desire. Requires high-quality imagery to disrupt feed.</td>
+              </tr>
+              <tr>
+                <td><strong>Innovative / New Concept</strong> (e.g., "collagen-infused coffee")</td>
+                <td>Meta Ads</td>
+                <td>No search volume exists because people don't know it exists. Requires video education.</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>How to Scale the Budget</h3>
+          <p>Start with one channel. If you are lifestyle-driven, put 90% of your budget into Meta testing variations of ad angles (video hooks, static feature callouts, user testimonials). Use the remaining 10% on Google Brand Search ads to capture customers searching for your brand name after seeing your Instagram ads.</p>
+          <p>Once you hit a stable ROAS, expand your Google Shopping (PMax) campaigns to scale. That's the system we used to scale NexGen Apparel to a consistent 2.8x ROAS.</p>
+        `
+      },
+      {
+        id: "d2c-premium-pricing",
+        title: "Building a D2C Identity that Commands a Premium in 2026",
+        category: "Visual Identity",
+        date: "May 28, 2026",
+        readTime: "5 min read",
+        summary: "How to move away from price wars and use positioning, tactile design, and post-purchase storytelling to charge a 40%+ markup.",
+        gradient: "from-brand-indigo/20 via-brand-orange/10 to-transparent",
+        content: `
+          <p>In the Indian D2C space, the default tactic to beat competition is discounting. Buy One Get One Free, 20% off coupon codes, festive clearances. This is a race to the bottom. There will always be a competitor willing to discount their margins more than you, or source cheaper materials.</p>
+          
+          <h3>The Commodity Trap</h3>
+          <p>If your branding says "generic product," you must charge a generic price. A commodity is purchased purely on utility and price. To break out of the discount cycle, you must build brand equity — the emotional value that allows a consumer to pay more for your product than an identical competitor.</p>
+          
+          <h3>Three Pillars of Premium Positioning</h3>
+          
+          <h4>1. Tactile Design Quality</h4>
+          <p>Your brand does not stop at the screen checkout. The packaging design, unboxing experience, and weight of the box are critical touchpoints. If your custom D2C box uses thin, flimsy cardboard, the customer's brain notes: <em>This is cheap.</em> If the box is heavy, uses custom textured paper, and has a clean minimal layout, it justifies the premium price immediately.</p>
+          
+          <h4>2. Editorial Typography & Layout</h4>
+          <p>Cheap brands look loud. They use bright neon labels, five different font families, and busy badge icons ("100% NATURAL! BEST QUALITY!"). Premium brands use restrained visual language. They rely on elegant, custom editorial fonts, plenty of negative whitespace, and precise layout structures. Look at luxury cosmetics or high-end apparel brands — they whisper instead of scream.</p>
+          
+          <h4>3. Post-Purchase Storytelling</h4>
+          <p>The relationship doesn't end when the payment clears. The transactional emails, shipping updates, and follow-up insert cards are opportunities to build a narrative. Tell the story of how the product was sourced, detail the craftsmanship, or share care guides. By educating your customer on the effort behind the product, you increase its perceived value.</p>
+          
+          <h3>Conclusion</h3>
+          <p>Discounting is a short-term survival tactic. Premium brand building is a long-term equity strategy. Start building visual and structural cues that justify a markup, and watch your margins recover.</p>
+        `
+      },
+      {
+        id: "ai-branding-workflows",
+        title: "AI in Branding: How We Save Clients 15+ Hours a Week",
+        category: "AI & Automation",
+        date: "May 20, 2026",
+        readTime: "6 min read",
+        summary: "How we integrate custom LLMs and automated generation systems to manage social feeds without sacrificing brand voice.",
+        gradient: "from-brand-pink/20 via-brand-orange/10 to-transparent",
+        content: `
+          <p>Everyone is talking about AI. But most marketing agencies are using it in the worst way possible: asking ChatGPT to write standard captions, copy-pasting the output, and publishing generic social content. The result is a bland, robotic brand voice that sounds like everything else on the internet.</p>
+          
+          <h3>The Zynovax Approach to Brand Automation</h3>
+          <p>We don't use generic AI. We build custom-engineered workflow engines trained on our clients' specific brand strategy documents, core values, positioning statements, and previous high-converting ad copy.</p>
+          
+          <p>This ensures that when the AI generates content, it speaks with the exact tone of voice, formatting rules, and structural hooks mapped out in the strategy phase. We call this **Voice-Lock Generation**.</p>
+          
+          <h3>Our 3-Step Automation Setup</h3>
+          
+          <h4>1. Custom Brand Voice Training</h4>
+          <p>Before writing a single word, we compile a brand's custom LLM profile. This includes definitions of:
+          <ul>
+            <li><strong>Vocabulary boundaries:</strong> Words the brand must use vs. words the brand must never use.</li>
+            <li><strong>Punctuation style:</strong> Does the brand use emojis? Do they write in short, punchy sentence segments or long, descriptive copy?</li>
+            <li><strong>Syntactic blueprints:</strong> Structures of high-performing email headers and hooks.</li>
+          </ul>
+          
+          <h4>2. Automatic Feed Alerts & Draft Generation</h4>
+          <p>We link client inventory data or competitor ad trackers to a workflow system. When a new competitor ad launches or client stock runs low, the system automatically triggers a content generation draft inside Slack or Notion. It draft copy options, outline visual concepts, and estimate performance scores.</p>
+          
+          <h4>3. Human-in-the-Loop Curation</h4>
+          <p>We never publish raw AI output. The automation handles 80% of the repetitive drafting, formatting, and scheduling work. Our creative copywriters then step in to review, refine, and polish the content. This hybrid system ensures premium output in half the time.</p>
+          
+          <h3>The Bottom Line</h3>
+          <p>AI should not replace human creativity — it should eliminate repetitive operational friction. By implementing these automated tools for our clients, we save their internal teams an average of 15 hours per week, allowing them to focus on product and logistics.</p>
+        `
+      }
+    ];
+
+    /* =============================================
+       2. DOM SELECTORS
+       ============================================= */
+    const blogSearch = document.getElementById('blog-search');
+    const blogContainer = document.getElementById('blog-posts-container');
+    const categoryContainer = document.getElementById('category-pills-container');
+    
+    // Sliders
+    const sliderTraffic = document.getElementById('slider-traffic');
+    const sliderAov = document.getElementById('slider-aov');
+    const sliderBoost = document.getElementById('slider-boost');
+    
+    // Calculator Outputs
+    const valTraffic = document.getElementById('val-traffic');
+    const valAov = document.getElementById('val-aov');
+    const valBoost = document.getElementById('val-boost');
+    const valResult = document.getElementById('val-result');
+    
+    // Modal Selectors
+    const readModal = document.getElementById('read-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalScrollContainer = document.getElementById('modal-scroll-container');
+    const readingProgressBar = document.getElementById('reading-progress-bar');
+    const modalArtTitle = document.getElementById('modal-art-title');
+    const modalArtCategory = document.getElementById('modal-art-category');
+    const modalArtDate = document.getElementById('modal-art-date');
+    const modalArtReadtime = document.getElementById('modal-art-readtime');
+    const modalArtContent = document.getElementById('modal-art-content');
+    
+    // Modal buttons
+    const btnCloseModal = document.getElementById('btn-close-modal');
+    const btnFooterClose = document.getElementById('btn-footer-close');
+    const btnFontInc = document.getElementById('btn-font-inc');
+    const btnFontDec = document.getElementById('btn-font-dec');
+    
+    // Share Buttons
+    const btnShareTwitter = document.getElementById('btn-share-twitter');
+    const btnShareLinkedin = document.getElementById('btn-share-linkedin');
+    const btnShareCopy = document.getElementById('btn-share-copy');
+    const shareCopiedPill = document.getElementById('share-copied-pill');
+
+    // Newsletter Selectors
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterSuccess = document.getElementById('newsletter-success');
+
+    // App state
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let currentFontSize = 16; // default article font size in px
+    let activeArticleId = null;
+
+    /* =============================================
+       3. RENDER BLOG CARDS
+       ============================================= */
+    function renderPosts() {
+      // Filter posts
+      const filtered = POSTS.filter(post => {
+        const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
+        const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              post.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              post.category.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      // Clear container
+      blogContainer.innerHTML = '';
+
+      if (filtered.length === 0) {
+        blogContainer.innerHTML = `
+          <div class="p-12 text-center rounded-2xl border border-dashed border-gray-200 dark:border-gray-800">
+            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="mt-4 font-syne font-bold text-lg text-gray-900 dark:text-white">No articles found</h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Try adjusting your keywords or category filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Render cards
+      filtered.forEach((post, index) => {
+        const card = document.createElement('div');
+        card.className = 'blog-card p-6 md:p-8 flex flex-col md:flex-row gap-6 cursor-pointer opacity-0 transform translate-y-4 transition-all duration-500 reveal';
+        card.dataset.id = post.id;
+        
+        // Custom background gradient mesh simulation
+        card.innerHTML = `
+          <div class="w-full md:w-48 h-36 rounded-xl bg-gradient-to-br ${post.gradient} border border-gray-100 dark:border-gray-800 flex-shrink-0 flex items-center justify-center relative overflow-hidden group">
+            <div class="absolute inset-0 bg-black/5 dark:bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <!-- Custom CSS design icon representing the category -->
+            <span class="font-syne font-extrabold text-sm uppercase tracking-widest text-brand-pink/50 opacity-40 group-hover:scale-110 transition-transform duration-300">${post.category.split(' ')[0]}</span>
+          </div>
+          <div class="flex-grow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-[10px] font-bold text-brand-pink uppercase tracking-widest bg-brand-pink/10 px-2 py-0.5 rounded">${post.category}</span>
+                <span class="text-gray-400 text-xs">${post.date}</span>
+              </div>
+              <h3 class="font-syne font-bold text-xl md:text-2xl text-gray-900 dark:text-white mb-2 group-hover:text-brand-pink transition-colors">
+                ${post.title}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+                ${post.summary}
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100/50 dark:border-gray-800/50">
+              <span class="text-xs text-gray-400 flex items-center gap-1">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                ${post.readTime}
+              </span>
+              <span class="text-xs font-bold text-brand-pink group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                Read Article
+                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        `;
+
+        // Click handler to open modal
+        card.addEventListener('click', () => openArticle(post.id));
+
+        blogContainer.appendChild(card);
+
+        // Simple reveal animation stagger
+        setTimeout(() => {
+          card.classList.remove('opacity-0', 'translate-y-4');
+        }, index * 80);
+      });
+    }
+
+    /* =============================================
+       4. SEARCH & FILTER EVENT LISTENERS
+       ============================================= */
+    blogSearch.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderPosts();
+    });
+
+    categoryContainer.addEventListener('click', (e) => {
+      const pill = e.target.closest('.category-pill');
+      if (!pill) return;
+
+      // Update active pill
+      document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
+      pill.classList.add('active');
+
+      activeCategory = pill.dataset.category;
+      renderPosts();
+    });
+
+    /* =============================================
+       5. BRAND ROI CALCULATOR ALGORITHM
+       ============================================= */
+    function formatINR(number) {
+      // Formats currency into Indian style: e.g. ₹2,40,000
+      return '₹' + Math.round(number).toLocaleString('en-IN');
+    }
+
+    function calculateROI() {
+      const traffic = parseInt(sliderTraffic.value, 10);
+      const aov = parseInt(sliderAov.value, 10);
+      const boost = parseFloat(sliderBoost.value);
+
+      // Update Slider Label Displays
+      valTraffic.textContent = traffic.toLocaleString('en-IN') + ' visitors';
+      valAov.textContent = '₹' + aov.toLocaleString('en-IN');
+      valBoost.textContent = '+' + boost.toFixed(1) + '% Conversion rate';
+
+      // Calculation: Traffic * AOV * Boost%
+      // e.g. 20,000 * 1500 * (0.8 / 100) = 2,40,000
+      const additionalRevenue = traffic * aov * (boost / 100);
+
+      // Update calculation display text
+      valResult.textContent = formatINR(additionalRevenue);
+    }
+
+    // Set slider listeners
+    sliderTraffic.addEventListener('input', calculateROI);
+    sliderAov.addEventListener('input', calculateROI);
+    sliderBoost.addEventListener('input', calculateROI);
+
+    /* =============================================
+       6. IMMERSIVE READING MODAL CONTROLS
+       ============================================= */
+    function openArticle(postId) {
+      const post = POSTS.find(p => p.id === postId);
+      if (!post) return;
+
+      activeArticleId = postId;
+
+      // Populate content
+      modalArtTitle.textContent = post.title;
+      modalArtCategory.textContent = post.category;
+      modalArtDate.textContent = post.date;
+      modalArtReadtime.textContent = post.readTime;
+      modalArtContent.innerHTML = post.content;
+
+      // Reset style settings
+      currentFontSize = 16;
+      modalArtContent.style.fontSize = currentFontSize + 'px';
+      readingProgressBar.style.width = '0%';
+      modalScrollContainer.scrollTop = 0;
+
+      // Show modal
+      readModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeArticle() {
+      readModal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      activeArticleId = null;
+    }
+
+    // Modal Scroll progress listener
+    modalScrollContainer.addEventListener('scroll', () => {
+      const totalHeight = modalScrollContainer.scrollHeight - modalScrollContainer.clientHeight;
+      if (totalHeight > 0) {
+        const scrolledPercentage = (modalScrollContainer.scrollTop / totalHeight) * 100;
+        readingProgressBar.style.width = scrolledPercentage + '%';
+      }
+    });
+
+    // Font Sizing Controls
+    btnFontInc.addEventListener('click', () => {
+      if (currentFontSize < 24) {
+        currentFontSize += 2;
+        modalArtContent.style.fontSize = currentFontSize + 'px';
+      }
+    });
+
+    btnFontDec.addEventListener('click', () => {
+      if (currentFontSize > 14) {
+        currentFontSize -= 2;
+        modalArtContent.style.fontSize = currentFontSize + 'px';
+      }
+    });
+
+    // Close Actions
+    btnCloseModal.addEventListener('click', closeArticle);
+    btnFooterClose.addEventListener('click', closeArticle);
+    modalBackdrop.addEventListener('click', closeArticle);
+
+    // Escape Key to Close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && activeArticleId) {
+        closeArticle();
+      }
+    });
+
+    /* =============================================
+       7. SOCIAL SHARE WIDGET FUNCTIONS
+       ============================================= */
+    function getShareUrl() {
+      return window.location.origin + '/blog.html?post=' + encodeURIComponent(activeArticleId);
+    }
+
+    btnShareTwitter.addEventListener('click', () => {
+      const text = encodeURIComponent('Checking out this excellent branding guide from Zynovax:');
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(getShareUrl())}`, '_blank');
+    });
+
+    btnShareLinkedin.addEventListener('click', () => {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getShareUrl())}`, '_blank');
+    });
+
+    btnShareCopy.addEventListener('click', () => {
+      navigator.clipboard.writeText(getShareUrl()).then(() => {
+        // Show copied notification badge
+        shareCopiedPill.classList.remove('opacity-0');
+        shareCopiedPill.classList.add('opacity-100');
+        
+        setTimeout(() => {
+          shareCopiedPill.classList.remove('opacity-100');
+          shareCopiedPill.classList.add('opacity-0');
+        }, 1800);
+      });
+    });
+
+    /* =============================================
+       8. NEWSLETTER SUBSCRIPTION FLOW
+       ============================================= */
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const emailInput = document.getElementById('newsletter-email');
+      const submitBtn = document.getElementById('newsletter-btn');
+      
+      // Disable form during request simulation
+      emailInput.disabled = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+
+      // Simulate network request
+      setTimeout(() => {
+        newsletterForm.classList.add('hidden');
+        newsletterSuccess.classList.remove('hidden');
+      }, 1500);
+    });
+
+    /* =============================================
+       9. INITIALIZATION
+       ============================================= */
+    // Initial Render
+    renderPosts();
+    
+    // Initial calculation
+    calculateROI();
+
+    // Check URL parameters for direct article linking
+    const params = new URLSearchParams(window.location.search);
+    const postQuery = params.get('post');
+    if (postQuery && POSTS.some(p => p.id === postQuery)) {
+      openArticle(postQuery);
+    }
+
+  </script>
+</body>
+</html>

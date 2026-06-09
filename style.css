@@ -1,0 +1,953 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =============================================
+   ZYNOVAX — Premium Brand Agency Website
+   Custom Styles — style.css
+   ============================================= */
+
+/* ---- CoFo Sans Webfont Setup & Overrides ---- */
+@font-face {
+  font-family: 'CoFo Sans';
+  src: local('CoFo Sans'), local('CoFoSans'),
+    url('fonts/CoFoSans-Regular.woff2') format('woff2'),
+    url('fonts/CoFoSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: local('CoFo Sans Medium'), local('CoFoSans-Medium'),
+    url('fonts/CoFoSans-Medium.woff2') format('woff2'),
+    url('fonts/CoFoSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: local('CoFo Sans Bold'), local('CoFoSans-Bold'),
+    url('fonts/CoFoSans-Bold.woff2') format('woff2'),
+    url('fonts/CoFoSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: local('CoFo Sans Black'), local('CoFoSans-Black'),
+    url('fonts/CoFoSans-Black.woff2') format('woff2'),
+    url('fonts/CoFoSans-Black.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global font stacks overrides for high precedence */
+body,
+.font-outfit {
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+}
+
+.font-syne {
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Syne', sans-serif !important;
+}
+
+/* ---- Smooth scrolling ---- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* ---- Global mobile overflow guard ---- */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ---- Hero floating chips ---- */
+.hero-chip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  min-width: 130px;
+}
+
+.hero-chip:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(255, 26, 140, 0.14);
+}
+
+/* ---- Typing cursor ---- */
+#hero-typing::after {
+  content: '|';
+  animation: cursorBlink 0.75s step-end infinite;
+  color: #FF1A8C;
+  font-weight: 400;
+}
+
+@keyframes cursorBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* ---- Selection ---- */
+::selection {
+  background-color: #FF1A8C22;
+  color: #FF1A8C;
+}
+
+/* ---- Custom scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF6B35, #FF1A8C, #8B2FC9);
+  border-radius: 99px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+/* =============================================
+   MARQUEE TICKER
+   ============================================= */
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* =============================================
+   PAGE TRANSITION LOADER
+   ============================================= */
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B35, #FF1A8C, #8B2FC9, #4A2FBD, #FF6B35);
+  background-size: 300% 100%;
+  z-index: 99999;
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+  animation: loaderShimmer 2s linear infinite;
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#page-loader.active {
+  opacity: 1;
+  transform: scaleX(0.75);
+}
+
+#page-loader.done {
+  opacity: 0;
+  transform: scaleX(1);
+}
+
+@keyframes loaderShimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
+/* =============================================
+   CLIENT LOGO STRIP
+   ============================================= */
+.logo-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  white-space: nowrap;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.logo-strip-item:hover {
+  opacity: 0.8;
+}
+
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+#navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark #navbar {
+  background: rgba(3, 7, 18, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#navbar.scrolled {
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark #navbar.scrolled {
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================================
+   GRADIENT TEXT
+   ============================================= */
+.gradient-text {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 40%, #8B2FC9 70%, #4A2FBD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 50%, #8B2FC9 100%);
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #FF1A8C 0%, #8B2FC9 50%, #4A2FBD 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary span,
+.btn-primary svg {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 26, 140, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid;
+  border-color: #e5e7eb;
+  color: #374151;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dark .btn-outline {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #e5e7eb;
+}
+
+.btn-outline:hover {
+  border-color: #FF1A8C;
+  color: #FF1A8C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 26, 140, 0.15);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* =============================================
+   LABEL BADGE
+   ============================================= */
+.label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 26, 140, 0.1), rgba(139, 47, 201, 0.1));
+  border: 1px solid rgba(255, 26, 140, 0.2);
+  color: #E8176F;
+}
+
+.dark .label-badge {
+  color: #FF1A8C;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 26, 140, 0.15), rgba(139, 47, 201, 0.15));
+  border-color: rgba(255, 26, 140, 0.3);
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  top: 20%;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, transparent 70%);
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  top: 10%;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 26, 140, 0.1) 0%, transparent 70%);
+  animation-delay: -2s;
+}
+
+.orb-3 {
+  bottom: 10%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 47, 201, 0.08) 0%, transparent 70%);
+  animation-delay: -4s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+/* Grid Pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.dark .grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 26, 140, 0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* =============================================
+   TICKER / MARQUEE
+   ============================================= */
+.ticker-track {
+  animation: ticker 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.ticker-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF1A8C, #8B2FC9);
+  flex-shrink: 0;
+}
+
+.dark .ticker-item {
+  color: #6b7280;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* =============================================
+   REVEAL ANIMATION
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.reveal:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.reveal:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.reveal:nth-child(3) {
+  transition-delay: 160ms;
+}
+
+.reveal:nth-child(4) {
+  transition-delay: 240ms;
+}
+
+.reveal:nth-child(5) {
+  transition-delay: 320ms;
+}
+
+.reveal:nth-child(6) {
+  transition-delay: 400ms;
+}
+
+/* =============================================
+   STATS
+   ============================================= */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255, 26, 140, 0.04));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+/* =============================================
+   WORK TAGS
+   ============================================= */
+.work-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* =============================================
+   TESTIMONIALS SCROLL
+   ============================================= */
+.testimonial-scroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.testimonial-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-scroll.dragging {
+  cursor: grabbing;
+}
+
+/* =============================================
+   CONTACT FORM
+   ============================================= */
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.dark .form-label {
+  color: #d1d5db;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-family: 'CoFo Sans', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+  color: #111827;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.dark .form-input {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+.form-input:focus {
+  border-color: #FF1A8C;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 26, 140, 0.08);
+}
+
+.dark .form-input:focus {
+  background: #111827;
+  box-shadow: 0 0 0 4px rgba(255, 26, 140, 0.12);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+/* =============================================
+   BACK TO TOP
+   ============================================= */
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =============================================
+   MOBILE MENU ANIMATION
+   ============================================= */
+#mobile-menu {
+  transform-origin: top;
+  animation: menuOpen 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes menuOpen {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* =============================================
+   PROCESS STEP HOVER
+   ============================================= */
+.process-step:hover>div:first-child>div:first-child {
+  transform: scale(1.05);
+}
+
+/* =============================================
+   RESPONSIVE TWEAKS
+   ============================================= */
+@media (max-width: 640px) {
+  .hero-orb {
+    opacity: 0.5;
+    transform: scale(0.6);
+  }
+
+  .orb-1 {
+    left: -200px;
+  }
+
+  .orb-2 {
+    right: -200px;
+  }
+}
+
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+@media print {
+
+  #navbar,
+  #whatsapp-float,
+  #back-to-top {
+    display: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* =============================================
+   FOCUS STYLES FOR ACCESSIBILITY
+   ============================================= */
+:focus-visible {
+  outline: 2px solid #FF1A8C;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =============================================
+   GRADIENT BORDER CARD (optional utility)
+   ============================================= */
+.gradient-border {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.dark .gradient-border {
+  background: #111827;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #FF6B35, #FF1A8C, #8B2FC9, #4A2FBD);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* =============================================
+   DARK MODE TRANSITION
+   ============================================= */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease;
+  transition-duration: 200ms;
+}
+
+/* Exclude elements where we don't want the global transition */
+svg *,
+img,
+.btn-primary,
+.btn-outline,
+.reveal,
+.hero-orb,
+.ticker-track,
+.testimonial-card,
+.process-step>div>div,
+.service-card,
+.work-card,
+.stat-card {
+  transition: unset;
+}
+
+/* Re-apply specific transitions after reset */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  transition: all 0.3s ease;
+}
+
+.reveal {
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card {
+  transition: transform 0.5s ease;
+}
+
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.nav-link {
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link {
+  transition: color 0.2s ease;
+}
+
+#back-to-top {
+  transition: opacity 0.3s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.testimonial-card {
+  transition: box-shadow 0.3s ease;
+}
+
+/* =============================================
+   LOGO ANIMATION
+   ============================================= */
+@keyframes logoPulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 26, 140, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 26, 140, 0.7)) drop-shadow(0 0 40px rgba(139, 47, 201, 0.3));
+  }
+}
+
+.about-logo-glow {
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+/* =============================================
+   FAQ DETAILS ANIMATION
+   ============================================= */
+details>div {
+  overflow: hidden;
+  animation: faqOpen 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes faqOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details summary:focus-visible {
+  outline: 2px solid #FF1A8C;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* =============================================
+   PAGE ENTRY ANIMATION
+   ============================================= */
+@keyframes pageEntry {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: pageEntry 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* =============================================
+   GRADIENT SHIMMER (hover utility)
+   ============================================= */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.shimmer:hover::after {
+  animation: shimmerMove 0.7s ease forwards;
+}
+
+@keyframes shimmerMove {
+  to {
+    left: 150%;
+  }
+}
+
+/* =============================================
+   IMPROVED SCROLLBAR (Firefox)
+   ============================================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FF1A8C transparent;
+}
+
+/* =============================================
+   TABLE RESPONSIVE HELPER
+   ============================================= */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =============================================
+   ACTIVE NAV STATE
+   ============================================= */
+.nav-link.active {
+  color: #FF1A8C !important;
+}
+
+/* =============================================
+   LENIS SMOOTH SCROLL STYLES
+   ============================================= */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}

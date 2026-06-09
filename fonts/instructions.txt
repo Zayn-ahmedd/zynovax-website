@@ -1,0 +1,17 @@
+Copy your licensed CoFo Sans font files into this folder (d:/Zynovax/Website/fonts/).
+
+To match the @font-face rules defined in style.css, please rename your files to match the following names:
+
+1. For Regular Weight (400):
+   - CoFoSans-Regular.woff2  (or CoFoSans-Regular.woff)
+
+2. For Medium Weight (500):
+   - CoFoSans-Medium.woff2   (or CoFoSans-Medium.woff)
+
+3. For Bold Weight (700):
+   - CoFoSans-Bold.woff2     (or CoFoSans-Bold.woff)
+
+4. For Black Weight (800):
+   - CoFoSans-Black.woff2    (or CoFoSans-Black.woff)
+
+Once these files are placed in this folder, the website will automatically load and render CoFo Sans on all devices!

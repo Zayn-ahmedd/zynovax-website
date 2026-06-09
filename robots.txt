@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow private pages
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://zynovax.in/sitemap.xml
