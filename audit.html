@@ -182,10 +182,17 @@
                         <span class="text-xs text-red-500 error-msg hidden mt-1">Please enter your name</span>
                       </div>
                       
-                      <div class="form-group">
-                        <label for="email" class="form-label">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com" class="form-input" />
-                        <span class="text-xs text-red-500 error-msg hidden mt-1">Please enter a valid email</span>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="form-group">
+                          <label for="email" class="form-label">Email Address *</label>
+                          <input type="email" id="email" name="email" required placeholder="you@example.com" class="form-input" />
+                          <span class="text-xs text-red-500 error-msg hidden mt-1">Please enter a valid email</span>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone" class="form-label">Phone Number *</label>
+                          <input type="tel" id="phone" name="phone" required placeholder="e.g. +91 98765 43210" class="form-input" />
+                          <span class="text-xs text-red-500 error-msg hidden mt-1">Please enter a valid phone number</span>
+                        </div>
                       </div>
 
                       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -471,6 +478,7 @@
         if (step === 1) {
           const nameInput = document.getElementById('name');
           const emailInput = document.getElementById('email');
+          const phoneInput = document.getElementById('phone');
           const bizInput = document.getElementById('business');
           const webInput = document.getElementById('website');
 
@@ -480,6 +488,10 @@
           }
           if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
             showError(emailInput);
+            valid = false;
+          }
+          if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
+            showError(phoneInput);
             valid = false;
           }
           if (!bizInput.value.trim()) {
@@ -514,6 +526,10 @@
 
       function validateEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validatePhone(phone) {
+        return /^\+?[0-9\s\-()]{7,20}$/.test(phone.trim());
       }
 
       // Handle Form Submit
