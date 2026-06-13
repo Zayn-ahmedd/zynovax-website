@@ -7,24 +7,8 @@
 
 
 /* =============================================
-   4. SMOOTH SCROLL for internal links (with Lenis inertia scroll support)
+   4. SMOOTH SCROLL for internal links (Handled globally by shared.js)
    ============================================= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      if (window.lenis) {
-        window.lenis.scrollTo(target);
-      } else {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  });
-});
-
 
 /* =============================================
    5. REVEAL ON SCROLL (Intersection Observer)
@@ -427,36 +411,9 @@ window.requestIdleCallback = window.requestIdleCallback || function (cb) {
 
 
 /* =============================================
-   18. LENIS SMOOTH SCROLL INTEGRATION
+   18. LIGHTWEIGHT VIEWPORT SMOOTH SCROLL ENGINE (Lenis Purged)
    ============================================= */
-(function initLenis() {
-  if (window.matchMedia('(pointer: coarse)').matches) {
-    // Disable smooth scroll on mobile touch devices for native feel
-    return;
-  }
-  const script = document.createElement('script');
-  script.src = 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
-  script.onload = () => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    window.lenis = lenis;
-  };
-  document.head.appendChild(script);
-})();
+// Scroll engine is initialized at the top of the file for local anchors.
 
 /* =============================================
    19. WHATSAPP FLOATING BUTTON (copied from shared.js)

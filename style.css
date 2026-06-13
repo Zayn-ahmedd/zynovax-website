@@ -73,7 +73,7 @@ body {
 .hero-chip {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   white-space: nowrap;
   min-width: 130px;
 }
@@ -281,7 +281,7 @@ body {
   inset: 0;
   background: linear-gradient(135deg, #FF1A8C 0%, #8B2FC9 50%, #4A2FBD 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .btn-primary:hover::before {
@@ -608,7 +608,7 @@ body {
   border: 2px solid #e5e7eb;
   background: #f9fafb;
   color: #111827;
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   outline: none;
 }
 
@@ -769,45 +769,59 @@ img,
   transition: unset;
 }
 
-/* Re-apply specific transitions after reset */
+/* Re-apply specific transitions after reset with premium cubic-bezier ease-out-quint */
 .btn-primary {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .btn-outline {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .reveal {
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .work-card {
-  transition: transform 0.5s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .stat-card {
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-link {
-  transition: color 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .mobile-nav-link {
-  transition: color 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 #back-to-top {
-  transition: opacity 0.3s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .testimonial-card {
-  transition: box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Global inputs and controls focus transition configurations */
+input, textarea, select {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Tactile scale feedback on active interaction */
+.btn-primary:active,
+.btn-outline:active,
+#submit-form-btn:active,
+#submit-btn:active,
+.hero-chip:active {
+  transform: scale(0.98) !important;
 }
 
 /* =============================================

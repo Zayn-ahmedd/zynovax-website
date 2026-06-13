@@ -351,35 +351,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
-  // ── Lenis Smooth Scroll Integration ──
-  (function initLenis() {
-    if (window.matchMedia('(pointer: coarse)').matches) {
-      // Disable smooth scroll on mobile touch devices for native feel
-      return;
+  // ── LIGHTWEIGHT VIEWPORT SMOOTH SCROLL ENGINE (Lenis Purged) ──
+  window.smoothScrollTo = function (targetPosition, duration = 800) {
+    const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function easeOutQuint(t) {
+      return 1 - Math.pow(1 - t, 5);
     }
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
-    script.onload = () => {
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        smoothTouch: false,
-      });
 
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
+    function step(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      window.scrollTo(0, startPosition + distance * easeOutQuint(progress));
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(step);
       }
-      requestAnimationFrame(raf);
+    }
 
-      window.lenis = lenis;
-    };
-    document.head.appendChild(script);
-  })();
+    requestAnimationFrame(step);
+  };
+
+  // Bind anchor click listener globally for local smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const offsetTop = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - 80;
+        window.smoothScrollTo(offsetTop, 800);
+      }
+    });
+  });
 
   // ── Global Scroll to Top Button Injection & Handling ──
   (function initScrollToTop() {
@@ -441,11 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     btn.addEventListener('click', function () {
-      if (window.lenis) {
-        window.lenis.scrollTo(0);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      window.smoothScrollTo(0, 800);
     });
   })();
 

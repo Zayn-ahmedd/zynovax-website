@@ -1621,16 +1621,46 @@
 
             formElement.reset();
 
-            // Animate UI State Flip: Fade out State 1 and fade in State 2
+            // Animate UI State Flip: Measure, cross-fade, and smooth height-interpolation
+            const rightColumn = state1.parentElement;
+            const initialHeight = rightColumn.offsetHeight;
+
+            // 1. Swap classes temporarily (invisible) to measure exact target auto height
+            state1.classList.add("hidden");
+            state2.classList.remove("hidden");
+            rightColumn.style.height = "auto";
+            const targetHeight = rightColumn.offsetHeight;
+
+            // 2. Restore initial state to start transition
+            state1.classList.remove("hidden");
+            state2.classList.add("hidden");
+            rightColumn.style.height = `${initialHeight}px`;
+            rightColumn.style.transition = "height 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+            
+            // Force reflow
+            rightColumn.offsetHeight;
+
+            // 3. Initiate fade out of State 1
             state1.classList.add("opacity-0");
+
             setTimeout(() => {
+              // Swap state views
               state1.classList.add("hidden");
               state2.classList.remove("hidden");
 
-              // Micro-delay to trigger CSS opacity transitions
+              // Transition right column height
+              rightColumn.style.height = `${targetHeight}px`;
+
+              // Micro-delay to trigger opacity transition on State 2
               setTimeout(() => {
                 state2.classList.remove("opacity-0");
               }, 50);
+
+              // Reset inline styles after height transition completes
+              setTimeout(() => {
+                rightColumn.style.height = "";
+                rightColumn.style.transition = "";
+              }, 400);
             }, 300);
 
           } else {
