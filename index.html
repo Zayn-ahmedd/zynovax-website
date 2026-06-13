@@ -2,6 +2,15 @@
 <html lang="en" data-theme="light">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KNXE5ED98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4KNXE5ED98', { send_page_view: true });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zynovax — Brand Building Agency Perungalathur, Chennai</title>
@@ -93,92 +102,7 @@
 <body class="font-outfit bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
 
   <!-- ========== NAVBAR ========== -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
-      <!-- Logo -->
-      <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 group" aria-label="Zynovax home">
-        <img src="logo.png" alt="Zynovax Logo" class="h-8 sm:h-9 w-auto flex-shrink-0" />
-        <div class="h-5 sm:h-6 w-24 sm:w-28 overflow-hidden relative flex-shrink-0">
-          <img src="logo-text.png" alt="Zynovax" class="absolute w-full h-auto"
-            style="top: 50%; transform: translateY(-50%);" />
-        </div>
-      </a>
-
-      <!-- Desktop Nav -->
-      <ul class="hidden lg:flex items-center gap-8" role="list">
-        <li><a href="about.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">About</a>
-        </li>
-        <li><a href="services.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">Services</a>
-        </li>
-        <li><a href="work.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">Work</a>
-        </li>
-        <li><a href="blog.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">Blog</a>
-        </li>
-        <li><a href="testimonials.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">Testimonials</a>
-        </li>
-        <li><a href="process.html"
-            class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-pink transition-colors duration-200">Process</a>
-        </li>
-      </ul>
-
-      <!-- Actions -->
-      <div class="flex items-center gap-3">
-        <!-- Dark mode toggle -->
-        <button id="theme-toggle" aria-label="Toggle dark mode"
-          class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-pink">
-          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 hidden dark:block"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-          </svg>
-          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 block dark:hidden"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-        </button>
-
-        <a href="audit.html" class="hidden lg:inline-flex btn-primary text-sm px-5 py-2.5">Get Free Brand Audit</a>
-
-        <!-- Mobile hamburger -->
-        <button id="mobile-menu-btn"
-          class="lg:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-brand-pink focus:outline-none"
-          aria-label="Toggle navigation" aria-expanded="false">
-          <svg id="ham-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="ham-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-      class="lg:hidden hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 shadow-xl">
-      <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
-        <a href="about.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">About</a>
-        <a href="services.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">Services</a>
-        <a href="work.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">Work</a>
-        <a href="blog.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">Blog</a>
-        <a href="testimonials.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">Testimonials</a>
-        <a href="process.html"
-          class="mobile-nav-link text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-brand-pink transition-colors">Process</a>
-        <a href="audit.html" class="btn-primary text-center mt-2">Get Free Brand Audit</a>
-      </div>
-    </div>
-  </header>
+  <div id="navbar-placeholder"></div>
 
   <!-- ========== HERO ========== -->
   <section id="hero"
@@ -188,6 +112,19 @@
     <div class="hero-orb orb-1" aria-hidden="true"></div>
     <div class="hero-orb orb-2" aria-hidden="true"></div>
     <div class="hero-orb orb-3" aria-hidden="true"></div>
+
+    <!-- ── Video Background ── -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
+      <video autoplay muted loop playsinline
+        class="w-full h-full object-cover opacity-50 dark:opacity-25 transition-opacity duration-1000"
+        id="hero-bg-video">
+        <source src="https://www.hevahealth.com/videos/girl_in_nature.mp4" type="video/mp4">
+      </video>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/30 via-white/60 to-white dark:from-gray-950/40 dark:via-gray-950/75 dark:to-gray-950">
+      </div>
+    </div>
+
     <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-15" aria-hidden="true"></div>
 
     <!-- ── Floating social proof chips (desktop only) ── -->
@@ -299,7 +236,7 @@
         <span
           class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-brand-orange/10 via-brand-pink/10 to-brand-purple/10 border border-brand-pink/20 text-xs sm:text-sm font-semibold text-brand-magenta dark:text-brand-pink tracking-wide">
           <span class="w-2 h-2 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
-          Brand Engineering Agency · Perungalathur, Chennai, India
+          Creative Brand Building Agency · Perungalathur, Chennai, India
         </span>
       </div>
 
@@ -587,8 +524,8 @@
           class="stat-card reveal text-center p-8 rounded-2xl bg-gradient-to-br from-brand-pink/5 to-brand-purple/5 border border-brand-purple/10 dark:from-brand-pink/10 dark:to-brand-purple/10 dark:border-brand-purple/20 hover:scale-105 transition-transform duration-300">
           <div class="stat-number font-syne font-extrabold text-5xl md:text-6xl gradient-text mb-2" data-target="100"
             data-suffix="%">0</div>
-          <span class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest">Transparent
-            Pricing</span>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest">Client
+            Satisfaction</span>
         </div>
         <div
           class="stat-card reveal text-center p-8 rounded-2xl bg-gradient-to-br from-brand-purple/5 to-brand-indigo/5 border border-brand-indigo/10 dark:from-brand-purple/10 dark:to-brand-indigo/10 dark:border-brand-indigo/20 hover:scale-105 transition-transform duration-300">
@@ -623,50 +560,80 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+
+        <!-- Problem Card 01: Overcharge, underdeliver -->
         <div
-          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-100 dark:border-red-900/30 bg-white dark:bg-gray-950 p-8 hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
-          <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center mb-5">
-            <svg class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-900/40 min-h-[320px] flex flex-col justify-end hover:-translate-y-2 transition-all duration-300">
+          <!-- Red top accent bar -->
+          <div class="absolute top-0 left-0 right-0 h-1 z-20 bg-gradient-to-r from-red-400 to-red-600"></div>
+          <!-- Background photo -->
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+            alt="Frustrated client reviewing an overpriced invoice at a desk"
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-700" />
+          <!-- Dark scrim -->
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-gray-950/30"></div>
+          <!-- Content -->
+          <div class="relative z-10 p-7">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-900/40 backdrop-blur-sm border border-red-500/20 flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">01</span>
+            <h3 class="font-syne font-bold text-xl text-white mb-3">Overcharge, underdeliver</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Premium rates for basic work. Half-done websites. Extra
+              charges demanded. Sound familiar?</p>
           </div>
-          <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">01</span>
-          <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-3">Overcharge, underdeliver</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Premium rates for basic work. Half-done
-            websites. Extra charges demanded. Sound familiar?</p>
         </div>
 
+        <!-- Problem Card 02: Design without strategy -->
         <div
-          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-100 dark:border-red-900/30 bg-white dark:bg-gray-950 p-8 hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
-          <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center mb-5">
-            <svg class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-900/40 min-h-[320px] flex flex-col justify-end hover:-translate-y-2 transition-all duration-300">
+          <div class="absolute top-0 left-0 right-0 h-1 z-20 bg-gradient-to-r from-red-400 to-red-600"></div>
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80"
+            alt="Generic logo design without a strategic identity system behind it"
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-gray-950/30"></div>
+          <div class="relative z-10 p-7">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-900/40 backdrop-blur-sm border border-red-500/20 flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">02</span>
+            <h3 class="font-syne font-bold text-xl text-white mb-3">Design without strategy</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">A logo without identity. A website without SEO. Beautiful
+              files that do nothing for your business.</p>
           </div>
-          <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">02</span>
-          <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-3">Design without strategy</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">A logo without identity. A website without
-            SEO. Beautiful files that do nothing for your business.</p>
         </div>
 
+        <!-- Problem Card 03: Disappear after delivery -->
         <div
-          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-100 dark:border-red-900/30 bg-white dark:bg-gray-950 p-8 hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
-          <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center mb-5">
-            <svg class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6z" />
-            </svg>
+          class="reveal problem-card group relative overflow-hidden rounded-2xl border border-red-900/40 min-h-[320px] flex flex-col justify-end hover:-translate-y-2 transition-all duration-300">
+          <div class="absolute top-0 left-0 right-0 h-1 z-20 bg-gradient-to-r from-red-400 to-red-600"></div>
+          <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcef?auto=format&fit=crop&w=800&q=80"
+            alt="Empty office desk symbolising an agency that has gone dark after project delivery"
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-gray-950/30"></div>
+          <div class="relative z-10 p-7">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-900/40 backdrop-blur-sm border border-red-500/20 flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6z" />
+              </svg>
+            </div>
+            <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">03</span>
+            <h3 class="font-syne font-bold text-xl text-white mb-3">Disappear after delivery</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Deliver the files, take the money, and vanish. No support.
+              No accountability. No results.</p>
           </div>
-          <span class="font-mono text-xs text-red-400 tracking-widest mb-3 block">03</span>
-          <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-3">Disappear after delivery</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Deliver the files, take the money, and
-            vanish. No support. No accountability. No results.</p>
         </div>
+
       </div>
 
       <!-- The answer -->
@@ -1318,8 +1285,8 @@
                 </svg>
               </div>
               <div>
-                <p class="font-semibold text-gray-900 dark:text-white text-sm">Transparent Pricing</p>
-                <p class="text-gray-400 text-xs mt-1">No hidden charges. Ever.</p>
+                <p class="font-semibold text-gray-900 dark:text-white text-sm">Custom Scoping</p>
+                <p class="text-gray-400 text-xs mt-1">Tailored scoping for your exact needs.</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -1340,37 +1307,44 @@
         <!-- Visual -->
         <div class="reveal relative">
           <div
-            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-orange/10 via-brand-pink/10 to-brand-purple/10 dark:from-brand-orange/20 dark:via-brand-pink/20 dark:to-brand-purple/20 border border-brand-pink/10 dark:border-brand-pink/20 p-6 sm:p-10 flex flex-col gap-6">
-            <!-- Floating logo -->
-            <div class="flex justify-center mb-4 animate-float">
-              <img src="logo.png" alt="Zynovax" class="h-24 w-auto drop-shadow-2xl" />
-            </div>
+            class="relative rounded-3xl overflow-hidden border border-brand-pink/20 flex flex-col gap-6 min-h-[420px]">
+            <!-- Background photo -->
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+              alt="Premium modern agency workspace with open plan studio and creative team"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <!-- Dark scrim — stronger at bottom, fades at top -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-gray-950/40"></div>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div
-                class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center border border-gray-100 dark:border-gray-800">
-                <p class="font-syne font-extrabold text-3xl gradient-text">3+</p>
-                <p class="text-xs text-gray-400 mt-1">Years Experience</p>
+            <!-- Card content — sits above the photo -->
+            <div class="relative z-10 p-6 sm:p-10 flex flex-col gap-6 h-full">
+              <!-- Floating logo -->
+              <div class="flex justify-center mb-2 animate-float">
+                <img src="logo.png" alt="Zynovax" class="h-24 w-auto drop-shadow-2xl" />
               </div>
-              <div
-                class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center border border-gray-100 dark:border-gray-800">
-                <p class="font-syne font-extrabold text-3xl gradient-text">50+</p>
-                <p class="text-xs text-gray-400 mt-1">Happy Clients</p>
-              </div>
-              <div
-                class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center border border-gray-100 dark:border-gray-800">
-                <p class="font-syne font-extrabold text-3xl gradient-text">₹₹</p>
-                <p class="text-xs text-gray-400 mt-1">Fair Pricing</p>
-              </div>
-              <div
-                class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center border border-gray-100 dark:border-gray-800">
-                <p class="font-syne font-extrabold text-3xl gradient-text">5★</p>
-                <p class="text-xs text-gray-400 mt-1">Client Rating</p>
-              </div>
-            </div>
 
-            <div class="text-center">
-              <p class="text-xs text-gray-400 uppercase tracking-widest">Perungalathur, Chennai · Tamil Nadu · India</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+                  <p class="font-syne font-extrabold text-3xl gradient-text">3+</p>
+                  <p class="text-xs text-gray-400 mt-1">Years Experience</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+                  <p class="font-syne font-extrabold text-3xl gradient-text">50+</p>
+                  <p class="text-xs text-gray-400 mt-1">Happy Clients</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+                  <p class="font-syne font-extrabold text-3xl gradient-text">100%</p>
+                  <p class="text-xs text-gray-400 mt-1">Bespoke</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+                  <p class="font-syne font-extrabold text-3xl gradient-text">5★</p>
+                  <p class="text-xs text-gray-400 mt-1">Client Rating</p>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Perungalathur, Chennai · Tamil Nadu · India
+                </p>
+              </div>
             </div>
           </div>
 
@@ -1409,7 +1383,7 @@
         and how to fix it.
       </p>
       <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="audit.html" id="cta-audit-btn" class="btn-primary px-10 py-5 text-lg w-full sm:w-auto group">
+        <a href="audit.html" id="cta-audit-btn" onclick="if(typeof gtag==='function'){gtag('event','click_CTA',{'cta_name':'Claim Your Free Audit'});}" class="btn-primary px-10 py-5 text-lg w-full sm:w-auto group">
           Claim Your Free Audit
           <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -1428,109 +1402,254 @@
 
 
   <!-- ========== FOOTER ========== -->
-  <footer class="bg-gray-950 dark:bg-black text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-        <!-- Brand -->
-        <div class="md:col-span-2 lg:col-span-2">
-          <div class="flex items-center gap-2.5 sm:gap-3 mb-4">
-            <img src="logo.png" alt="Zynovax" class="h-9 sm:h-10 w-auto brightness-110 flex-shrink-0" />
-            <div class="h-6 sm:h-7 w-28 sm:w-32 overflow-hidden relative flex-shrink-0 brightness-110">
-              <img src="logo-text.png" alt="Zynovax" class="absolute w-full h-auto"
-                style="top: 50%; transform: translateY(-50%);" />
+  <div id="footer-placeholder"></div>
+
+  <!-- Main Popup Modal Overlay Wrapper -->
+  <div id="lead-popup-modal"
+    class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+
+    <!-- Content Layout Box (Two-Column Master Structure Split) -->
+    <div
+      class="relative w-full max-w-3xl bg-white/40 dark:bg-gray-950/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/25 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
+
+      <!-- Close Button Icon Element -->
+      <button id="close-popup-btn"
+        class="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+        aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- LEFT SIDE COLUMN: Cinematic Graphic Brand Billboard (Hidden on Small Screens) -->
+      <div class="hidden md:flex w-1/2 p-8 flex-col justify-between relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          alt="Zynovax Workspace" class="absolute inset-0 w-full h-full object-cover z-0" />
+        <!-- Superimposed high-contrast gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-indigo-950/85 to-black/90 z-10"
+          aria-hidden="true"></div>
+
+        <div class="relative z-20">
+          <span class="text-xs font-bold tracking-widest text-purple-200 uppercase">Zynovax Automation Hub</span>
+          <h3 class="text-2xl font-extrabold text-white mt-3 leading-tight">Accelerate Your Brand Engine.</h3>
+        </div>
+        <p class="text-xs text-purple-100 relative z-20 leading-relaxed">Drop your strategic parameters data points. Our
+          engineering matrix will synthesize custom performance metrics dashboards directly for your workflow matrix.
+        </p>
+      </div>
+
+      <!-- RIGHT SIDE COLUMN: Core Form Core Validation Capture Elements Area -->
+      <div class="w-full md:w-1/2 p-8 bg-transparent flex flex-col justify-center relative min-h-[460px]">
+
+        <!-- STATE 1: Initial Form Capture View -->
+        <div id="modal-state-1" class="transition-opacity duration-300 w-full flex flex-col justify-center">
+          <div>
+            <h4 class="text-xl font-black text-gray-900 dark:text-white tracking-tight">Let's Build Weapons.</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Submit your request below to engineer strategic
+              brand growth blueprints.</p>
+          </div>
+
+          <!-- WEB3FORMS CONNECTED INPUT CAPTURE LOOP CONTAINER -->
+          <form id="lead-secure-form" class="mt-6 space-y-4">
+            <!-- Web3Forms Mandatory Hidden Parameter Access Tokens Keys Map Block -->
+            <input type="hidden" name="access_key" value="50358115-d0e0-4774-93d4-35baf350fd89">
+            <input type="hidden" name="subject" value="New High-Value Lead Dispatched from Zynovax Web Portal">
+            <input type="hidden" name="from_name" value="Zynovax Core Automations Platform">
+
+            <!-- Input Item Name -->
+            <div>
+              <label
+                class="block text-[11px] font-bold tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-1">Full
+                Name</label>
+              <input type="text" name="client_name" required placeholder="Ahmed Rashmi"
+                class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800/80 rounded-xl text-sm font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
             </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
-            Strategy-first brand building for startups, D2C brands, and local businesses. Based in Perungalathur,
-            Chennai. Built for
-            India.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-              class="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-brand-orange hover:to-brand-pink flex items-center justify-center transition-all duration-200 hover:scale-110">
-              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+
+            <!-- Input Item Phone -->
+            <div>
+              <label
+                class="block text-[11px] font-bold tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-1">Phone
+                Number</label>
+              <input type="tel" name="client_phone" required placeholder="+91 98765 43210"
+                class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800/80 rounded-xl text-sm font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+            </div>
+
+            <!-- Input Item Email -->
+            <div>
+              <label
+                class="block text-[11px] font-bold tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-1">Email
+                Address</label>
+              <input type="email" name="client_mail" required placeholder="ceo@zynovax.in"
+                class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800/80 rounded-xl text-sm font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+            </div>
+
+            <!-- Textarea Input Field -->
+            <div>
+              <label
+                class="block text-[11px] font-bold tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-1">Describe
+                The Service You Need</label>
+              <textarea name="service_details" required rows="3"
+                placeholder="Tell us about the branding, website, or automation solutions you want to build..."
+                class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800/80 rounded-xl text-sm font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none transition-all"></textarea>
+            </div>
+
+            <!-- CTA Action Execution Interactive Submission Link Button Trigger -->
+            <button type="submit" id="submit-form-btn"
+              class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl text-sm font-bold shadow-lg hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center space-x-2">
+              <span id="btn-text-label">Deploy My Request Blueprint</span>
+              <!-- Inline Hidden SVG Processing Loader Ring -->
+              <svg id="loading-spinner" class="animate-spin h-4 w-4 text-white hidden"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
               </svg>
-            </a>
-            <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              class="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600 flex items-center justify-center transition-all duration-200 hover:scale-110">
-              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <a href="mailto:info@zynovax.in" aria-label="Email"
-              class="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-brand-pink hover:to-brand-purple flex items-center justify-center transition-all duration-200 hover:scale-110">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </a>
-          </div>
+            </button>
+          </form>
         </div>
 
-        <!-- Services -->
-        <div>
-          <h3 class="font-syne font-bold text-sm uppercase tracking-widest text-gray-300 mb-5">Services</h3>
-          <ul class="space-y-3">
-            <li><a href="services.html#brand-strategy"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Brand Strategy</a></li>
-            <li><a href="services.html#visual-identity"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Visual Identity</a></li>
-            <li><a href="services.html#social-media"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Social Media</a></li>
-            <li><a href="services.html#performance-marketing"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Performance Marketing</a></li>
-            <li><a href="services.html#content-writing"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Content & Copywriting</a></li>
-            <li><a href="services.html#ai-tools"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">AI Brand Tools</a></li>
-          </ul>
+        <!-- STATE 2: Thank You & Book a Call View -->
+        <div id="modal-state-2"
+          class="hidden opacity-0 transition-opacity duration-300 w-full flex flex-col items-center text-center space-y-6">
+          <div
+            class="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">Thank You!</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed px-4">
+              Your strategic requirements have been successfully deployed. Let's maximize our momentum. Book your free
+              30-minute deep-dive brand audit call now.
+            </p>
+          </div>
+          <a href="audit.html"
+            onclick="if(typeof gtag==='function'){gtag('event','click_CTA',{'cta_name':'Book A Call Now'});}"
+            class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-bold shadow-lg shadow-emerald-600/20 text-center block transform hover:-translate-y-0.5 active:translate-y-0 transition-all">
+            Book A Call Now
+          </a>
         </div>
 
-        <!-- Company -->
-        <div>
-          <h3 class="font-syne font-bold text-sm uppercase tracking-widest text-gray-300 mb-5">Company</h3>
-          <ul class="space-y-3">
-            <li><a href="about.html" class="text-gray-400 hover:text-brand-pink text-sm transition-colors">About</a>
-            </li>
-            <li><a href="services.html"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Services</a></li>
-            <li><a href="work.html" class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Work</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Blog</a></li>
-            <li><a href="testimonials.html"
-                class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Testimonials</a></li>
-            <li><a href="process.html" class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Process</a>
-            </li>
-            <li><a href="audit.html" class="text-gray-400 hover:text-brand-pink text-sm transition-colors">Free Brand
-                Audit</a></li>
-          </ul>
-        </div>
       </div>
 
-      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-gray-500 text-sm">&copy; 2026 Zynovax. All rights reserved. Built in Perungalathur, Chennai
-          &#127470;&#127475;</p>
-        <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
-          <a href="privacy.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Privacy
-            Policy</a>
-          <a href="terms.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Terms &
-            Conditions</a>
-          <a href="refunds.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Refund Policy</a>
-          <a href="mailto:info@zynovax.in"
-            class="text-gray-500 hover:text-brand-pink text-xs transition-colors">info@zynovax.in</a>
-          <a href="sitemap.xml" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Sitemap</a>
-        </div>
-      </div>
     </div>
-  </footer>
+  </div>
 
+  <!-- ==========================================
+       VANILLA JAVASCRIPT ASYNC ROUTING LOGIC PIPELINE
+       ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const popupModal = document.getElementById("lead-popup-modal");
+      const closeBtn = document.getElementById("close-popup-btn");
+      const formElement = document.getElementById("lead-secure-form");
+      const btnText = document.getElementById("btn-text-label");
+      const spinner = document.getElementById("loading-spinner");
+      const submitBtn = document.getElementById("submit-form-btn");
 
+      const state1 = document.getElementById("modal-state-1");
+      const state2 = document.getElementById("modal-state-2");
+
+      // A. Timer Optimization Initialization: Pop the layout after exactly 3.5 seconds
+      setTimeout(() => {
+        popupModal.classList.remove("opacity-0", "pointer-events-none");
+        popupModal.querySelector(".transform").classList.remove("scale-95");
+        popupModal.querySelector(".transform").classList.add("scale-100");
+      }, 3500);
+
+      // B. Close Event Bind Controls
+      const closeModalEngine = () => {
+        popupModal.classList.add("opacity-0", "pointer-events-none");
+        popupModal.querySelector(".transform").classList.remove("scale-100");
+        popupModal.querySelector(".transform").classList.add("scale-95");
+
+        // Gracefully reset to State 1 after transition completes so that a subsequent trigger starts fresh
+        setTimeout(() => {
+          state1.classList.remove("hidden", "opacity-0");
+          state2.classList.add("hidden", "opacity-0");
+          submitBtn.disabled = false;
+          btnText.textContent = "Deploy My Request Blueprint";
+          spinner.classList.add("hidden");
+        }, 300);
+      };
+
+      closeBtn.addEventListener("click", closeModalEngine);
+
+      // Outer blur zone click logic safe check execution
+      popupModal.addEventListener("click", (e) => {
+        if (e.target === popupModal) closeModalEngine();
+      });
+
+      // C. Serverless Web3Forms Async Processing Engine Hook
+      formElement.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Visual Interface Locks Transition Updates
+        submitBtn.disabled = true;
+        btnText.textContent = "Processing Growth Nodes...";
+        spinner.classList.remove("hidden");
+
+        const formData = new FormData(formElement);
+        const formObject = Object.fromEntries(formData);
+        const jsonPayload = JSON.stringify(formObject);
+
+        try {
+          const apiResponse = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: jsonPayload
+          });
+
+          const responseResult = await apiResponse.json();
+
+          if (responseResult.success) {
+            // Trigger Google Analytics 4 Custom Lead Conversion Event
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                'event_category': 'Lead Acquisition',
+                'event_label': 'Popup Lead Submission Form',
+                'value': 1.0,
+                'currency': 'INR'
+              });
+            }
+
+            formElement.reset();
+
+            // Animate UI State Flip: Fade out State 1 and fade in State 2
+            state1.classList.add("opacity-0");
+            setTimeout(() => {
+              state1.classList.add("hidden");
+              state2.classList.remove("hidden");
+
+              // Micro-delay to trigger CSS opacity transitions
+              setTimeout(() => {
+                state2.classList.remove("opacity-0");
+              }, 50);
+            }, 300);
+
+          } else {
+            throw new Error(responseResult.message || "Pipeline Routing Processing Interruption.");
+          }
+
+        } catch (error) {
+          console.error("Zynovax Forms Automation Engine Error Loop Checked:", error);
+          alert("Submission Error Detected. Please check your network connection and try again.");
+          submitBtn.disabled = false;
+          btnText.textContent = "Deploy My Request Blueprint";
+          spinner.classList.add("hidden");
+        }
+      });
+    });
+  </script>
 
   <!-- JavaScript -->
-
+  <script src="shared.js"></script>
   <script src="main.js"></script>
 </body>
 

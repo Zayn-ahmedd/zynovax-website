@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KNXE5ED98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4KNXE5ED98', { send_page_view: true });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Insights — Zynovax Brand Building Agency</title>
-  <meta name="description" content="Read our latest insights on strategy-first brand building, visual identity design, performance marketing, and AI engineering for modern D2C and local brands." />
+  <meta name="description"
+    content="Read our latest insights on strategy-first brand building, visual identity design, performance marketing, and AI engineering for modern D2C and local brands." />
   <link rel="icon" href="logo.png" type="image/png" />
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +61,7 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
     }
-    
+
     .dark .blog-card {
       background: rgba(17, 24, 39, 0.6);
       border-color: rgba(255, 255, 255, 0.05);
@@ -64,6 +77,7 @@
     .category-pill {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .category-pill.active {
       background: linear-gradient(135deg, #FF6B35 0%, #FF1A8C 50%, #8B2FC9 100%);
       color: white;
@@ -86,9 +100,11 @@
       outline: none;
       transition: background 0.3s;
     }
+
     .dark input[type="range"] {
       background: #374151;
     }
+
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -100,6 +116,7 @@
       box-shadow: 0 0 10px rgba(255, 26, 140, 0.5);
       transition: transform 0.2s;
     }
+
     input[type="range"]::-webkit-slider-thumb:hover {
       transform: scale(1.25);
     }
@@ -110,6 +127,7 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
     }
+
     .dark class-modal,
     .dark .glass-modal {
       background: rgba(3, 7, 18, 0.9);
@@ -118,29 +136,62 @@
     }
   </style>
 </head>
+
 <body class="font-outfit bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
 
   <!-- Shared Navbar Placeholder -->
-  <div id="navbar-placeholder"></div>
+  <div id="navbar-placeholder"></div>  <!-- MAIN CONTAINER -->
+  <main>
 
-  <!-- MAIN CONTAINER -->
-  <main class="pt-24 lg:pt-32 min-h-screen">
-    
     <!-- Hero / Header Section -->
-    <section class="relative py-12 md:py-16 overflow-hidden">
-      <!-- Background Orbs -->
+    <section class="relative w-full min-h-screen md:h-screen overflow-hidden flex flex-col justify-center">
+
+      <!-- ── Background Orbs ── -->
       <div class="hero-orb orb-1" aria-hidden="true"></div>
       <div class="hero-orb orb-2" aria-hidden="true"></div>
-      <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-15" aria-hidden="true"></div>
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- ── Premium Editorial Video Background ── -->
+      <!--
+        Video: "Woman working typing on laptop" (Mixkit #4028) — focused creator at workstation, editorial/content mood.
+        Fallback: "Busy office space" (Mixkit #918) — cinematic startup agency workspace in motion.
+        License: Free / No attribution required (mixkit.co/license)
+      -->
+      <div class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0" aria-hidden="true">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0"
+          id="hero-bg-video-blog"
+        >
+          <!-- Primary: Focused creator/writer at laptop — editorial insight publishing mood -->
+          <source src="https://assets.mixkit.co/videos/4028/4028-1080.mp4" type="video/mp4" />
+          <!-- Fallback: Cinematic busy startup office, creatives in flow state -->
+          <source src="https://assets.mixkit.co/videos/918/918-1080.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Glassmorphic scrim: keeps "Engineering Brands That Command Attention" razor-sharp -->
+        <div class="absolute inset-0 bg-white/40 dark:bg-gray-950/40 backdrop-blur-[1px]"></div>
+
+        <!-- Depth gradient — fades cleanly into the blog grid section below -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white dark:from-gray-950/20 dark:via-gray-950/55 dark:to-gray-950 transition-colors duration-500"></div>
+      </div>
+
+      <!-- ── Grid Texture ── -->
+      <div class="absolute inset-0 grid-pattern opacity-20 dark:opacity-10" aria-hidden="true"></div>
+
+      <!-- ── Content ── -->
+      <div class="relative z-10 w-full pt-36 pb-20 md:pt-0 md:pb-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="label-badge reveal mb-4">Zynovax Journal</span>
         <h1 class="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight reveal">
           Engineering Brands<br />
           <span class="gradient-text">That Command Attention</span>
         </h1>
         <p class="mt-6 text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto reveal">
-          No templates. No compromises. Deep strategy, sharp visual design, and performance-marketing tactics optimized to grow your business.
+          No templates. No compromises. Deep strategy, sharp visual design, and performance-marketing tactics optimized
+          to grow your business.
         </p>
 
         <!-- Search and Filtering Interface -->
@@ -148,28 +199,41 @@
           <div class="relative w-full md:w-2/3">
             <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
               <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </span>
-            <input type="text" id="blog-search" placeholder="Search insights by title or topic..." class="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink transition-all text-sm shadow-sm" />
+            <input type="text" id="blog-search" placeholder="Search insights by title or topic..."
+              class="w-full pl-12 pr-4 py-3.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-2 border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink transition-all text-sm shadow-sm" />
           </div>
         </div>
 
         <!-- Dynamic Category Pills -->
         <div class="mt-6 flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto reveal" id="category-pills-container">
-          <button class="category-pill active px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="all">All Articles</button>
-          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Branding & Strategy">Branding & Strategy</button>
-          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Visual Identity">Visual Identity</button>
-          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="Performance Marketing">Performance Marketing</button>
-          <button class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all" data-category="AI & Automation">AI & Automation</button>
+          <button
+            class="category-pill active px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50/90 dark:bg-gray-900/90 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all"
+            data-category="all">All Articles</button>
+          <button
+            class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50/90 dark:bg-gray-900/90 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all"
+            data-category="Branding &amp; Strategy">Branding &amp; Strategy</button>
+          <button
+            class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50/90 dark:bg-gray-900/90 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all"
+            data-category="Visual Identity">Visual Identity</button>
+          <button
+            class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50/90 dark:bg-gray-900/90 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all"
+            data-category="Performance Marketing">Performance Marketing</button>
+          <button
+            class="category-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-100 dark:border-gray-800 bg-gray-50/90 dark:bg-gray-900/90 text-gray-500 dark:text-gray-400 hover:text-brand-pink dark:hover:text-brand-pink transition-all"
+            data-category="AI &amp; Automation">AI &amp; Automation</button>
         </div>
       </div>
-    </section>
+
+    </section><!-- /Hero / Header Section -->
 
     <!-- Main Grid Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-24">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        
+
         <!-- Left Side: Blog List (Covers 2 cols) -->
         <div class="lg:col-span-2 space-y-8" id="blog-posts-container">
           <!-- Dynamically populated via Javascript -->
@@ -177,15 +241,18 @@
 
         <!-- Right Side: Sidebar Widget Controls (Covers 1 col) -->
         <div class="space-y-8">
-          
+
           <!-- BRAND ROI CALCULATOR WIDGET -->
           <div class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl relative overflow-hidden">
             <!-- Micro-gradient lines -->
-            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple"></div>
-            
+            <div
+              class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple">
+            </div>
+
             <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-2">Brand ROI Calculator</h3>
             <p class="text-xs text-gray-400 mb-6 leading-relaxed">
-              Estimate the monthly revenue boost a custom brand strategy and high-trust custom visual identity can bring by improving conversions.
+              Estimate the monthly revenue boost a custom brand strategy and high-trust custom visual identity can bring
+              by improving conversions.
             </p>
 
             <div class="space-y-6">
@@ -195,7 +262,8 @@
                   <span class="text-gray-700 dark:text-gray-300">Monthly Traffic</span>
                   <span class="text-brand-pink" id="val-traffic">20,000 visitors</span>
                 </div>
-                <input type="range" id="slider-traffic" min="5000" max="250000" step="5000" value="20000" class="w-full" />
+                <input type="range" id="slider-traffic" min="5000" max="250000" step="5000" value="20000"
+                  class="w-full" />
               </div>
 
               <!-- Slider 2 -->
@@ -217,18 +285,24 @@
               </div>
 
               <!-- Live Calculation Result Card -->
-              <div class="p-4 rounded-xl bg-gray-50/50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 text-center relative overflow-hidden mt-2">
-                <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Est. Additional Revenue / Month</span>
-                <div class="font-syne font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-pink mt-1" id="val-result">
+              <div
+                class="p-4 rounded-xl bg-gray-50/50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 text-center relative overflow-hidden mt-2">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Est. Additional Revenue /
+                  Month</span>
+                <div
+                  class="font-syne font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-pink mt-1"
+                  id="val-result">
                   ₹2,40,000
                 </div>
                 <p class="text-[10px] text-gray-400 mt-2">Based on a baseline conversion rate upgrade of 1.5%</p>
               </div>
 
               <!-- Direct CTA Link -->
-              <a href="audit.html" class="btn-primary w-full py-3.5 text-sm flex items-center justify-center gap-2 group">
+              <a href="audit.html"
+                class="btn-primary w-full py-3.5 text-sm flex items-center justify-center gap-2 group">
                 Claim Free Audit to Verify
-                <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
@@ -242,12 +316,15 @@
               No spam. Just hard-hitting, strategy-first breakdowns delivered twice a month.
             </p>
             <form id="newsletter-form" class="space-y-3">
-              <input type="email" id="newsletter-email" required placeholder="your.name@business.com" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink text-xs transition-colors" />
-              <button type="submit" id="newsletter-btn" class="w-full py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-950 font-semibold rounded-xl text-xs transition-colors">
+              <input type="email" id="newsletter-email" required placeholder="your.name@business.com"
+                class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl focus:border-brand-pink focus:outline-none dark:focus:border-brand-pink text-xs transition-colors" />
+              <button type="submit" id="newsletter-btn"
+                class="w-full py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-950 font-semibold rounded-xl text-xs transition-colors">
                 Join the Loop
               </button>
             </form>
-            <div id="newsletter-success" class="hidden text-xs text-green-500 font-medium mt-3 flex items-center gap-1.5">
+            <div id="newsletter-success"
+              class="hidden text-xs text-green-500 font-medium mt-3 flex items-center gap-1.5">
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
               </svg>
@@ -256,57 +333,84 @@
           </div>
 
           <!-- ABOUT AUTHOR -->
-          <div class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-syne font-extrabold text-xl shadow-lg mb-4">
-              AR
-            </div>
+          <div
+            class="blog-card p-6 border border-gray-100 dark:border-gray-800 rounded-2xl flex flex-col items-center text-center">
+            <img src="ahmed-rashmi.jpg" alt="Ahmed Rashmi"
+              class="w-16 h-16 rounded-full object-cover border border-brand-pink shadow-md mb-4" />
             <h4 class="font-syne font-bold text-gray-900 dark:text-white text-base">Ahmed Rashmi</h4>
             <p class="text-brand-pink text-xs font-semibold mb-3">Founder & Brand Strategist</p>
             <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
-              Helping Indian brands scale from generic commodities to high-value identities. Based in Perungalathur, Chennai, serving clients nationwide.
+              Helping Indian brands scale from generic commodities to high-value identities. Based in Perungalathur,
+              Chennai, serving clients nationwide.
             </p>
             <div class="flex gap-2.5">
-              <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-pink text-xs transition-colors">LinkedIn</a>
+              <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-brand-pink text-xs transition-colors">LinkedIn</a>
               <span class="text-gray-700">•</span>
-              <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-pink text-xs transition-colors">Instagram</a>
+              <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-brand-pink text-xs transition-colors">Instagram</a>
             </div>
           </div>
 
         </div>
+    </section>
 
+    <!-- CTA -->
+    <section class="py-24 bg-white dark:bg-gray-950">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2
+          class="reveal font-syne font-extrabold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 tracking-tight">
+          Want actionable brand strategy<br /><span class="gradient-text">in your inbox?</span>
+        </h2>
+        <p class="reveal text-gray-500 dark:text-gray-400 text-lg mb-10">
+          Start with a free brand audit. No obligation — just hard data on how to fix your conversion rates.
+        </p>
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="audit.html" class="btn-primary px-10 py-4 text-base">Claim Your Free Audit</a>
+          <a href="work.html" class="btn-outline px-10 py-4 text-base">Explore Our Work</a>
+        </div>
       </div>
     </section>
 
     <!-- IMMERSIVE ARTICLE READING MODAL (Full page overlay) -->
     <div id="read-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
       <!-- Backdrop -->
-      <div class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity" id="modal-backdrop"></div>
-      
+      <div class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity" id="modal-backdrop">
+      </div>
+
       <!-- Immersive reading screen -->
       <div class="relative min-h-screen flex items-stretch justify-center z-10">
         <div class="glass-modal w-full max-w-4xl flex flex-col justify-between shadow-2xl relative">
-          
+
           <!-- Reading Progress Bar (Scroll-bound) -->
           <div class="absolute top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-800">
-            <div id="reading-progress-bar" class="h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple w-0"></div>
+            <div id="reading-progress-bar"
+              class="h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple w-0"></div>
           </div>
-          
+
           <!-- Modal Top Bar -->
-          <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100 dark:border-gray-800/80 sticky top-0 bg-white/70 dark:bg-gray-950/70 backdrop-blur-md z-20">
+          <div
+            class="px-6 py-4 flex items-center justify-between border-b border-gray-100 dark:border-gray-800/80 sticky top-0 bg-white/70 dark:bg-gray-950/70 backdrop-blur-md z-20">
             <!-- Left: Brand logo watermark -->
             <div class="flex items-center gap-2">
               <img src="logo.png" alt="Zynovax Logo" class="h-6 w-auto" />
-              <span class="font-syne font-extrabold text-xs tracking-tight bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple bg-clip-text text-transparent">ZYNOVAX JOURNAL</span>
+              <span
+                class="font-syne font-extrabold text-xs tracking-tight bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple bg-clip-text text-transparent">ZYNOVAX
+                JOURNAL</span>
             </div>
 
             <!-- Right Controls: Font sizing & Close -->
             <div class="flex items-center gap-3">
-              <div class="flex items-center bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg p-0.5">
-                <button id="btn-font-dec" title="Decrease font size" class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A-</button>
+              <div
+                class="flex items-center bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg p-0.5">
+                <button id="btn-font-dec" title="Decrease font size"
+                  class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A-</button>
                 <span class="w-px h-3 bg-gray-200 dark:bg-gray-800"></span>
-                <button id="btn-font-inc" title="Increase font size" class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A+</button>
+                <button id="btn-font-inc" title="Increase font size"
+                  class="px-2.5 py-1 text-xs font-semibold text-gray-500 hover:text-brand-pink transition-colors">A+</button>
               </div>
-              <button id="btn-close-modal" aria-label="Close article" class="p-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-500 hover:text-brand-pink transition-colors">
+              <button id="btn-close-modal" aria-label="Close article"
+                class="p-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-500 hover:text-brand-pink transition-colors">
                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -317,28 +421,31 @@
           <!-- Main Scrollable Body Content -->
           <div class="flex-grow overflow-y-auto px-6 sm:px-12 py-10 md:py-14" id="modal-scroll-container">
             <div class="max-w-2xl mx-auto">
-              
+
               <!-- Article Meta Header -->
               <div class="mb-8">
                 <div class="flex items-center gap-2 mb-3">
-                  <span id="modal-art-category" class="text-xs font-bold text-brand-pink uppercase tracking-widest bg-brand-pink/10 px-2.5 py-1 rounded">Branding & Strategy</span>
+                  <span id="modal-art-category"
+                    class="text-xs font-bold text-brand-pink uppercase tracking-widest bg-brand-pink/10 px-2.5 py-1 rounded">Branding
+                    & Strategy</span>
                   <span class="text-gray-400 text-xs" id="modal-art-date">June 8, 2026</span>
                 </div>
-                <h2 class="font-syne font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white leading-tight" id="modal-art-title">
+                <h2 class="font-syne font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white leading-tight"
+                  id="modal-art-title">
                   The Anatomy of a Strategy-First Brand
                 </h2>
                 <!-- Author & Readtime Info -->
                 <div class="flex items-center gap-3 mt-6 border-y border-gray-100 dark:border-gray-800/80 py-4">
-                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center text-white text-xs font-bold font-syne">
-                    AR
-                  </div>
+                  <img src="ahmed-rashmi.jpg" alt="Ahmed Rashmi"
+                    class="w-9 h-9 rounded-full object-cover border border-brand-pink" />
                   <div class="text-xs flex-1">
                     <p class="font-semibold text-gray-900 dark:text-white">Ahmed Rashmi</p>
                     <p class="text-gray-400">Founder & Brand Strategist</p>
                   </div>
                   <div class="text-xs text-gray-400 flex items-center gap-1">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span id="modal-art-readtime">5 min read</span>
                   </div>
@@ -346,36 +453,54 @@
               </div>
 
               <!-- Article Body -->
-              <article class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 text-base" id="modal-art-content">
+              <article
+                class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 text-base"
+                id="modal-art-content">
                 <!-- Populated dynamically -->
               </article>
 
               <!-- Article Footer Share / Widget -->
-              <div class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span class="text-xs text-gray-400">Did you find this strategy insightful? Share it with other founders:</span>
+              <div
+                class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-gray-400">Did you find this strategy insightful? Share it with other
+                  founders:</span>
                 <div class="flex items-center gap-2 relative">
-                  <button id="btn-share-twitter" title="Share on Twitter" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
-                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <button id="btn-share-twitter" title="Share on Twitter"
+                    class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
                   </button>
-                  <button id="btn-share-linkedin" title="Share on LinkedIn" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
-                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                  <button id="btn-share-linkedin" title="Share on LinkedIn"
+                    class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
+                    </svg>
                   </button>
-                  <button id="btn-share-copy" title="Copy Link" class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
+                  <button id="btn-share-copy" title="Copy Link"
+                    class="w-8 h-8 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-400 hover:text-brand-pink flex items-center justify-center border border-gray-100 dark:border-gray-800 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                     </svg>
                   </button>
                   <!-- Floating notification pill for copied link -->
-                  <span id="share-copied-pill" class="absolute bottom-full mb-2 right-0 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none transition-all duration-200">Copied!</span>
+                  <span id="share-copied-pill"
+                    class="absolute bottom-full mb-2 right-0 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none transition-all duration-200">Copied!</span>
                 </div>
               </div>
 
               <!-- In-article call to action widget -->
-              <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-brand-orange/5 via-brand-pink/5 to-brand-purple/5 border border-brand-pink/10 text-center">
+              <div
+                class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-brand-orange/5 via-brand-pink/5 to-brand-purple/5 border border-brand-pink/10 text-center">
                 <span class="label-badge text-[10px]">Audit Invitation</span>
-                <h3 class="font-syne font-extrabold text-xl sm:text-2xl mt-4 mb-2">Is your brand built on templates or truth?</h3>
+                <h3 class="font-syne font-extrabold text-xl sm:text-2xl mt-4 mb-2">Is your brand built on templates or
+                  truth?</h3>
                 <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-md mx-auto mb-6">
-                  Get a free audit worth ₹5,000. We'll identify bottlenecks in your visual positioning and performance ads setup within 24 hours.
+                  Get a free audit worth ₹5,000. We'll identify bottlenecks in your visual positioning and performance
+                  ads setup within 24 hours.
                 </p>
                 <a href="audit.html" class="btn-primary px-8 py-3.5 text-xs">Claim Free Brand Audit</a>
               </div>
@@ -384,7 +509,8 @@
           </div>
 
           <!-- Modal Footer bottom bar (Close confirmation) -->
-          <div class="px-6 py-4 border-t border-gray-100 dark:border-gray-800/80 flex justify-end bg-gray-50/50 dark:bg-gray-950/20">
+          <div
+            class="px-6 py-4 border-t border-gray-100 dark:border-gray-800/80 flex justify-end bg-gray-50/50 dark:bg-gray-950/20">
             <button id="btn-footer-close" class="btn-outline px-6 py-2.5 text-xs">Finished Reading</button>
           </div>
 
@@ -397,7 +523,7 @@
   </main>
 
   <script src="shared.js"></script>
-  
+
   <!-- In-page Blog Interactive Actions -->
   <script>
     "use strict";
@@ -597,18 +723,18 @@
     const blogSearch = document.getElementById('blog-search');
     const blogContainer = document.getElementById('blog-posts-container');
     const categoryContainer = document.getElementById('category-pills-container');
-    
+
     // Sliders
     const sliderTraffic = document.getElementById('slider-traffic');
     const sliderAov = document.getElementById('slider-aov');
     const sliderBoost = document.getElementById('slider-boost');
-    
+
     // Calculator Outputs
     const valTraffic = document.getElementById('val-traffic');
     const valAov = document.getElementById('val-aov');
     const valBoost = document.getElementById('val-boost');
     const valResult = document.getElementById('val-result');
-    
+
     // Modal Selectors
     const readModal = document.getElementById('read-modal');
     const modalBackdrop = document.getElementById('modal-backdrop');
@@ -619,13 +745,13 @@
     const modalArtDate = document.getElementById('modal-art-date');
     const modalArtReadtime = document.getElementById('modal-art-readtime');
     const modalArtContent = document.getElementById('modal-art-content');
-    
+
     // Modal buttons
     const btnCloseModal = document.getElementById('btn-close-modal');
     const btnFooterClose = document.getElementById('btn-footer-close');
     const btnFontInc = document.getElementById('btn-font-inc');
     const btnFontDec = document.getElementById('btn-font-dec');
-    
+
     // Share Buttons
     const btnShareTwitter = document.getElementById('btn-share-twitter');
     const btnShareLinkedin = document.getElementById('btn-share-linkedin');
@@ -661,9 +787,9 @@
         const activeCat = sanitize(activeCategory);
 
         const matchesCategory = activeCat === 'all' || postCat === activeCat;
-        const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                              post.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                              post.category.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.category.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
       });
 
@@ -686,9 +812,10 @@
       // Render cards
       filtered.forEach((post, index) => {
         const card = document.createElement('div');
-        card.className = 'blog-card p-6 md:p-8 flex flex-col md:flex-row gap-6 cursor-pointer opacity-0 transform translate-y-4 transition-all duration-500 reveal';
+        // Removed 'reveal' class to prevent opacity lock by static IntersectionObserver
+        card.className = 'blog-card p-6 md:p-8 flex flex-col md:flex-row gap-6 cursor-pointer opacity-0 transform translate-y-4 transition-all duration-500';
         card.dataset.id = post.id;
-        
+
         // Custom background gradient mesh simulation
         card.innerHTML = `
           <div class="w-full md:w-48 h-36 rounded-xl bg-gradient-to-br ${post.gradient} border border-gray-100 dark:border-gray-800 flex-shrink-0 flex items-center justify-center relative overflow-hidden group">
@@ -754,10 +881,12 @@
       document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
       pill.classList.add('active');
 
-      activeCategory = pill.dataset.category;
+      // Sanitize the active category selection: lowercase and trimmed
+      const rawCategory = pill.dataset.category || 'all';
+      activeCategory = rawCategory.toLowerCase().trim();
 
       // Unconditionally reset the search inputs when 'All Articles' is selected to restore list
-      if (activeCategory && activeCategory.toLowerCase().trim() === 'all') {
+      if (activeCategory === 'all') {
         searchQuery = '';
         if (blogSearch) blogSearch.value = '';
       }
@@ -886,7 +1015,7 @@
         // Show copied notification badge
         shareCopiedPill.classList.remove('opacity-0');
         shareCopiedPill.classList.add('opacity-100');
-        
+
         setTimeout(() => {
           shareCopiedPill.classList.remove('opacity-100');
           shareCopiedPill.classList.add('opacity-0');
@@ -899,10 +1028,10 @@
        ============================================= */
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       const emailInput = document.getElementById('newsletter-email');
       const submitBtn = document.getElementById('newsletter-btn');
-      
+
       // Disable form during request simulation
       emailInput.disabled = true;
       submitBtn.disabled = true;
@@ -920,7 +1049,7 @@
        ============================================= */
     // Initial Render
     renderPosts();
-    
+
     // Initial calculation
     calculateROI();
 
@@ -933,4 +1062,5 @@
 
   </script>
 </body>
+
 </html>

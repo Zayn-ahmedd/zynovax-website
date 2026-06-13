@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KNXE5ED98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4KNXE5ED98', { send_page_view: true });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Testimonials — Zynovax Brand Building Agency</title>
@@ -78,14 +87,49 @@
 
   <div id="navbar-placeholder"></div>
 
-  <main class="pt-20">
+  <main>
 
     <!-- PAGE HERO -->
-    <section class="relative py-24 md:py-32 bg-white dark:bg-gray-950 overflow-hidden">
+    <section class="relative w-full min-h-screen md:h-screen overflow-hidden flex flex-col justify-center bg-gray-950">
+
+      <!-- ── Background Orbs ── -->
       <div class="hero-orb orb-2" aria-hidden="true"></div>
       <div class="hero-orb orb-3" aria-hidden="true"></div>
-      <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-10" aria-hidden="true"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- ── Premium Social Proof Video Background ── -->
+      <!--
+        Video: "Open office space" (Mixkit #914) — collaborative agency workspace, people connecting & building.
+        Fallback: "Woman working typing on laptop" (Mixkit #4028) — focused creator in editorial flow.
+        License: Free / No attribution required (mixkit.co/license)
+      -->
+      <div class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0" aria-hidden="true">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0"
+          id="hero-bg-video-testimonials"
+        >
+          <!-- Primary: Open collaborative agency floor — trust, teamwork, human connection -->
+          <source src="https://assets.mixkit.co/videos/914/914-1080.mp4" type="video/mp4" />
+          <!-- Fallback: Focused creator at workstation — quality output, personal commitment -->
+          <source src="https://assets.mixkit.co/videos/4028/4028-1080.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Glassmorphic scrim: keeps "Don't take our word for it." razor-sharp -->
+        <div class="absolute inset-0 bg-white/40 dark:bg-gray-950/40 backdrop-blur-[1px]"></div>
+
+        <!-- Depth gradient — anchors video cleanly into the rating strip section below -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white dark:from-gray-950/20 dark:via-gray-950/55 dark:to-gray-950 transition-colors duration-500"></div>
+      </div>
+
+      <!-- ── Grid Texture ── -->
+      <div class="absolute inset-0 grid-pattern opacity-20 dark:opacity-10" aria-hidden="true"></div>
+
+      <!-- ── Content ── -->
+      <div class="relative z-10 w-full pt-36 pb-20 md:pt-0 md:pb-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="label-badge reveal">Client Stories</span>
         <h1
           class="reveal font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight mt-6 mb-6">
@@ -95,7 +139,9 @@
           Real founders. Real businesses. Real results. Here's what happens when strategy meets execution.
         </p>
       </div>
-    </section>
+
+    </section><!-- /PAGE HERO -->
+
 
     <!-- RATING SUMMARY STRIP -->
     <section class="py-12 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">

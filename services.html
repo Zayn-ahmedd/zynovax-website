@@ -1,295 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KNXE5ED98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4KNXE5ED98', { send_page_view: true });
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Zynovax Brand Building Agency</title>
-  <meta name="description" content="Six strategy-first brand services: Brand Strategy, Visual Identity, Social Media, Performance Marketing, Content Writing & AI Brand Tools." />
+  <meta name="description"
+    content="Six strategy-first brand services: Brand Strategy, Visual Identity, Social Media, Performance Marketing, Content Writing & AI Brand Tools." />
   <link rel="canonical" href="https://zynovax.in/services" />
   <link rel="icon" href="logo.png" type="image/png" />
   <meta property="og:title" content="Services — Zynovax" />
-  <meta property="og:description" content="Six strategy-first brand services: Brand Strategy, Visual Identity, Social Media, Performance Marketing, Content Writing & AI Brand Tools." />
+  <meta property="og:description"
+    content="Six strategy-first brand services: Brand Strategy, Visual Identity, Social Media, Performance Marketing, Content Writing & AI Brand Tools." />
   <meta property="og:image" content="https://zynovax.in/logo.png" />
   <meta property="og:url" content="https://zynovax.in/services" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{outfit:['Outfit','sans-serif'],syne:['Syne','sans-serif']},colors:{brand:{orange:'#FF6B35',pink:'#FF1A8C',magenta:'#E8176F',purple:'#8B2FC9',indigo:'#4A2FBD'}}}}}</script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { outfit: ['Outfit', 'sans-serif'], syne: ['Syne', 'sans-serif'] }, colors: { brand: { orange: '#FF6B35', pink: '#FF1A8C', magenta: '#E8176F', purple: '#8B2FC9', indigo: '#4A2FBD' } } } } }</script>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="font-outfit bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
 
-<div id="navbar-placeholder"></div>
+  <div id="navbar-placeholder"></div>
 
-<main class="pt-20">
 
-  <!-- PAGE HERO -->
-  <section class="relative py-24 md:py-32 bg-white dark:bg-gray-950 overflow-hidden">
-    <div class="hero-orb orb-1" aria-hidden="true"></div>
-    <div class="hero-orb orb-2" aria-hidden="true"></div>
-    <div class="absolute inset-0 grid-pattern opacity-30 dark:opacity-10" aria-hidden="true"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="label-badge reveal">What We Do</span>
-      <h1 class="reveal font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight mt-6 mb-6">
-        Six services.<br/><span class="gradient-text">One obsession.</span>
-      </h1>
-      <p class="reveal text-gray-500 dark:text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-        Every service we offer is built on a foundation of strategy. We don't design for aesthetics alone — we engineer for results.
-      </p>
-      <div class="reveal flex flex-wrap items-center justify-center gap-3">
-        <a href="index.html#contact" class="btn-primary px-8 py-4">Start Your Project</a>
-        <a href="#pricing" class="btn-outline px-8 py-4">View Pricing</a>
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="relative w-full min-h-screen md:h-screen overflow-hidden flex flex-col justify-center">
+
+      <!-- ── Background Orbs ── -->
+      <div class="hero-orb orb-1" aria-hidden="true"></div>
+      <div class="hero-orb orb-2" aria-hidden="true"></div>
+
+      <!-- ── Premium Agency Video Background ── -->
+      <!--
+        Video: "Business people at work meeting" (Mixkit #4809) — team at laptops reviewing strategy data.
+        Fallback: "Open office space" (Mixkit #914) — cinematic startup agency workspace.
+        License: Free / No attribution required (mixkit.co/license)
+      -->
+      <div class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0" aria-hidden="true">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0"
+          id="hero-bg-video-services"
+        >
+          <!-- Primary: Team reviewing analytics & strategy docs at a meeting table -->
+          <source src="https://assets.mixkit.co/videos/4809/4809-1080.mp4" type="video/mp4" />
+          <!-- Fallback: Open-plan cinematic agency workspace -->
+          <source src="https://assets.mixkit.co/videos/914/914-1080.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Glassmorphic scrim: ensures "Six services. One obsession." stays razor-sharp -->
+        <div class="absolute inset-0 bg-white/40 dark:bg-gray-950/40 backdrop-blur-[1px]"></div>
+
+        <!-- Depth gradient — fades the video into the services grid section below -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white dark:from-gray-950/20 dark:via-gray-950/55 dark:to-gray-950 transition-colors duration-500"></div>
       </div>
-    </div>
-  </section>
 
-  <!-- SERVICES GRID -->
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- ── Grid Texture ── -->
+      <div class="absolute inset-0 grid-pattern opacity-20 dark:opacity-10" aria-hidden="true"></div>
 
-      <!-- Service 1: Brand Strategy -->
-      <div id="brand-strategy" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
-        <div>
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center mb-6 shadow-lg shadow-brand-pink/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-          </div>
-          <span class="text-xs font-mono text-brand-pink uppercase tracking-widest mb-2 block">01 / Brand Strategy</span>
-          <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Your brand's battle plan.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">Before we design a single pixel or write a single word, we build your brand's strategic foundation. This is the document that drives every decision we make for your brand.</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Market research & competitor analysis</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand positioning & unique value proposition</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Target audience personas & messaging hierarchy</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand voice, tone & personality guidelines</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">30/60/90 day growth roadmap</span></li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Get Brand Strategy</a>
+      <!-- ── Content ── -->
+      <div class="relative z-10 w-full pt-36 pb-20 md:pt-0 md:pb-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="label-badge reveal">What We Do</span>
+        <h1
+          class="reveal font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight mt-6 mb-6">
+          Six services.<br /><span class="gradient-text">One obsession.</span>
+        </h1>
+        <p class="reveal text-gray-500 dark:text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+          Every service we offer is built on a foundation of strategy. We don't design for aesthetics alone — we
+          engineer for results.
+        </p>
+        <div class="reveal flex flex-wrap items-center justify-center gap-3">
+          <a href="index.html#contact" class="btn-primary px-8 py-4">Start Your Project</a>
+          <a href="work.html" class="btn-outline px-8 py-4">See Our Work</a>
         </div>
-        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-orange/10 to-brand-pink/10 dark:from-brand-orange/20 dark:to-brand-pink/20 border border-brand-pink/10 p-6 sm:p-10 text-center">
-          <div class="text-6xl mb-6">🎯</div>
-          <p class="font-syne font-bold text-2xl text-gray-900 dark:text-white mb-3">"Strategy before design. Always."</p>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">— The Zynovax Way</p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">7–10</p><p class="text-xs text-gray-400 mt-1">Days Delivery</p>
+      </div>
+
+    </section><!-- /PAGE HERO -->
+
+
+    <!-- SERVICES GRID -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Service 1: Brand Strategy -->
+        <div id="brand-strategy" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
+          <div>
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center mb-6 shadow-lg shadow-brand-pink/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
             </div>
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">2</p><p class="text-xs text-gray-400 mt-1">Revision Rounds</p>
+            <span class="text-xs font-mono text-brand-pink uppercase tracking-widest mb-2 block">01 / Brand
+              Strategy</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Your brand's
+              battle plan.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">Before we design a single pixel or write a
+              single word, we build your brand's strategic foundation. This is the document that drives every decision
+              we make for your brand.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Market research & competitor
+                  analysis</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand positioning & unique value
+                  proposition</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Target audience personas &
+                  messaging hierarchy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand voice, tone & personality
+                  guidelines</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">30/60/90 day growth roadmap</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Get Brand Strategy</a>
+          </div>
+          <!-- Brand Strategy — Premium Photo Card -->
+          <div
+            class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <!-- Background photo -->
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+              alt="Minimalist strategy workspace with a whiteboard and brand planning documents"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <!-- Dark gradient scrim -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <!-- Glassmorphism content panel -->
+            <div class="relative z-10 p-6 sm:p-8">
+              <span class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-pink/80 mb-3">Brand
+                Strategy</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"Strategy before design.
+                Always."</p>
+              <p class="text-xs text-gray-400 mb-6">— The Zynovax Way</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">7–10</p>
+                  <p class="text-xs text-gray-400 mt-1">Days Delivery</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">2</p>
+                  <p class="text-xs text-gray-400 mt-1">Revision Rounds</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Service 2: Visual Identity -->
-      <div id="visual-identity" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
-        <div class="order-2 lg:order-1 relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-pink/10 to-brand-purple/10 dark:from-brand-pink/20 dark:to-brand-purple/20 border border-brand-purple/10 p-6 sm:p-10 text-center">
-          <div class="text-6xl mb-6">🎨</div>
-          <p class="font-syne font-bold text-2xl text-gray-900 dark:text-white mb-3">"Built to be unmistakable."</p>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">— Our Design Promise</p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">10–14</p><p class="text-xs text-gray-400 mt-1">Days Delivery</p>
-            </div>
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">3</p><p class="text-xs text-gray-400 mt-1">Revision Rounds</p>
-            </div>
-          </div>
-        </div>
-        <div class="order-1 lg:order-2">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center mb-6 shadow-lg shadow-brand-purple/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-          </div>
-          <span class="text-xs font-mono text-brand-purple uppercase tracking-widest mb-2 block">02 / Visual Identity</span>
-          <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">A system, not just a logo.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We don't just design logos — we craft complete visual identity systems that work across every touchpoint your brand appears at.</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Primary + secondary logo suite (all formats)</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand color palette & typography system</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand pattern, icons & visual elements</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Business card, letterhead & stationery</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand style guide document (PDF + Figma)</span></li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Get Visual Identity</a>
-        </div>
-      </div>
-
-      <!-- Service 3: Social Media -->
-      <div id="social-media" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
-        <div>
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center mb-6 shadow-lg shadow-brand-indigo/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-          </div>
-          <span class="text-xs font-mono text-brand-indigo uppercase tracking-widest mb-2 block">03 / Social Media Management</span>
-          <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Feed domination, on purpose.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We handle everything — strategy, content creation, scheduling, community management, and monthly performance reports. You focus on running the business.</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Monthly content calendar & strategy</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">12–20 on-brand posts per month</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Story & Reel scripting + design</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Caption writing & hashtag research</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Monthly analytics & growth report</span></li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Start Social Media</a>
-        </div>
-        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-purple/10 to-brand-indigo/10 dark:from-brand-purple/20 dark:to-brand-indigo/20 border border-brand-indigo/10 p-6 sm:p-10 text-center">
-          <div class="text-6xl mb-6">📱</div>
-          <p class="font-syne font-bold text-2xl text-gray-900 dark:text-white mb-3">"Content that converts."</p>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">— Our Content Philosophy</p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">Monthly</p><p class="text-xs text-gray-400 mt-1">Retainer</p>
-            </div>
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">2</p><p class="text-xs text-gray-400 mt-1">Platforms</p>
+        <!-- Service 2: Visual Identity -->
+        <div id="visual-identity" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
+          <!-- Visual Identity — Premium Photo Card -->
+          <div
+            class="order-2 lg:order-1 relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80"
+              alt="Abstract brand design color palette and typography system layout"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <div class="relative z-10 p-6 sm:p-8">
+              <span
+                class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-purple/80 mb-3">Visual
+                Identity</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"Built to be
+                unmistakable."</p>
+              <p class="text-xs text-gray-400 mb-6">— Our Design Promise</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">10–14</p>
+                  <p class="text-xs text-gray-400 mt-1">Days Delivery</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">3</p>
+                  <p class="text-xs text-gray-400 mt-1">Revision Rounds</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Service 4: Performance Marketing -->
-      <div id="performance-marketing" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
-        <div class="order-2 lg:order-1 relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-indigo/10 to-brand-orange/10 dark:from-brand-indigo/20 dark:to-brand-orange/20 border border-brand-orange/10 p-6 sm:p-10 text-center">
-          <div class="text-6xl mb-6">⚡</div>
-          <p class="font-syne font-bold text-2xl text-gray-900 dark:text-white mb-3">"Every rupee tracked."</p>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">— Our Performance Promise</p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">Meta</p><p class="text-xs text-gray-400 mt-1">& Google Ads</p>
+          <div class="order-1 lg:order-2">
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center mb-6 shadow-lg shadow-brand-purple/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
             </div>
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-800 text-center">
-              <p class="font-syne font-extrabold text-2xl gradient-text">Weekly</p><p class="text-xs text-gray-400 mt-1">Reports</p>
+            <span class="text-xs font-mono text-brand-purple uppercase tracking-widest mb-2 block">02 / Visual
+              Identity</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">A system, not
+              just a logo.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We don't just design logos — we craft
+              complete visual identity systems that work across every touchpoint your brand appears at.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Primary + secondary logo suite (all
+                  formats)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand color palette & typography
+                  system</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand pattern, icons & visual
+                  elements</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Business card, letterhead &
+                  stationery</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand style guide document (PDF +
+                  Figma)</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Get Visual Identity</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Social Media -->
+        <div id="social-media" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
+          <div>
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center mb-6 shadow-lg shadow-brand-indigo/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="text-xs font-mono text-brand-indigo uppercase tracking-widest mb-2 block">03 / Social Media
+              Management</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Feed
+              domination, on purpose.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We handle everything — strategy, content
+              creation, scheduling, community management, and monthly performance reports. You focus on running the
+              business.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Monthly content calendar &
+                  strategy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">12–20 on-brand posts per
+                  month</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Story & Reel scripting +
+                  design</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Caption writing & hashtag
+                  research</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Monthly analytics & growth
+                  report</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Start Social Media</a>
+          </div>
+          <!-- Social Media — Premium Photo Card -->
+          <div
+            class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=900&q=80"
+              alt="Social media content creation setup with phone and analytics dashboard"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <div class="relative z-10 p-6 sm:p-8">
+              <span
+                class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-indigo/80 mb-3">Social
+                Media</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"Content that converts."
+              </p>
+              <p class="text-xs text-gray-400 mb-6">— Our Content Philosophy</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">Monthly</p>
+                  <p class="text-xs text-gray-400 mt-1">Retainer</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">2</p>
+                  <p class="text-xs text-gray-400 mt-1">Platforms</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="order-1 lg:order-2">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center mb-6 shadow-lg shadow-brand-orange/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+
+        <!-- Service 4: Performance Marketing -->
+        <div id="performance-marketing"
+          class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
+          <!-- Performance Marketing — Premium Photo Card -->
+          <div
+            class="order-2 lg:order-1 relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+              alt="Dark marketing analytics dashboard with performance charts and ROAS data"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <div class="relative z-10 p-6 sm:p-8">
+              <span
+                class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-orange/80 mb-3">Performance
+                Marketing</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"Every rupee tracked."</p>
+              <p class="text-xs text-gray-400 mb-6">— Our Performance Promise</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">Meta</p>
+                  <p class="text-xs text-gray-400 mt-1">&amp; Google Ads</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">Weekly</p>
+                  <p class="text-xs text-gray-400 mt-1">Reports</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <span class="text-xs font-mono text-brand-orange uppercase tracking-widest mb-2 block">04 / Performance Marketing</span>
-          <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Ads that actually work.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">No vanity metrics. No excuses. Just real results tied to real revenue. We manage Meta and Google ad campaigns with a relentless focus on ROAS.</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Campaign strategy & funnel mapping</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Ad copy & creative design</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Audience targeting & pixel setup</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">A/B testing & continuous optimization</span></li>
-            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-gray-600 dark:text-gray-400 text-sm">Weekly ROAS & spend reports</span></li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Start Performance Ads</a>
-        </div>
-      </div>
-
-      <!-- Service 5 & 6 — side by side -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div id="content-writing" class="reveal bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800 p-6 sm:p-10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-pink/10 transition-all duration-300 scroll-mt-24">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center mb-6 shadow-lg shadow-brand-magenta/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          <div class="order-1 lg:order-2">
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center mb-6 shadow-lg shadow-brand-orange/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-xs font-mono text-brand-orange uppercase tracking-widest mb-2 block">04 / Performance
+              Marketing</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Ads that
+              actually work.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">No vanity metrics. No excuses. Just real
+              results tied to real revenue. We manage Meta and Google ad campaigns with a relentless focus on ROAS.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Campaign strategy & funnel
+                  mapping</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Ad copy & creative design</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Audience targeting & pixel
+                  setup</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">A/B testing & continuous
+                  optimization</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Weekly ROAS & spend reports</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Start Performance Ads</a>
           </div>
-          <span class="text-xs font-mono text-brand-magenta uppercase tracking-widest mb-2 block">05 / Content & Copywriting</span>
-          <h2 class="font-syne font-extrabold text-2xl md:text-3xl text-gray-900 dark:text-white mb-4">Words that sell.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6 text-sm">We write with purpose. Every word we craft is designed to persuade, connect, and convert — from your homepage headline to your email sequence.</p>
-          <ul class="space-y-2 mb-8">
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-magenta flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Website copy (all pages)</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-magenta flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Email sequences & newsletters</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-magenta flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Blog posts & SEO articles</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-magenta flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Ad copy & landing pages</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-magenta flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Brand voice document</li>
-          </ul>
-          <a href="index.html#contact" class="btn-outline px-6 py-3 text-sm inline-flex items-center gap-2">Get Started <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
 
-        <div id="ai-brand-tools" class="reveal bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800 p-6 sm:p-10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-purple/10 transition-all duration-300 scroll-mt-24">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center mb-6 shadow-lg shadow-brand-indigo/30">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2" /></svg>
+        <!-- Service 5: Content & Copywriting — Full-width two-column layout -->
+        <div id="content-writing" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-24">
+          <div>
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center mb-6 shadow-lg shadow-brand-magenta/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <span class="text-xs font-mono text-brand-magenta uppercase tracking-widest mb-2 block">05 / Content &amp;
+              Copywriting</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">Words that
+              sell.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We write with purpose. Every word we craft
+              is designed to persuade, connect, and convert — from your homepage headline to your email sequence.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Website copy (all pages)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Email sequences &amp; newsletters</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Blog posts &amp; SEO articles</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Ad copy &amp; landing pages</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-orange to-brand-magenta flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand voice document</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Get Started Writing</a>
           </div>
-          <span class="text-xs font-mono text-brand-purple uppercase tracking-widest mb-2 block">06 / AI Brand Tools</span>
-          <h2 class="font-syne font-extrabold text-2xl md:text-3xl text-gray-900 dark:text-white mb-4">The future, built today.</h2>
-          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6 text-sm">We build custom AI systems that automate your brand's content production, reporting, and customer communication — built specifically for your business.</p>
-          <ul class="space-y-2 mb-8">
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom AI content engines</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Brand voice AI chatbots</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Automated reporting dashboards</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social media automation</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom GPT brand assistants</li>
-          </ul>
-          <a href="index.html#contact" class="btn-outline px-6 py-3 text-sm inline-flex items-center gap-2">Get Started <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <!-- Content & Copywriting — Premium Photo Card -->
+          <div
+            class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
+              alt="Premium editorial writing desk with notebook, pen and minimalist workspace"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <div class="relative z-10 p-6 sm:p-8">
+              <span
+                class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-magenta/80 mb-3">Content
+                &amp; Copywriting</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"Words that move people."
+              </p>
+              <p class="text-xs text-gray-400 mb-6">— Our Copy Philosophy</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">5–7</p>
+                  <p class="text-xs text-gray-400 mt-1">Days Delivery</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">2</p>
+                  <p class="text-xs text-gray-400 mt-1">Revision Rounds</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: AI Brand Tools — Full-width two-column layout -->
+        <div id="ai-brand-tools" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-8 scroll-mt-24">
+          <!-- AI Brand Tools — Premium Photo Card -->
+          <div
+            class="order-2 lg:order-1 relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+              alt="Abstract AI neural network visualization with dark futuristic interface"
+              class="absolute inset-0 w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+            <div class="relative z-10 p-6 sm:p-8">
+              <span class="inline-block text-[10px] font-mono tracking-[0.18em] uppercase text-brand-purple/80 mb-3">AI
+                Brand Tools</span>
+              <p class="font-syne font-bold text-xl sm:text-2xl text-white leading-snug mb-1">"The future of brand,
+                automated."</p>
+              <p class="text-xs text-gray-400 mb-6">— Our AI Promise</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">Custom</p>
+                  <p class="text-xs text-gray-400 mt-1">Built for You</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 text-center">
+                  <p class="font-syne font-extrabold text-2xl gradient-text">24/7</p>
+                  <p class="text-xs text-gray-400 mt-1">Automation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center mb-6 shadow-lg shadow-brand-indigo/30">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
+              </svg>
+            </div>
+            <span class="text-xs font-mono text-brand-purple uppercase tracking-widest mb-2 block">06 / AI Brand
+              Tools</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">The future,
+              built today.</h2>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">We build custom AI systems that automate
+              your brand's content production, reporting, and customer communication — built specifically for your
+              business.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Custom AI content engines</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Brand voice AI chatbots</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Automated reporting dashboards</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Social media automation</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div><span class="text-gray-600 dark:text-gray-400 text-sm">Custom GPT brand assistants</span>
+              </li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary px-6 py-3 text-sm">Build My AI System</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="py-24 bg-white dark:bg-gray-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="label-badge reveal">Pricing</span>
-        <h2 class="reveal font-syne font-extrabold text-4xl md:text-5xl text-gray-900 dark:text-white mt-4 tracking-tight">Transparent. No surprises.</h2>
-        <p class="reveal text-gray-500 dark:text-gray-400 mt-4 max-w-xl mx-auto">Every package is custom-scoped after a free discovery call. These are starting points — not limits.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Starter -->
-        <div class="reveal rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-          <h3 class="font-syne font-extrabold text-xl text-gray-900 dark:text-white mb-2">Starter</h3>
-          <p class="text-gray-400 text-sm mb-6">Perfect for new businesses</p>
-          <div class="mb-8"><span class="font-syne font-extrabold text-4xl gradient-text">₹15K</span><span class="text-gray-400 text-sm ml-2">onwards</span></div>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Brand Strategy Document</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Logo + Basic Identity</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social Media Setup (2 platforms)</li>
-            <li class="flex items-center gap-2 text-sm text-gray-400"><svg class="h-4 w-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Performance Ads</li>
-            <li class="flex items-center gap-2 text-sm text-gray-400"><svg class="h-4 w-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>AI Brand Tools</li>
-          </ul>
-          <a href="index.html#contact" class="btn-outline w-full py-3 text-sm text-center block">Get Started</a>
-        </div>
-        <!-- Growth -->
-        <div class="reveal relative rounded-3xl border-2 border-brand-pink bg-white dark:bg-gray-900 p-8 shadow-2xl shadow-brand-pink/20 hover:-translate-y-1 transition-all duration-300">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-pink to-brand-purple text-white text-xs font-bold px-4 py-1.5 rounded-full">Most Popular</div>
-          <h3 class="font-syne font-extrabold text-xl text-gray-900 dark:text-white mb-2">Growth</h3>
-          <p class="text-gray-400 text-sm mb-6">For brands ready to scale</p>
-          <div class="mb-8"><span class="font-syne font-extrabold text-4xl gradient-text">₹35K</span><span class="text-gray-400 text-sm ml-2">onwards / mo</span></div>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Complete Brand Strategy</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Full Visual Identity System</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social Media Management</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Performance Ad Campaigns</li>
-            <li class="flex items-center gap-2 text-sm text-gray-400"><svg class="h-4 w-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>AI Brand Tools</li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary w-full py-3 text-sm text-center block">Get Started</a>
-        </div>
-        <!-- Premium -->
-        <div class="reveal rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-          <h3 class="font-syne font-extrabold text-xl text-gray-900 dark:text-white mb-2">Premium</h3>
-          <p class="text-gray-400 text-sm mb-6">Full-stack brand engineering</p>
-          <div class="mb-8"><span class="font-syne font-extrabold text-4xl gradient-text">₹70K</span><span class="text-gray-400 text-sm ml-2">onwards / mo</span></div>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Growth</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Content & Copywriting</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom AI Brand Tools</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated Account Manager</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"><svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority support & monthly strategy call</li>
-          </ul>
-          <a href="index.html#contact" class="btn-outline w-full py-3 text-sm text-center block">Get Started</a>
+
+
+    <!-- CTA -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2
+          class="reveal font-syne font-extrabold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 tracking-tight">
+          Not sure which service<br /><span class="gradient-text">you need?</span></h2>
+        <p class="reveal text-gray-500 dark:text-gray-400 text-lg mb-10">Start with a free brand audit. We'll analyse
+          your brand and tell you exactly where to focus.</p>
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="audit.html" class="btn-primary px-10 py-4 text-base">Claim Free Brand Audit</a>
+          <a href="process.html" class="btn-outline px-10 py-4 text-base">See Our Process</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="py-24 bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="reveal font-syne font-extrabold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 tracking-tight">Not sure which service<br/><span class="gradient-text">you need?</span></h2>
-      <p class="reveal text-gray-500 dark:text-gray-400 text-lg mb-10">Start with a free brand audit. We'll analyse your brand and tell you exactly where to focus.</p>
-      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="audit.html" class="btn-primary px-10 py-4 text-base">Claim Free Brand Audit</a>
-        <a href="process.html" class="btn-outline px-10 py-4 text-base">See Our Process</a>
-      </div>
-    </div>
-  </section>
+  </main>
 
-</main>
-
-<div id="footer-placeholder"></div>
-<script src="shared.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="shared.js"></script>
 </body>
+
 </html>

@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 — Page Not Found · Zynovax</title>
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{outfit:['Outfit','sans-serif'],syne:['Syne','sans-serif']},colors:{brand:{orange:'#FF6B35',pink:'#FF1A8C',magenta:'#E8176F',purple:'#8B2FC9',indigo:'#4A2FBD'}}}}}</script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { outfit: ['Outfit', 'sans-serif'], syne: ['Syne', 'sans-serif'] }, colors: { brand: { orange: '#FF6B35', pink: '#FF1A8C', magenta: '#E8176F', purple: '#8B2FC9', indigo: '#4A2FBD' } } } } }</script>
   <link rel="stylesheet" href="style.css" />
   <style>
     .glitch {
       position: relative;
       display: inline-block;
     }
+
     .glitch::before,
     .glitch::after {
       content: attr(data-text);
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: transparent;
       clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     }
+
     .glitch::before {
       left: 3px;
       text-shadow: -2px 0 #FF1A8C;
       animation: glitch-top 3s infinite linear alternate-reverse;
     }
+
     .glitch::after {
       left: -3px;
       text-shadow: 2px 0 #8B2FC9;
       clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
       animation: glitch-bottom 2.5s infinite linear alternate-reverse;
     }
+
     @keyframes glitch-top {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 1px); }
-      40% { transform: translate(-1px, -1px); }
-      60% { transform: translate(1px, 1px); }
-      80% { transform: translate(2px, -1px); }
-      100% { transform: translate(0); }
+      0% {
+        transform: translate(0);
+      }
+
+      20% {
+        transform: translate(-2px, 1px);
+      }
+
+      40% {
+        transform: translate(-1px, -1px);
+      }
+
+      60% {
+        transform: translate(1px, 1px);
+      }
+
+      80% {
+        transform: translate(2px, -1px);
+      }
+
+      100% {
+        transform: translate(0);
+      }
     }
+
     @keyframes glitch-bottom {
-      0% { transform: translate(0); }
-      20% { transform: translate(2px, -1px); }
-      40% { transform: translate(1px, 1px); }
-      60% { transform: translate(-1px, -1px); }
-      80% { transform: translate(-2px, 1px); }
-      100% { transform: translate(0); }
+      0% {
+        transform: translate(0);
+      }
+
+      20% {
+        transform: translate(2px, -1px);
+      }
+
+      40% {
+        transform: translate(1px, 1px);
+      }
+
+      60% {
+        transform: translate(-1px, -1px);
+      }
+
+      80% {
+        transform: translate(-2px, 1px);
+      }
+
+      100% {
+        transform: translate(0);
+      }
     }
+
     .float-orb {
       position: absolute;
       border-radius: 50%;
@@ -57,105 +105,150 @@
       animation: orbFloat 8s ease-in-out infinite;
       pointer-events: none;
     }
+
     @keyframes orbFloat {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-30px) scale(1.05);
+      }
     }
+
     .link-card {
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
+
     .link-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,26,140,0.4);
-      box-shadow: 0 12px 40px rgba(255,26,140,0.08);
+      border-color: rgba(255, 26, 140, 0.4);
+      box-shadow: 0 12px 40px rgba(255, 26, 140, 0.08);
     }
+
     @keyframes countUp {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
+
     .error-code {
-      animation: countUp 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+      animation: countUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
   </style>
 </head>
+
 <body class="font-outfit bg-white dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen">
 
-<div id="navbar-placeholder"></div>
+  <div id="navbar-placeholder"></div>
 
-<main class="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-20">
+  <main class="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-20">
 
-  <!-- Background orbs -->
-  <div class="float-orb w-[500px] h-[500px] bg-brand-pink/10 -top-20 -left-40 animation-delay-0" style="animation-delay:0s" aria-hidden="true"></div>
-  <div class="float-orb w-[400px] h-[400px] bg-brand-purple/10 bottom-0 right-0 animation-delay-2" style="animation-delay:2s" aria-hidden="true"></div>
-  <div class="absolute inset-0 grid-pattern opacity-20 dark:opacity-10" aria-hidden="true"></div>
+    <!-- Background orbs -->
+    <div class="float-orb w-[500px] h-[500px] bg-brand-pink/10 -top-20 -left-40 animation-delay-0"
+      style="animation-delay:0s" aria-hidden="true"></div>
+    <div class="float-orb w-[400px] h-[400px] bg-brand-purple/10 bottom-0 right-0 animation-delay-2"
+      style="animation-delay:2s" aria-hidden="true"></div>
+    <div class="absolute inset-0 grid-pattern opacity-20 dark:opacity-10" aria-hidden="true"></div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
 
-    <!-- 404 number with glitch effect -->
-    <div class="error-code mb-6 select-none" aria-hidden="true">
-      <span
-        class="glitch font-syne font-extrabold text-[clamp(120px,25vw,220px)] leading-none"
-        data-text="404"
-        style="background: linear-gradient(135deg, #FF6B35, #FF1A8C, #8B2FC9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
-      >404</span>
+      <!-- 404 number with glitch effect -->
+      <div class="error-code mb-6 select-none" aria-hidden="true">
+        <span class="glitch font-syne font-extrabold text-[clamp(120px,25vw,220px)] leading-none" data-text="404"
+          style="background: linear-gradient(135deg, #FF6B35, #FF1A8C, #8B2FC9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">404</span>
+      </div>
+
+      <!-- Message -->
+      <h1
+        class="font-syne font-extrabold text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-5 tracking-tight">
+        This page doesn't exist.<br />
+        <span class="gradient-text">Your brand should.</span>
+      </h1>
+      <p class="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto leading-relaxed mb-12">
+        Looks like this page has gone missing — just like brands that haven't invested in their identity yet. Let's fix
+        that.
+      </p>
+
+      <!-- Primary CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="index.html" class="btn-primary px-8 py-4 text-base group">
+          <svg class="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform inline" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Home
+        </a>
+        <a href="audit.html" class="btn-outline px-8 py-4 text-base">Get Free Brand Audit</a>
+      </div>
+
+      <!-- Quick link cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+        <a href="services.html"
+          class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center mx-auto mb-3">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Services</p>
+        </a>
+        <a href="work.html"
+          class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center mx-auto mb-3">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Work</p>
+        </a>
+        <a href="process.html"
+          class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center mx-auto mb-3">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Process</p>
+        </a>
+        <a href="about.html"
+          class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center mx-auto mb-3">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">About</p>
+        </a>
+      </div>
+
+      <!-- Brand tagline at bottom -->
+      <div class="mt-16 flex items-center justify-center gap-3 text-gray-400 text-sm">
+        <img src="logo.png" alt="Zynovax" class="h-6 w-auto opacity-50" />
+        <span>Zynovax · Creative Brand Building Agency · Perungalathur, Chennai</span>
+      </div>
+
     </div>
+  </main>
 
-    <!-- Message -->
-    <h1 class="font-syne font-extrabold text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-5 tracking-tight">
-      This page doesn't exist.<br/>
-      <span class="gradient-text">Your brand should.</span>
-    </h1>
-    <p class="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto leading-relaxed mb-12">
-      Looks like this page has gone missing — just like brands that haven't invested in their identity yet. Let's fix that.
-    </p>
-
-    <!-- Primary CTA -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-      <a href="index.html" class="btn-primary px-8 py-4 text-base group">
-        <svg class="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-        Back to Home
-      </a>
-      <a href="audit.html" class="btn-outline px-8 py-4 text-base">Get Free Brand Audit</a>
-    </div>
-
-    <!-- Quick link cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-      <a href="services.html" class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-brand-pink flex items-center justify-center mx-auto mb-3">
-          <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-        </div>
-        <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Services</p>
-      </a>
-      <a href="work.html" class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center mx-auto mb-3">
-          <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-        </div>
-        <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Work</p>
-      </a>
-      <a href="process.html" class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-indigo flex items-center justify-center mx-auto mb-3">
-          <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
-        </div>
-        <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">Process</p>
-      </a>
-      <a href="about.html" class="link-card bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 text-center group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center mx-auto mb-3">
-          <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-        </div>
-        <p class="font-syne font-bold text-sm text-gray-900 dark:text-white">About</p>
-      </a>
-    </div>
-
-    <!-- Brand tagline at bottom -->
-    <div class="mt-16 flex items-center justify-center gap-3 text-gray-400 text-sm">
-      <img src="logo.png" alt="Zynovax" class="h-6 w-auto opacity-50" />
-      <span>Zynovax · Brand Engineering Agency · Perungalathur, Chennai</span>
-    </div>
-
-  </div>
-</main>
-
-<div id="footer-placeholder"></div>
-<script src="shared.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="shared.js"></script>
 </body>
+
 </html>

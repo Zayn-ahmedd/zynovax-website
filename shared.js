@@ -80,10 +80,23 @@ function buildFooter() {
               <img src="logo-text.png" alt="Zynovax" class="absolute w-full h-auto" style="top: 50%; transform: translateY(-50%);" />
             </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">Strategy-first brand building for startups, D2C brands, and local businesses. Based in Perungalathur, Chennai. Built for India.</p>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mb-4">Strategy-first brand building for startups, D2C brands, and local businesses. Based in Perungalathur, Chennai. Built for India.</p>
+          <div class="flex flex-col gap-2 mb-5">
+            <a href="tel:6383712480" class="flex items-center gap-2 text-gray-400 hover:text-brand-pink text-sm transition-colors">
+              <svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <span>+91 63837 12480</span>
+            </a>
+            <a href="mailto:info@zynovax.in" class="flex items-center gap-2 text-gray-400 hover:text-brand-pink text-sm transition-colors">
+              <svg class="h-4 w-4 text-brand-pink flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <span>info@zynovax.in</span>
+            </a>
+          </div>
           <div class="flex items-center gap-3">
             <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-brand-orange hover:to-brand-pink flex items-center justify-center transition-all duration-200 hover:scale-110">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com/zynovax" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-700 flex items-center justify-center transition-all duration-200 hover:scale-110">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
             </a>
             <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600 flex items-center justify-center transition-all duration-200 hover:scale-110">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -121,9 +134,8 @@ function buildFooter() {
         <p class="text-gray-500 text-sm">© 2025 Zynovax. All rights reserved. Built in Perungalathur, Chennai 🇮🇳</p>
         <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
           <a href="privacy.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Terms & Conditions</a>
+          <a href="terms.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Terms &amp; Conditions</a>
           <a href="refunds.html" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Refund Policy</a>
-          <a href="mailto:info@zynovax.in" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">info@zynovax.in</a>
           <a href="sitemap.xml" class="text-gray-500 hover:text-brand-pink text-xs transition-colors">Sitemap</a>
         </div>
       </div>
@@ -142,20 +154,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const footerEl = document.getElementById('footer-placeholder');
   if (footerEl) footerEl.outerHTML = buildFooter();
 
-  // ── Dark mode ──
+  // ── Dark mode (Async & Fail-safe Engine) ──
   const html = document.documentElement;
   const saved = localStorage.getItem('zynovax-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (saved === 'dark' || (!saved && prefersDark)) {
+  const isDark = saved === 'dark' || (!saved && prefersDark);
+
+  if (isDark) {
     html.classList.add('dark');
   } else {
     html.classList.remove('dark');
   }
 
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    localStorage.setItem('zynovax-theme', html.classList.contains('dark') ? 'dark' : 'light');
-  });
+  function bindToggleListener(btn) {
+    if (btn.dataset.themeBound) return;
+    btn.dataset.themeBound = "true";
+    btn.addEventListener('click', () => {
+      const wasDark = html.classList.toggle('dark');
+      localStorage.setItem('zynovax-theme', wasDark ? 'dark' : 'light');
+    });
+  }
+
+  const existingBtn = document.getElementById('theme-toggle');
+  if (existingBtn) {
+    bindToggleListener(existingBtn);
+  } else {
+    const observer = new MutationObserver((mutations, obs) => {
+      const targetBtn = document.getElementById('theme-toggle');
+      if (targetBtn) {
+        bindToggleListener(targetBtn);
+        obs.disconnect();
+      }
+    });
+    observer.observe(document.body || document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
 
   // ── Navbar scroll ──
   const navbar = document.getElementById('navbar');
@@ -252,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(waStyle);
     var waBtn = document.createElement('a');
     waBtn.id = 'wa-fab';
-    waBtn.href = 'https://wa.me/919876543210?text=Hi%20Zynovax%2C%20I%27d%20love%20to%20learn%20about%20your%20brand%20building%20services!';
+    waBtn.href = 'https://wa.me/916383712480?text=Hi%20Zynovax%2C%20I%27d%20love%20to%20learn%20about%20your%20brand%20building%20services!';
     waBtn.target = '_blank';
     waBtn.rel = 'noopener noreferrer';
     waBtn.setAttribute('aria-label', 'Chat with us on WhatsApp');
@@ -353,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     var style = document.createElement('style');
-    style.textContent = 
+    style.textContent =
       '#back-to-top {' +
       '  position: fixed;' +
       '  bottom: 28px;' +
@@ -414,5 +449,225 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  // ── Lead Capture Popup Modal ──
+  (function initLeadCapturePopup() {
+    if (localStorage.getItem('leadPopupClosed') === 'true') return;
+
+    setTimeout(() => {
+      if (localStorage.getItem('leadPopupClosed') === 'true') return;
+
+      var modalHtml = `
+<div id="lead-capture-modal" class="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500 ease-out transform scale-95" style="backdrop-filter: blur(8px);">
+  <div class="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800 grid grid-cols-1 md:grid-cols-12">
+    <!-- Close button -->
+    <button id="close-lead-modal" class="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors focus:outline-none" aria-label="Close modal">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Left Column (Brand Value Pitch - Dark Accent Background) -->
+    <div class="md:col-span-5 bg-gradient-to-br from-brand-indigo via-brand-purple to-brand-magenta p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+      <div class="absolute -top-12 -left-12 w-48 h-48 bg-white/10 rounded-full blur-2xl" aria-hidden="true"></div>
+      
+      <div class="relative z-10 space-y-6 my-auto">
+        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/15 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        
+        <h2 class="font-syne font-extrabold text-2xl sm:text-3xl leading-tight">
+          90% of brands have shifted to AI. Have you?
+        </h2>
+        <p class="text-white/80 text-sm leading-relaxed">
+          Your competitors are already using custom AI automation and performance marketing engines to scale, automate, and win. Let us help you stay ahead before the gap gets bigger.
+        </p>
+      </div>
+
+      <!-- Baseline Row -->
+      <div class="relative z-10 flex gap-4 pt-6 mt-8 border-t border-white/10 text-white/70">
+        <a href="tel:+919876543210" class="hover:text-white transition-colors" aria-label="Call Zynovax">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </a>
+        <a href="mailto:hello@zynovax.in" class="hover:text-white transition-colors" aria-label="Email Zynovax">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+        <a href="https://instagram.com/zynovax" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Zynovax Instagram">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/company/zynovax" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Zynovax LinkedIn">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column (Intake Form & CTA Booking - Clean White Background) -->
+    <div class="md:col-span-7 p-8 sm:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-center">
+      <form id="lead-capture-form" class="space-y-4">
+        <div>
+          <label for="lead-name" class="block text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">Name</label>
+          <input type="text" id="lead-name" required placeholder="Enter Your Name*" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/80 rounded-xl text-sm focus:outline-none focus:border-brand-pink transition-colors dark:text-white" />
+        </div>
+        
+        <div>
+          <label for="lead-phone" class="block text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">Phone</label>
+          <input type="tel" id="lead-phone" required placeholder="Enter Your Mobile Number*" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/80 rounded-xl text-sm focus:outline-none focus:border-brand-pink transition-colors dark:text-white" />
+        </div>
+
+        <div>
+          <label for="lead-email" class="block text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">Email</label>
+          <input type="email" id="lead-email" required placeholder="Enter Your Email*" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/80 rounded-xl text-sm focus:outline-none focus:border-brand-pink transition-colors dark:text-white" />
+        </div>
+
+        <div>
+          <label for="lead-service" class="block text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">Select Required Service</label>
+          <div class="relative">
+            <select id="lead-service" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/80 rounded-xl text-sm focus:outline-none focus:border-brand-pink transition-colors appearance-none cursor-pointer dark:text-white">
+              <option value="" disabled selected>Select Required Service*</option>
+              <option value="Brand Strategy">Brand Strategy</option>
+              <option value="Visual Identity">Visual Identity</option>
+              <option value="Social Media Management">Social Media Management</option>
+              <option value="Performance Marketing">Performance Marketing</option>
+              <option value="Content & Copywriting">Content & Copywriting</option>
+              <option value="AI Brand Tools">AI Brand Tools</option>
+              <option value="Others">Others</option>
+            </select>
+            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-500">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-4 px-6 bg-gradient-to-r from-brand-pink to-brand-purple hover:from-brand-purple hover:to-brand-pink text-white font-syne font-bold text-sm rounded-xl tracking-wider uppercase transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-brand-pink/25">
+            Book a Strategy Call & Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+      var wrapper = document.createElement('div');
+      wrapper.innerHTML = modalHtml;
+      var modal = wrapper.firstElementChild;
+      document.body.appendChild(modal);
+
+      setTimeout(() => {
+        modal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+        modal.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+      }, 50);
+
+      function closeModal() {
+        modal.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+        modal.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+        localStorage.setItem('leadPopupClosed', 'true');
+        setTimeout(() => {
+          modal.remove();
+        }, 500);
+      }
+
+      document.getElementById('close-lead-modal')?.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.getElementById('lead-capture-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('lead-name').value;
+        const phone = document.getElementById('lead-phone').value;
+        const email = document.getElementById('lead-email').value;
+        const service = document.getElementById('lead-service').value;
+
+        // Show loading state
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'SUBMITTING SECURELY...';
+
+        // Dispatch to Formspree API (or Web3Forms)
+        fetch('https://formspree.io/f/xnqyoogv', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            email: email,
+            service: service,
+            _subject: 'New B2B Lead from Zynovax Website Popup',
+            _to: 'info@zynovax.in'
+          })
+        })
+          .then(() => {
+            showThankYouState();
+          })
+          .catch((err) => {
+            console.error('Submission error, fallback to thank you state:', err);
+            showThankYouState();
+          });
+
+        function showThankYouState() {
+          const modalWindow = modal.firstElementChild;
+          modalWindow.innerHTML = `
+            <!-- Close button -->
+            <button id="close-lead-modal" class="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors focus:outline-none" aria-label="Close modal">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div class="col-span-12 p-10 sm:p-12 text-center space-y-6 animate-fadeIn">
+              <!-- Success Icon -->
+              <div class="w-20 h-20 bg-gradient-to-tr from-brand-pink to-brand-purple text-white rounded-full flex items-center justify-center mx-auto mb-4 border border-white/10 shadow-lg shadow-brand-pink/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 class="font-syne font-extrabold text-3xl text-gray-900 dark:text-white leading-tight">Lead Received Securely!</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-base max-w-md mx-auto leading-relaxed">
+                Our strategy division will review your brand within 24 hours.
+              </p>
+              <div class="pt-4">
+                <a href="audit.html" class="inline-block px-8 py-4 bg-gradient-to-r from-brand-pink to-brand-purple hover:from-brand-purple hover:to-brand-pink text-white font-syne font-bold text-sm rounded-xl tracking-wider uppercase transition-all duration-300 transform hover:scale-[1.04] active:scale-[0.98] shadow-lg shadow-brand-pink/25">
+                  Book a Call
+                </a>
+              </div>
+            </div>
+          `;
+
+          localStorage.setItem('leadPopupClosed', 'true');
+
+          // Re-bind close event
+          document.getElementById('close-lead-modal')?.addEventListener('click', closeModal);
+        }
+      });
+
+    }, 4000);
+  })();
+
 });
+
 
